@@ -1,0 +1,43 @@
+# Azure SDKs
+azure-ai-contentsafety==1.0.0
+azure-ai-ml==1.30.0
+azure-identity==1.25.1
+azure-keyvault-secrets==4.10.0
+azure-search-documents==11.6.0
+azureml-mlflow==1.60.0.post1
+
+# OpenAI
+openai==2.8.1
+
+# ML / Data Science
+mlflow==3.6.0
+mlflow-skinny==3.6.0
+mlflow-tracing==3.6.0
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.7.2
+seaborn==0.13.2
+matplotlib==3.10.7
+matplotlib-inline==0.2.1
+tqdm==4.67.1
+tenacity==9.1.2
+
+# Jupyter ecosystem
+jupyter==1.1.1
+jupyter-console==6.6.3
+jupyter-events==0.12.0
+jupyter-lsp==2.3.0
+jupyter_client==8.6.3
+jupyter_core==5.9.1
+jupyter_server==2.17.0
+jupyter_server_terminals==0.5.3
+jupyterlab==4.5.0
+jupyterlab_pygments==0.3.0
+jupyterlab_server==2.28.0
+jupyterlab_widgets==3.0.16
+
+# Dev / Testing
+pytest==9.0.1
+pytest-cov==7.0.0
+python-dotenv==1.2.1
+PyYAML==6.0.3
