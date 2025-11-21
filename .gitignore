@@ -1,0 +1,126 @@
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dll
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build / distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Byte-compiled
+*$py.class
+
+# ============================
+# Jupyter Notebooks
+# ============================
+.ipynb_checkpoints/
+.notebook_cache/
+*.nbconvert.ipynb
+
+# ============================
+# Logs & runtime files
+# ============================
+logs/
+*.log
+*.tmp
+*.pid
+
+# ============================
+# Data (exclude raw & processed unless explicitly included)
+# ============================
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.parquet
+
+# Keep approved content templates
+!data/content/approved_content/*.json
+
+# Large auto-generated outputs
+data/processed/*.json
+
+# ============================
+# Reports & visualizations
+# ============================
+reports/*.pdf
+reports/*.csv
+reports/visualizations/*.png
+reports/visualizations/*.jpg
+reports/visualizations/*.svg
+
+# ============================
+# Configuration
+# ============================
+# Allow example environment file but ignore real one
+.env
+*.env
+.env.*
+!.env.example
+
+# Secrets
+**/secrets.yaml
+**/secrets.json
+**/*_secret.*
+**/key.json
+
+# ============================
+# Azure / Cloud Tools
+# ============================
+# Azure CLI caches
+.azure/
+azureprofile.json
+az.sess
+*.azureauth
+
+# Terraform / Bicep (if used)
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+*.tfplan
+
+# ============================
+# Editor / OS files
+# ============================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# VS Code
+.vscode/
+.history/
+.settings/
+
+# PyCharm
+.idea/
+
+# ============================
+# Node / Frontend (if any future UI)
+# ============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================
+# Kiro internal artifacts
+# ============================
+.kiro/cache/
+.kiro/tmp/
