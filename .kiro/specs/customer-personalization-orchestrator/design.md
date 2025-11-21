@@ -31,7 +31,7 @@ The Customer Personalization Orchestrator is built as a modular, agent-based sys
          ├──► [2] RETRIEVAL AGENT
          │         │
          │         ├─ Input: segment characteristics
-         │         ├─ Service: Azure Cognitive Search
+         │         ├─ Service: Azure AI Search
          │         └─ Output: retrieved_content (top 3-5 per segment)
          │
          ├──► [3] GENERATION AGENT
@@ -166,7 +166,7 @@ def _segment_by_rules(df: pd.DataFrame) -> pd.DataFrame:
 
 **Purpose**: Retrieve relevant approved content from indexed corpus to ground message generation.
 
-**Azure Service**: Azure Cognitive Search
+**Azure Service**: Azure AI Search
 
 **Index Schema**:
 ```json
@@ -184,7 +184,7 @@ def _segment_by_rules(df: pd.DataFrame) -> pd.DataFrame:
 
 **Retrieval Strategy**:
 1. Construct query from segment characteristics (e.g., "high value premium products")
-2. Use Azure Search's semantic search with query boosting
+2. Use Azure AI Search's semantic search with query boosting
 3. Return top 3-5 results ranked by relevance score
 4. Extract snippets (150-200 words) for prompt inclusion
 
@@ -735,7 +735,7 @@ User/Script           Orchestrator         Segmentation    Retrieval    Generati
 
 | Component | Technology | Version | Purpose |
 |-----------|-----------|---------|---------|
-| **Language** | Python | 3.9+ | Primary development language |
+| **Language** | Python | **3.11** | Primary development language |
 | **Orchestration** | Custom Python scripts | - | Pipeline coordination |
 | **Data Processing** | Pandas, NumPy | Latest | Data manipulation and analysis |
 | **ML/Clustering** | Scikit-learn | Latest | K-means clustering for segmentation |
@@ -744,9 +744,9 @@ User/Script           Orchestrator         Segmentation    Retrieval    Generati
 
 | Service | Purpose | API Version |
 |---------|---------|-------------|
-| **Azure OpenAI** | Message generation with GPT-4 | 2024-02-15-preview |
-| **Azure Cognitive Search** | Content indexing and retrieval | 2023-11-01 |
-| **Azure AI Content Safety** | Safety policy enforcement | 2023-10-01 |
+| **Azure OpenAI** | Message generation with GPT-4 | 2025-11-01-preview |
+| **Azure AI Search** | Content indexing and retrieval | 2024-11-01-preview |
+| **Azure AI Content Safety** | Safety policy enforcement | Latest Stable |
 | **Azure Monitor** (Optional) | Logging and telemetry | Latest |
 | **Azure ML** (Optional) | Experiment tracking with MLflow | Latest |
 
@@ -754,25 +754,25 @@ User/Script           Orchestrator         Segmentation    Retrieval    Generati
 
 ```python
 # Core
-python>=3.9
-pandas>=2.0.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
+python>=3.11
+pandas>=2.2.0
+numpy>=1.26.0
+scikit-learn>=1.4.0
 
 # Azure SDKs
-azure-ai-openai>=1.0.0
-azure-search-documents>=11.4.0
+azure-ai-openai>=1.50.0
+azure-search-documents>=11.6.0
 azure-ai-contentsafety>=1.0.0
-azure-identity>=1.14.0
+azure-identity>=1.16.0
 
 # Visualization
-matplotlib>=3.7.0
-seaborn>=0.12.0
-plotly>=5.17.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.20.0
 
 # Notebook
 jupyter>=1.0.0
-ipykernel>=6.25.0
+ipykernel>=6.29.0
 
 # Utilities
 python-dotenv>=1.0.0
@@ -780,8 +780,8 @@ pyyaml>=6.0
 tqdm>=4.66.0
 
 # Testing
-pytest>=7.4.0
-pytest-cov>=4.1.0
+pytest>=8.0.0
+pytest-cov>=5.0.0
 ```
 
 ---
@@ -793,7 +793,7 @@ pytest-cov>=4.1.0
 ```yaml
 azure_openai:
   endpoint: https://<resource-name>.openai.azure.com/
-  api_version: "2024-02-15-preview"
+  api_version: "2025-11-01-preview"
   deployment_name: gpt-4  # or gpt-4-turbo
   max_tokens: 1000
   temperature: 0.7
@@ -801,7 +801,7 @@ azure_openai:
 
 azure_search:
   endpoint: https://<search-service>.search.windows.net
-  api_version: "2023-11-01"
+  api_version: "2024-11-01-preview"
   index_name: approved-content
   semantic_configuration: default
 
@@ -981,7 +981,7 @@ def log_audit_entry(variant_id: str, decision: dict):
 ### Unit Tests
 
 - **Segmentation**: Test clustering convergence, segment assignment
-- **Retrieval**: Mock Azure Search, test query construction
+- **Retrieval**: Mock Azure AI Search, test query construction
 - **Generation**: Mock OpenAI API, validate prompt formatting, citation extraction
 - **Safety**: Mock Content Safety API, test threshold application
 - **Experimentation**: Test random assignment distribution, lift calculation
@@ -1112,7 +1112,7 @@ log_structured("variant_generated", {
 ### ADR-002: Azure-Native Services
 **Status**: Accepted  
 **Context**: Need enterprise-grade AI services with compliance  
-**Decision**: Use Azure OpenAI, Cognitive Search, Content Safety  
+**Decision**: Use Azure OpenAI, Azure AI Search, Azure AI Content Safety  
 **Consequences**:
 - ✅ Enterprise security and compliance
 - ✅ Managed services reduce operational burden
@@ -1437,7 +1437,7 @@ class RobustOpenAIClient:
     def __init__(self, endpoint: str, deployment: str):
         self.client = AzureOpenAI(
             azure_endpoint=endpoint,
-            api_version="2024-02-15-preview",
+            api_version="2025-11-01-preview",
             azure_ad_token_provider=DefaultAzureCredential()
         )
         self.deployment = deployment
@@ -1542,7 +1542,7 @@ Customer receives control message instead
 **Phase 3 Scale**:
 - Multi-tenant architecture
 - Real-time content updates
-- Continuous evaluation and drift detection
+- Continuous evaluation with Azure AI Foundry Observability
 - Advanced explainability (SHAP values)
 
 **Enterprise Readiness**:

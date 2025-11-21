@@ -34,9 +34,9 @@ This specification defines the requirements for building a Customer Personalizat
 
 ### Acceptance Criteria
 
-1. WHEN the system initializes THEN the system SHALL index 20-50 approved content documents into Azure Cognitive Search with metadata (document ID, title, category, approval date)
+1. WHEN the system initializes THEN the system SHALL index 20-50 approved content documents into Azure AI Search with metadata (document ID, title, category, approval date)
 
-2. WHEN retrieving content for a customer segment THEN the system SHALL query Azure Cognitive Search using segment characteristics and return the top 3-5 most relevant content snippets
+2. WHEN retrieving content for a customer segment THEN the system SHALL query Azure AI Search using segment characteristics and return the top 3-5 most relevant content snippets
 
 3. WHEN content is retrieved THEN the system SHALL include source metadata (document ID, title, paragraph index) for each snippet to enable citation tracking
 

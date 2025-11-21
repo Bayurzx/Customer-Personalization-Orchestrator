@@ -12,6 +12,8 @@ This document outlines the discrete, trackable implementation tasks for building
 ## Day 1: Environment Setup & Segmentation
 
 ### Task 1.1: Project Environment Setup
+- [ ] **Complete Task 1.1**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1 hour  
 **Dependencies**: None
@@ -19,11 +21,11 @@ This document outlines the discrete, trackable implementation tasks for building
 **Description**: Set up development environment, Azure resources, and project structure.
 
 **Subtasks**:
-- [ ] 1.1.1: Create Python virtual environment with Python 3.9+
-- [ ] 1.1.2: Install dependencies from `requirements.txt`
-- [ ] 1.1.3: Create `.env` file with Azure credentials
-- [ ] 1.1.4: Initialize project directory structure (`.kiro/`, `src/`, `config/`, `data/`, `logs/`)
-- [ ] 1.1.5: Set up Git repository with `.gitignore`
+- Create Python virtual environment with **Python 3.11**
+- Install dependencies from `requirements.txt`
+- Create `.env` file with Azure credentials
+- Initialize project directory structure (`.kiro/`, `src/`, `config/`, `data/`, `logs/`)
+- Set up Git repository with `.gitignore`
 
 **Acceptance Criteria**:
 - Python environment activates without errors
@@ -34,7 +36,7 @@ This document outlines the discrete, trackable implementation tasks for building
 
 **Validation**:
 ```bash
-python --version  # Should show 3.9+
+python --version  # Should show 3.11.x
 pip list | grep azure  # Should show azure-* packages
 python -c "from azure.identity import DefaultAzureCredential; DefaultAzureCredential()"
 ```
@@ -42,6 +44,8 @@ python -c "from azure.identity import DefaultAzureCredential; DefaultAzureCreden
 ---
 
 ### Task 1.2: Azure Resource Provisioning
+- [ ] **Complete Task 1.2**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 1.1
@@ -49,12 +53,12 @@ python -c "from azure.identity import DefaultAzureCredential; DefaultAzureCreden
 **Description**: Provision and configure required Azure services.
 
 **Subtasks**:
-- [ ] 1.2.1: Create Azure OpenAI resource and deploy GPT-4 model
-- [ ] 1.2.2: Create Azure Cognitive Search service
-- [ ] 1.2.3: Create Azure AI Content Safety resource
-- [ ] 1.2.4: Configure authentication (Managed Identity or API keys)
-- [ ] 1.2.5: Test connectivity to all services
-- [ ] 1.2.6: Document endpoints in `config/azure_config.yaml`
+- Create Azure OpenAI resource and deploy GPT-4 model
+- Create Azure AI Search service
+- Create Azure AI Content Safety resource
+- Configure authentication (Managed Identity or API keys)
+- Test connectivity to all services
+- Document endpoints in `config/azure_config.yaml`
 
 **Acceptance Criteria**:
 - All Azure resources created in same resource group
@@ -71,6 +75,8 @@ test_connection()  # Should return "Connection successful"
 ---
 
 ### Task 1.3: Sample Data Preparation
+- [ ] **Complete Task 1.3**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 1.1
@@ -78,11 +84,11 @@ test_connection()  # Should return "Connection successful"
 **Description**: Create or load sample customer dataset and approved content.
 
 **Subtasks**:
-- [ ] 1.3.1: Load or generate sample customer dataset (100-500 records)
-- [ ] 1.3.2: Validate dataset schema (required columns present)
-- [ ] 1.3.3: Create 20-50 approved content documents (JSON format)
-- [ ] 1.3.4: Validate content document schema
-- [ ] 1.3.5: Perform basic EDA in `notebooks/01_data_exploration.ipynb`
+- Load or generate sample customer dataset (100-500 records)
+- Validate dataset schema (required columns present)
+- Create 20-50 approved content documents (JSON format)
+- Validate content document schema
+- Perform basic EDA in `notebooks/01_data_exploration.ipynb`
 
 **Acceptance Criteria**:
 - Customer dataset has 100-500 records with all required fields
@@ -101,6 +107,8 @@ assert 'customer_id' in df.columns
 ---
 
 ### Task 1.4: Segmentation Agent Implementation
+- [ ] **Complete Task 1.4**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 2.5 hours  
 **Dependencies**: Task 1.3
@@ -108,13 +116,13 @@ assert 'customer_id' in df.columns
 **Description**: Implement customer segmentation using rule-based or clustering approach.
 
 **Subtasks**:
-- [ ] 1.4.1: Create `src/agents/segmentation_agent.py` module
-- [ ] 1.4.2: Implement `load_customer_data()` function
-- [ ] 1.4.3: Implement rule-based segmentation logic (RFM or similar)
-- [ ] 1.4.4: Alternative: Implement K-means clustering segmentation
-- [ ] 1.4.5: Implement `generate_segment_summary()` function
-- [ ] 1.4.6: Add segment label mapping (e.g., "High-Value Recent")
-- [ ] 1.4.7: Write unit tests in `tests/test_segmentation.py`
+- Create `src/agents/segmentation_agent.py` module
+- Implement `load_customer_data()` function
+- Implement rule-based segmentation logic (RFM or similar)
+- Alternative: Implement K-means clustering segmentation
+- Implement `generate_segment_summary()` function
+- Add segment label mapping (e.g., "High-Value Recent")
+- Write unit tests in `tests/test_segmentation.py`
 
 **Acceptance Criteria**:
 - Segments all customers into 3-5 distinct groups
@@ -134,6 +142,8 @@ assert segments['customer_id'].is_unique
 ---
 
 ### Task 1.5: Segmentation Analysis & Validation
+- [ ] **Complete Task 1.5**
+
 **Priority**: P1 (Important)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 1.4
@@ -141,11 +151,11 @@ assert segments['customer_id'].is_unique
 **Description**: Analyze segment quality and document findings.
 
 **Subtasks**:
-- [ ] 1.5.1: Create `notebooks/02_segmentation_analysis.ipynb`
-- [ ] 1.5.2: Visualize segment distribution
-- [ ] 1.5.3: Calculate segment statistics (mean, median per feature)
-- [ ] 1.5.4: Validate segments are balanced (no segment <10% of total)
-- [ ] 1.5.5: Document segment definitions in notebook
+- Create `notebooks/02_segmentation_analysis.ipynb`
+- Visualize segment distribution
+- Calculate segment statistics (mean, median per feature)
+- Validate segments are balanced (no segment <10% of total)
+- Document segment definitions in notebook
 
 **Acceptance Criteria**:
 - Segment distribution visualized (bar chart)
@@ -159,7 +169,9 @@ assert segments['customer_id'].is_unique
 
 ## Day 2: Content Retrieval & Indexing
 
-### Task 2.1: Azure Cognitive Search Index Setup
+### Task 2.1: Azure AI Search Index Setup
+- [ ] **Complete Task 2.1**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 1.2, Task 1.3
@@ -167,12 +179,12 @@ assert segments['customer_id'].is_unique
 **Description**: Create search index and define schema for content documents.
 
 **Subtasks**:
-- [ ] 2.1.1: Create `src/integrations/azure_search.py` module
-- [ ] 2.1.2: Define index schema (fields, types, searchable/filterable)
-- [ ] 2.1.3: Create index in Azure Cognitive Search
-- [ ] 2.1.4: Configure semantic search settings
-- [ ] 2.1.5: Write `index_documents()` function
-- [ ] 2.1.6: Write unit tests for search client
+- Create `src/integrations/azure_search.py` module
+- Define index schema (fields, types, searchable/filterable)
+- Create index in Azure AI Search
+- Configure semantic search settings
+- Write `index_documents()` function
+- Write unit tests for search client
 
 **Acceptance Criteria**:
 - Index created with correct schema
@@ -190,19 +202,21 @@ assert index_exists("approved-content") == True
 ---
 
 ### Task 2.2: Content Indexing Pipeline
+- [ ] **Complete Task 2.2**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 2.1
 
-**Description**: Index all approved content documents into Azure Search.
+**Description**: Index all approved content documents into Azure AI Search.
 
 **Subtasks**:
-- [ ] 2.2.1: Create `scripts/index_content.py` script
-- [ ] 2.2.2: Read all content documents from `data/content/approved_content/`
-- [ ] 2.2.3: Transform documents to match index schema
-- [ ] 2.2.4: Batch index documents (batches of 100)
-- [ ] 2.2.5: Add progress bar with `tqdm`
-- [ ] 2.2.6: Log indexing statistics (count, errors)
+- Create `scripts/index_content.py` script
+- Read all content documents from `data/content/approved_content/`
+- Transform documents to match index schema
+- Batch index documents (batches of 100)
+- Add progress bar with `tqdm`
+- Log indexing statistics (count, errors)
 
 **Acceptance Criteria**:
 - All 20-50 documents successfully indexed
@@ -219,6 +233,8 @@ python scripts/index_content.py
 ---
 
 ### Task 2.3: Retrieval Agent Implementation
+- [ ] **Complete Task 2.3**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 2 hours  
 **Dependencies**: Task 2.2
@@ -226,13 +242,13 @@ python scripts/index_content.py
 **Description**: Implement content retrieval logic for segment-based queries.
 
 **Subtasks**:
-- [ ] 2.3.1: Create `src/agents/retrieval_agent.py` module
-- [ ] 2.3.2: Implement `construct_query_from_segment()` function
-- [ ] 2.3.3: Implement `retrieve_content()` function with Azure Search client
-- [ ] 2.3.4: Implement `extract_snippet()` function (200-word limit)
-- [ ] 2.3.5: Add relevance score filtering (threshold: >0.5)
-- [ ] 2.3.6: Add logging for all queries and results
-- [ ] 2.3.7: Write unit tests in `tests/test_retrieval.py`
+- Create `src/agents/retrieval_agent.py` module
+- Implement `construct_query_from_segment()` function
+- Implement `retrieve_content()` function with Azure Search client
+- Implement `extract_snippet()` function (200-word limit)
+- Add relevance score filtering (threshold: >0.5)
+- Add logging for all queries and results
+- Write unit tests in `tests/test_retrieval.py`
 
 **Acceptance Criteria**:
 - Returns top 3-5 most relevant documents per query
@@ -253,6 +269,8 @@ assert all('document_id' in r for r in results)
 ---
 
 ### Task 2.4: Retrieval Quality Testing
+- [ ] **Complete Task 2.4**
+
 **Priority**: P1 (Important)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 2.3
@@ -260,11 +278,11 @@ assert all('document_id' in r for r in results)
 **Description**: Test retrieval quality across different segment types.
 
 **Subtasks**:
-- [ ] 2.4.1: Create `notebooks/03_retrieval_testing.ipynb`
-- [ ] 2.4.2: Test retrieval for each segment type
-- [ ] 2.4.3: Visualize relevance scores distribution
-- [ ] 2.4.4: Manually review top 3 results per segment for quality
-- [ ] 2.4.5: Document any retrieval issues or improvements needed
+- Create `notebooks/03_retrieval_testing.ipynb`
+- Test retrieval for each segment type
+- Visualize relevance scores distribution
+- Manually review top 3 results per segment for quality
+- Document any retrieval issues or improvements needed
 
 **Acceptance Criteria**:
 - Retrieval tested for all 3-5 segments
@@ -279,6 +297,8 @@ assert all('document_id' in r for r in results)
 ## Day 3: Message Generation & Safety
 
 ### Task 3.1: Prompt Template Creation
+- [ ] **Complete Task 3.1**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 2.3
@@ -286,12 +306,12 @@ assert all('document_id' in r for r in results)
 **Description**: Design and document prompt templates for message generation.
 
 **Subtasks**:
-- [ ] 3.1.1: Create base prompt template in `config/prompts/generation_prompt.txt`
-- [ ] 3.1.2: Create variant tone templates (urgent, informational, friendly)
-- [ ] 3.1.3: Define template variables (segment, content, tone)
-- [ ] 3.1.4: Add citation instruction examples
-- [ ] 3.1.5: Test prompts manually with Azure OpenAI Playground
-- [ ] 3.1.6: Document prompt engineering decisions
+- Create base prompt template in `config/prompts/generation_prompt.txt`
+- Create variant tone templates (urgent, informational, friendly)
+- Define template variables (segment, content, tone)
+- Add citation instruction examples
+- Test prompts manually with Azure OpenAI Playground
+- Document prompt engineering decisions
 
 **Acceptance Criteria**:
 - Base template created with all necessary sections
@@ -303,6 +323,8 @@ assert all('document_id' in r for r in results)
 ---
 
 ### Task 3.2: Azure OpenAI Integration
+- [ ] **Complete Task 3.2**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 1.2
@@ -310,12 +332,12 @@ assert all('document_id' in r for r in results)
 **Description**: Implement Azure OpenAI client and generation logic.
 
 **Subtasks**:
-- [ ] 3.2.1: Create `src/integrations/azure_openai.py` module
-- [ ] 3.2.2: Implement `AzureOpenAIClient` class
-- [ ] 3.2.3: Implement `generate_completion()` method with retry logic
-- [ ] 3.2.4: Add token counting and cost tracking
-- [ ] 3.2.5: Add timeout handling (10 seconds)
-- [ ] 3.2.6: Write unit tests with mocked responses
+- Create `src/integrations/azure_openai.py` module
+- Implement `AzureOpenAIClient` class
+- Implement `generate_completion()` method with retry logic
+- Add token counting and cost tracking
+- Add timeout handling (10 seconds)
+- Write unit tests with mocked responses
 
 **Acceptance Criteria**:
 - Client successfully connects to Azure OpenAI
@@ -336,6 +358,8 @@ assert 'tokens_used' in response
 ---
 
 ### Task 3.3: Generation Agent Implementation
+- [ ] **Complete Task 3.3**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 2 hours  
 **Dependencies**: Task 3.1, Task 3.2
@@ -343,13 +367,13 @@ assert 'tokens_used' in response
 **Description**: Implement message variant generation with citations.
 
 **Subtasks**:
-- [ ] 3.3.1: Create `src/agents/generation_agent.py` module
-- [ ] 3.3.2: Implement `load_prompt_template()` function
-- [ ] 3.3.3: Implement `generate_variant()` function
-- [ ] 3.3.4: Implement `extract_citations()` function using regex
-- [ ] 3.3.5: Implement variant validation (length, format)
-- [ ] 3.3.6: Generate 3 variants per segment (different tones)
-- [ ] 3.3.7: Write unit tests in `tests/test_generation.py`
+- Create `src/agents/generation_agent.py` module
+- Implement `load_prompt_template()` function
+- Implement `generate_variant()` function
+- Implement `extract_citations()` function using regex
+- Implement variant validation (length, format)
+- Generate 3 variants per segment (different tones)
+- Write unit tests in `tests/test_generation.py`
 
 **Acceptance Criteria**:
 - Generates 3 distinct variants per segment
@@ -372,6 +396,8 @@ assert len(variant['citations']) >= 1
 ---
 
 ### Task 3.4: Batch Generation Testing
+- [ ] **Complete Task 3.4**
+
 **Priority**: P1 (Important)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 3.3
@@ -379,12 +405,12 @@ assert len(variant['citations']) >= 1
 **Description**: Test generation quality and create sample variants.
 
 **Subtasks**:
-- [ ] 3.4.1: Create `notebooks/04_generation_samples.ipynb`
-- [ ] 3.4.2: Generate variants for each segment type
-- [ ] 3.4.3: Review variant quality manually
-- [ ] 3.4.4: Validate citations are correct
-- [ ] 3.4.5: Calculate token usage and costs
-- [ ] 3.4.6: Document any generation issues
+- Create `notebooks/04_generation_samples.ipynb`
+- Generate variants for each segment type
+- Review variant quality manually
+- Validate citations are correct
+- Calculate token usage and costs
+- Document any generation issues
 
 **Acceptance Criteria**:
 - Variants generated for all segments
@@ -396,6 +422,8 @@ assert len(variant['citations']) >= 1
 ---
 
 ### Task 3.5: Content Safety Integration
+- [ ] **Complete Task 3.5**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 1.2
@@ -403,12 +431,12 @@ assert len(variant['citations']) >= 1
 **Description**: Integrate Azure AI Content Safety API.
 
 **Subtasks**:
-- [ ] 3.5.1: Create `src/integrations/azure_content_safety.py` module
-- [ ] 3.5.2: Implement `ContentSafetyClient` class
-- [ ] 3.5.3: Implement `analyze_text()` method
-- [ ] 3.5.4: Parse severity scores from response
-- [ ] 3.5.5: Add retry logic for transient failures
-- [ ] 3.5.6: Write unit tests with mocked API responses
+- Create `src/integrations/azure_content_safety.py` module
+- Implement `ContentSafetyClient` class
+- Implement `analyze_text()` method
+- Parse severity scores from response
+- Add retry logic for transient failures
+- Write unit tests with mocked API responses
 
 **Acceptance Criteria**:
 - Client successfully connects to Content Safety API
@@ -427,6 +455,8 @@ assert 'hate_severity' in result
 ---
 
 ### Task 3.6: Safety Agent Implementation
+- [ ] **Complete Task 3.6**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 3.5
@@ -434,13 +464,13 @@ assert 'hate_severity' in result
 **Description**: Implement safety screening and audit logging.
 
 **Subtasks**:
-- [ ] 3.6.1: Create `src/agents/safety_agent.py` module
-- [ ] 3.6.2: Load safety thresholds from `config/safety_thresholds.yaml`
-- [ ] 3.6.3: Implement `check_safety()` function
-- [ ] 3.6.4: Implement `apply_policy_threshold()` function
-- [ ] 3.6.5: Implement audit logging to CSV
-- [ ] 3.6.6: Implement `generate_audit_report()` function
-- [ ] 3.6.7: Write unit tests in `tests/test_safety.py`
+- Create `src/agents/safety_agent.py` module
+- Load safety thresholds from `config/safety_thresholds.yaml`
+- Implement `check_safety()` function
+- Implement `apply_policy_threshold()` function
+- Implement audit logging to CSV
+- Implement `generate_audit_report()` function
+- Write unit tests in `tests/test_safety.py`
 
 **Acceptance Criteria**:
 - All variants screened against policy
@@ -461,6 +491,8 @@ assert 'hate_severity' in result
 ---
 
 ### Task 3.7: Safety Screening Testing
+- [ ] **Complete Task 3.7**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 30 minutes  
 **Dependencies**: Task 3.6
@@ -468,11 +500,11 @@ assert 'hate_severity' in result
 **Description**: Test safety screening on all generated variants.
 
 **Subtasks**:
-- [ ] 3.7.1: Run safety checks on all generated variants
-- [ ] 3.7.2: Calculate pass/block rates
-- [ ] 3.7.3: Review blocked variants manually
-- [ ] 3.7.4: Verify audit log completeness
-- [ ] 3.7.5: Generate safety summary report
+- Run safety checks on all generated variants
+- Calculate pass/block rates
+- Review blocked variants manually
+- Verify audit log completeness
+- Generate safety summary report
 
 **Acceptance Criteria**:
 - All variants screened
@@ -488,6 +520,8 @@ assert 'hate_severity' in result
 ## Day 4: Experimentation
 
 ### Task 4.1: Experiment Design
+- [ ] **Complete Task 4.1**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 3.7
@@ -495,12 +529,12 @@ assert 'hate_severity' in result
 **Description**: Design A/B/n experiment structure and configuration.
 
 **Subtasks**:
-- [ ] 4.1.1: Define experiment arms (3 treatment + 1 control)
-- [ ] 4.1.2: Update `config/experiment_config.yaml` with parameters
-- [ ] 4.1.3: Design control message (generic baseline)
-- [ ] 4.1.4: Document assignment strategy (stratified random)
-- [ ] 4.1.5: Define metrics and statistical tests
-- [ ] 4.1.6: Calculate required sample sizes (power analysis)
+- Define experiment arms (3 treatment + 1 control)
+- Update `config/experiment_config.yaml` with parameters
+- Design control message (generic baseline)
+- Document assignment strategy (stratified random)
+- Define metrics and statistical tests
+- Calculate required sample sizes (power analysis)
 
 **Acceptance Criteria**:
 - Experiment configuration complete
@@ -512,6 +546,8 @@ assert 'hate_severity' in result
 ---
 
 ### Task 4.2: Experimentation Agent Implementation
+- [ ] **Complete Task 4.2**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 2.5 hours  
 **Dependencies**: Task 4.1
@@ -519,12 +555,12 @@ assert 'hate_severity' in result
 **Description**: Implement experiment orchestration and assignment logic.
 
 **Subtasks**:
-- [ ] 4.2.1: Create `src/agents/experimentation_agent.py` module
-- [ ] 4.2.2: Implement `design_experiment()` function
-- [ ] 4.2.3: Implement `assign_customers_to_arms()` function
-- [ ] 4.2.4: Validate assignment distribution (balanced across arms)
-- [ ] 4.2.5: Implement assignment logging
-- [ ] 4.2.6: Write unit tests in `tests/test_experimentation.py`
+- Create `src/agents/experimentation_agent.py` module
+- Implement `design_experiment()` function
+- Implement `assign_customers_to_arms()` function
+- Validate assignment distribution (balanced across arms)
+- Implement assignment logging
+- Write unit tests in `tests/test_experimentation.py`
 
 **Acceptance Criteria**:
 - Experiment designed with correct arm structure
@@ -544,6 +580,8 @@ arm_counts = Counter(a['arm'] for a in assignments)
 ---
 
 ### Task 4.3: Engagement Simulation
+- [ ] **Complete Task 4.3**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 4.2
@@ -551,12 +589,12 @@ arm_counts = Counter(a['arm'] for a in assignments)
 **Description**: Simulate or load engagement data for experiment.
 
 **Subtasks**:
-- [ ] 4.3.1: Check if historical engagement data available
-- [ ] 4.3.2: If available: Load and map to assignments
-- [ ] 4.3.3: If not: Implement engagement simulation function
-- [ ] 4.3.4: Simulate open, click, conversion events
-- [ ] 4.3.5: Add realistic uplift bias for personalized variants
-- [ ] 4.3.6: Validate simulation distributions
+- Check if historical engagement data available
+- If available: Load and map to assignments
+- If not: Implement engagement simulation function
+- Simulate open, click, conversion events
+- Add realistic uplift bias for personalized variants
+- Validate simulation distributions
 
 **Acceptance Criteria**:
 - Engagement data generated for all assignments
@@ -576,6 +614,8 @@ assert treatment_open_rate > control_open_rate
 ---
 
 ### Task 4.4: Metrics Calculation
+- [ ] **Complete Task 4.4**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 4.3
@@ -583,12 +623,12 @@ assert treatment_open_rate > control_open_rate
 **Description**: Calculate experiment metrics and statistical significance.
 
 **Subtasks**:
-- [ ] 4.4.1: Implement `calculate_metrics()` function
-- [ ] 4.4.2: Calculate per-arm metrics (open, click, conversion rates)
-- [ ] 4.4.3: Implement `calculate_lift()` function
-- [ ] 4.4.4: Implement statistical significance testing (t-test/chi-square)
-- [ ] 4.4.5: Calculate confidence intervals
-- [ ] 4.4.6: Segment-level metrics breakdown
+- Implement `calculate_metrics()` function
+- Calculate per-arm metrics (open, click, conversion rates)
+- Implement `calculate_lift()` function
+- Implement statistical significance testing (t-test/chi-square)
+- Calculate confidence intervals
+- Segment-level metrics breakdown
 
 **Acceptance Criteria**:
 - Metrics calculated for all arms
@@ -608,6 +648,8 @@ assert lift > 0  # Expect positive lift
 ---
 
 ### Task 4.5: Experiment Execution Script
+- [ ] **Complete Task 4.5**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 4.4
@@ -615,12 +657,12 @@ assert lift > 0  # Expect positive lift
 **Description**: Create end-to-end experiment execution script.
 
 **Subtasks**:
-- [ ] 4.5.1: Create `scripts/run_experiment.py` script
-- [ ] 4.5.2: Integrate all agents in pipeline
-- [ ] 4.5.3: Add progress logging with `tqdm`
-- [ ] 4.5.4: Add error handling and graceful degradation
-- [ ] 4.5.5: Save intermediate outputs (segments, variants, assignments)
-- [ ] 4.5.6: Generate final results summary
+- Create `scripts/run_experiment.py` script
+- Integrate all agents in pipeline
+- Add progress logging with `tqdm`
+- Add error handling and graceful degradation
+- Save intermediate outputs (segments, variants, assignments)
+- Generate final results summary
 
 **Acceptance Criteria**:
 - Script executes full pipeline without errors
@@ -642,6 +684,8 @@ python scripts/run_experiment.py
 ## Day 5: Reporting & Finalization
 
 ### Task 5.1: Experiment Report Generation
+- [ ] **Complete Task 5.1**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 2 hours  
 **Dependencies**: Task 4.5
@@ -649,13 +693,13 @@ python scripts/run_experiment.py
 **Description**: Create comprehensive experiment report notebook.
 
 **Subtasks**:
-- [ ] 5.1.1: Create `notebooks/05_experiment_report.ipynb`
-- [ ] 5.1.2: Add executive summary section
-- [ ] 5.1.3: Generate lift by variant visualizations (bar charts)
-- [ ] 5.1.4: Generate segment breakdown table
-- [ ] 5.1.5: Include statistical significance indicators
-- [ ] 5.1.6: Add safety audit summary section
-- [ ] 5.1.7: Include citation frequency analysis
+- Create `notebooks/05_experiment_report.ipynb`
+- Add executive summary section
+- Generate lift by variant visualizations (bar charts)
+- Generate segment breakdown table
+- Include statistical significance indicators
+- Add safety audit summary section
+- Include citation frequency analysis
 
 **Acceptance Criteria**:
 - Notebook runs end-to-end without errors
@@ -667,6 +711,8 @@ python scripts/run_experiment.py
 ---
 
 ### Task 5.2: Feature Attribution & Explainability
+- [ ] **Complete Task 5.2**
+
 **Priority**: P1 (Important)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 5.1
@@ -674,12 +720,12 @@ python scripts/run_experiment.py
 **Description**: Analyze which segment features drive performance.
 
 **Subtasks**:
-- [ ] 5.2.1: Create `notebooks/06_explainability.ipynb`
-- [ ] 5.2.2: Calculate correlation between segment features and metrics
-- [ ] 5.2.3: Generate feature importance plot
-- [ ] 5.2.4: Identify top-performing segment characteristics
-- [ ] 5.2.5: Write explainability narrative
-- [ ] 5.2.6: Document recommendations
+- Create `notebooks/06_explainability.ipynb`
+- Calculate correlation between segment features and metrics
+- Generate feature importance plot
+- Identify top-performing segment characteristics
+- Write explainability narrative
+- Document recommendations
 
 **Acceptance Criteria**:
 - Feature correlations calculated
@@ -691,6 +737,8 @@ python scripts/run_experiment.py
 ---
 
 ### Task 5.3: PDF Report Generation
+- [ ] **Complete Task 5.3**
+
 **Priority**: P1 (Important)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 5.1
@@ -698,12 +746,12 @@ python scripts/run_experiment.py
 **Description**: Export report to PDF for distribution.
 
 **Subtasks**:
-- [ ] 5.3.1: Install `nbconvert` and dependencies
-- [ ] 5.3.2: Create `scripts/generate_report.py` script
-- [ ] 5.3.3: Convert notebook to PDF with styling
-- [ ] 5.3.4: Verify all visualizations render in PDF
-- [ ] 5.3.5: Add cover page and table of contents
-- [ ] 5.3.6: Save to `reports/experiment_report.pdf`
+- Install `nbconvert` and dependencies
+- Create `scripts/generate_report.py` script
+- Convert notebook to PDF with styling
+- Verify all visualizations render in PDF
+- Add cover page and table of contents
+- Save to `reports/experiment_report.pdf`
 
 **Acceptance Criteria**:
 - PDF generated successfully
@@ -720,6 +768,8 @@ python scripts/generate_report.py
 ---
 
 ### Task 5.4: Documentation Finalization
+- [ ] **Complete Task 5.4**
+
 **Priority**: P1 (Important)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: All previous tasks
@@ -727,12 +777,12 @@ python scripts/generate_report.py
 **Description**: Complete project documentation.
 
 **Subtasks**:
-- [ ] 5.4.1: Update `README.md` with project overview and setup instructions
-- [ ] 5.4.2: Create `ARCHITECTURE.md` with system design details
-- [ ] 5.4.3: Document all configuration files with inline comments
-- [ ] 5.4.4: Add docstrings to all functions (Google style)
-- [ ] 5.4.5: Update `.env.example` with all required variables
-- [ ] 5.4.6: Create `CONTRIBUTING.md` with development guidelines
+- Update `README.md` with project overview and setup instructions
+- Create `ARCHITECTURE.md` with system design details
+- Document all configuration files with inline comments
+- Add docstrings to all functions (Google style)
+- Update `.env.example` with all required variables
+- Create `CONTRIBUTING.md` with development guidelines
 
 **Acceptance Criteria**:
 - README explains project purpose and setup clearly
@@ -744,6 +794,8 @@ python scripts/generate_report.py
 ---
 
 ### Task 5.5: Testing & Validation
+- [ ] **Complete Task 5.5**
+
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 5.4
@@ -751,12 +803,12 @@ python scripts/generate_report.py
 **Description**: Run full test suite and integration tests.
 
 **Subtasks**:
-- [ ] 5.5.1: Run all unit tests with `pytest`
-- [ ] 5.5.2: Check test coverage with `pytest-cov`
-- [ ] 5.5.3: Fix any failing tests
-- [ ] 5.5.4: Run integration test (`tests/test_integration.py`)
-- [ ] 5.5.5: Verify end-to-end pipeline on fresh data
-- [ ] 5.5.6: Document test results
+- Run all unit tests with `pytest`
+- Check test coverage with `pytest-cov`
+- Fix any failing tests
+- Run integration test (`tests/test_integration.py`)
+- Verify end-to-end pipeline on fresh data
+- Document test results
 
 **Acceptance Criteria**:
 - All unit tests pass
@@ -774,6 +826,8 @@ pytest tests/ --cov=src --cov-report=html
 ---
 
 ### Task 5.6: Code Review & Cleanup
+- [ ] **Complete Task 5.6**
+
 **Priority**: P1 (Important)  
 **Estimated Time**: 1 hour  
 **Dependencies**: Task 5.5
@@ -781,12 +835,12 @@ pytest tests/ --cov=src --cov-report=html
 **Description**: Final code review and cleanup.
 
 **Subtasks**:
-- [ ] 5.6.1: Run linter (`flake8` or `pylint`)
-- [ ] 5.6.2: Run code formatter (`black`)
-- [ ] 5.6.3: Remove debugging code and commented-out sections
-- [ ] 5.6.4: Verify all TODOs addressed or documented
-- [ ] 5.6.5: Check for hardcoded values (move to config)
-- [ ] 5.6.6: Final Git commit with all changes
+- Run linter (`flake8` or `pylint`)
+- Run code formatter (`black`)
+- Remove debugging code and commented-out sections
+- Verify all TODOs addressed or documented
+- Check for hardcoded values (move to config)
+- Final Git commit with all changes
 
 **Acceptance Criteria**:
 - No linter errors
@@ -798,6 +852,8 @@ pytest tests/ --cov=src --cov-report=html
 ---
 
 ### Task 5.7: Operationalization Recommendations
+- [ ] **Complete Task 5.7**
+
 **Priority**: P2 (Nice-to-have)  
 **Estimated Time**: 30 minutes  
 **Dependencies**: Task 5.2
@@ -805,11 +861,11 @@ pytest tests/ --cov=src --cov-report=html
 **Description**: Document recommendations for scaling beyond POC.
 
 **Subtasks**:
-- [ ] 5.7.1: Add operationalization section to experiment report
-- [ ] 5.7.2: Document scaling considerations
-- [ ] 5.7.3: Suggest production architecture improvements
-- [ ] 5.7.4: Identify technical debt and future work
-- [ ] 5.7.5: Estimate production timeline and resources
+- Add operationalization section to experiment report
+- Document scaling considerations
+- Suggest production architecture improvements
+- Identify technical debt and future work
+- Estimate production timeline and resources
 
 **Acceptance Criteria**:
 - Recommendations clearly documented
