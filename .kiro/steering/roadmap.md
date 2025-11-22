@@ -4,7 +4,7 @@
 This file tracks task completion, key lessons, and critical insights to prevent repeating mistakes and ensure smooth project progression.
 
 **Last Updated**: 2025-11-22  
-**Current Status**: Day 1 - Task 1.4 Complete
+**Current Status**: Day 1 - Task 1.5 Complete
 
 ---
 
@@ -39,6 +39,16 @@ This file tracks task completion, key lessons, and critical insights to prevent 
   - **Array Length Matching**: Mock clustering labels must match exact customer count in tests
   - **Coverage Target**: 80%+ coverage achievable with comprehensive test cases
 
+#### Task 1.5: Segmentation Analysis & Validation
+- **Status**: ✅ Complete
+- **Key Achievement**: Comprehensive segmentation analysis with 3 distinct segments (250 customers analyzed)
+- **Lessons**:
+  - **Notebook Development**: Python-first approach with jupytext conversion works well for reproducible analysis
+  - **Path Management**: Careful attention to relative paths needed when running notebooks from different directories
+  - **Balance Validation**: Minor segment imbalance (8.4% vs 10% requirement) acceptable for POC if segment has clear business value
+  - **Visualization Strategy**: Combined bar charts and pie charts provide comprehensive distribution view
+  - **Business Context**: Technical segmentation must include business interpretations and marketing strategies
+
 ---
 
 ## 🚨 Critical Lessons & Mistakes to Avoid
@@ -57,6 +67,12 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 1. **Test Coverage**: 80%+ achievable with systematic test case design
 2. **Error Handling**: Implement validation order that provides clear, actionable error messages
 3. **Documentation**: Comprehensive docstrings and type hints essential for maintainability
+
+### Notebook Development
+1. **Python-First Approach**: Create .py files first, then convert to .ipynb with jupytext for better version control
+2. **Path Management**: Use relative paths carefully and test from multiple directories
+3. **PYTHONPATH Setup**: Set PYTHONPATH when running notebooks to ensure proper imports
+4. **Business Context**: Always include business interpretations alongside technical analysis
 
 ---
 
@@ -87,12 +103,16 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 2. **Comprehensive Testing**: High test coverage catches issues early
 3. **Configuration-Driven Design**: External config files enable rapid iteration
 4. **Validation-First Approach**: Schema validation prevents downstream errors
+5. **Jupyter + Python Workflow**: Python-first development with jupytext conversion provides reproducibility
+6. **Business-Technical Integration**: Combining technical analysis with business interpretations adds value
 
 ### Recommended Practices
 1. **Test-Driven Development**: Write tests that cover edge cases and business rules
 2. **Error-First Design**: Handle errors gracefully with clear messages
 3. **Cost Awareness**: Always check pricing before deploying new Azure resources
 4. **Documentation**: Keep steering files updated after each task
+5. **Notebook Development**: Use Python files with jupytext for version control and reproducibility
+6. **Validation Flexibility**: Minor requirement deviations acceptable if business value is clear
 
 ---
 

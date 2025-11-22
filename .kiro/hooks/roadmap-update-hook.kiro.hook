@@ -4,7 +4,7 @@
   "description": "Automatically prompts to update the roadmap.md steering file whenever tasks are completed, ensuring progress tracking, lessons learned, and mistake prevention are consistently documented",
   "version": "2",
   "when": {
-    "type": "agentEnd"
+    "type": "userTriggered"
   },
   "then": {
     "type": "askAgent",

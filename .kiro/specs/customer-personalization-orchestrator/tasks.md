@@ -142,7 +142,7 @@ assert segments['customer_id'].is_unique
 ---
 
 ### Task 1.5: Segmentation Analysis & Validation
-- [ ] **Complete Task 1.5**
+- [x] **Complete Task 1.5**
 
 **Priority**: P1 (Important)  
 **Estimated Time**: 1 hour  
