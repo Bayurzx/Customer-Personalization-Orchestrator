@@ -3,8 +3,8 @@
 ## Overview
 This file tracks task completion, key lessons, and critical insights to prevent repeating mistakes and ensure smooth project progression.
 
-**Last Updated**: 2025-11-23  
-**Current Status**: Day 2 - Task 2.3 Complete
+**Last Updated**: 2025-11-22  
+**Current Status**: Day 1 - Task 1.2 Complete (Cost Optimized)
 
 ---
 
@@ -19,11 +19,14 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 
 #### Task 1.2: Azure Resource Provisioning  
 - **Status**: ✅ Complete
-- **Key Achievement**: Cost-optimized with gpt-5-mini ($0.25/1M vs $5/1M for gpt-4o)
+- **Key Achievement**: Cost-optimized with gpt-5-mini ($0.25/1M vs $5/1M for gpt-4o) - 20x cost reduction on input tokens
 - **Lessons**: 
-  - Always check latest model pricing before deployment
-  - gpt-5-mini has parameter limitations (no temperature/top_p control)
-  - Bash scripts more reliable than Python for Azure CLI operations
+  - **Model Selection Impact**: Always verify latest pricing before deployment - gpt-5-mini vs gpt-4o represents massive cost savings
+  - **Parameter Limitations**: gpt-5-mini only supports default temperature (1.0) and max_completion_tokens parameter - no fine-tuning options
+  - **API Compatibility**: Different models have different parameter requirements - must adapt code accordingly
+  - **Deployment Strategy**: Use GlobalStandard SKU for gpt-5-mini, Standard SKU not supported
+  - **Testing Adaptation**: Parameter changes require updating all test scripts and integration modules
+  - **Documentation Cascade**: Model changes impact multiple files - systematic updates needed across codebase
 
 #### Task 1.3: Sample Data Preparation
 - **Status**: ✅ Complete  
@@ -96,9 +99,12 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 3. **Mock Data Alignment**: Ensure mock arrays (like clustering labels) match exact data dimensions
 
 ### Azure & Cost Optimization
-1. **Model Selection**: Always verify latest pricing - gpt-5-mini is 20x cheaper than gpt-4o for input tokens
-2. **Parameter Limitations**: gpt-5-mini has fewer tuning options but sufficient for POC
-3. **Deployment Scripts**: Bash scripts with proper error handling more reliable than Python for Azure CLI
+1. **Model Selection**: Always verify latest pricing - gpt-5-mini is 20x cheaper than gpt-4o for input tokens ($0.25/1M vs $5/1M)
+2. **Parameter Limitations**: gpt-5-mini has fewer tuning options but sufficient for POC - only supports default temperature (1.0)
+3. **API Parameter Adaptation**: Different models require different parameters (max_completion_tokens vs max_tokens)
+4. **SKU Requirements**: gpt-5-mini requires GlobalStandard SKU, not Standard - check model-specific requirements
+5. **Deployment Scripts**: Bash scripts with proper error handling more reliable than Python for Azure CLI
+6. **Cost Impact Documentation**: Model changes affect cost estimates throughout documentation - update systematically
 
 ### Azure Search Integration
 1. **Schema Design**: Start with simple, flat schemas - avoid complex objects and collections until basic functionality works
@@ -186,11 +192,13 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 12. **Dynamic Query Construction**: Building search queries from segment characteristics provides much better relevance than static queries
 13. **Agent-Level Filtering**: Applying business logic (relevance thresholds) at the agent level rather than relying on service defaults
 14. **Dual API Patterns**: Providing both class-based and convenience function APIs improves developer experience
+15. **Cost-First Model Selection**: Evaluating model pricing early in project prevents budget overruns
+16. **Systematic Documentation Updates**: When making architectural changes, updating all affected files systematically prevents inconsistencies
 
 ### Recommended Practices
 1. **Test-Driven Development**: Write tests that cover edge cases and business rules
 2. **Error-First Design**: Handle errors gracefully with clear messages
-3. **Cost Awareness**: Always check pricing before deploying new Azure resources
+3. **Cost Awareness**: Always check pricing before deploying new Azure resources - model selection can have 20x cost impact
 4. **Documentation**: Keep steering files updated after each task
 5. **Notebook Development**: Use Python files with jupytext for version control and reproducibility
 6. **Validation Flexibility**: Minor requirement deviations acceptable if business value is clear
@@ -198,6 +206,8 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 8. **Index Management**: Document transformation is more reliable than complex schema design for POC development
 9. **Retrieval Agent Design**: Implement smart query construction using both segment names and feature values for better search relevance
 10. **Agent Testing**: Combine unit tests (mocked) with integration tests (real services) to catch both logic and configuration issues
+11. **Model Parameter Compatibility**: When switching models, systematically verify and update all API parameter usage
+12. **Cost-First Architecture**: Evaluate model pricing early in project design to prevent budget overruns
 
 ---
 
@@ -223,9 +233,10 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 ### Current Status
 - **Tasks Completed**: 8/27 (30%)
 - **Test Coverage**: 100% (62/62 tests passing through Task 2.3)
-- **Estimated Cost**: $25-50 for POC (vs original $50-100)
+- **Estimated Cost**: $25-50 for POC (reduced from $50-100 via gpt-5-mini optimization)
 - **Timeline**: On track for 5-day delivery
-- **Azure Resources**: Search index operational with 25 documents indexed, retrieval agent functional
+- **Azure Resources**: All services operational - OpenAI (gpt-5-mini), Search (25 docs indexed), Content Safety
+- **Cost Optimization**: Achieved 20x reduction in input token costs ($0.25/1M vs $5/1M)
 
 ### Quality Gates
 - ✅ All tests passing
