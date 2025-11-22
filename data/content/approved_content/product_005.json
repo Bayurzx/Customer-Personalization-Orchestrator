@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC010",
+  "title": "Integration Marketplace",
+  "category": "Product",
+  "content": "Extend your platform's capabilities with our comprehensive Integration Marketplace. Connect with over 200 popular business tools including CRM systems, marketing platforms, accounting software, and productivity apps. Our pre-built integrations ensure seamless data flow between your favorite tools, eliminating manual data entry and reducing errors. Popular integrations include Salesforce, HubSpot, QuickBooks, Slack, and Microsoft Office 365. Each integration is thoroughly tested and maintained by our team. Custom integrations are also available for enterprise customers with unique requirements. Streamline your workflow and boost productivity today.",
+  "audience": "All",
+  "keywords": ["integrations", "marketplace", "CRM", "productivity", "workflow", "seamless", "tools"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/integrations",
+  "metadata": {
+    "author": "Integration Team",
+    "version": "1.1",
+    "last_updated": "2025-11-08"
+  }
+}

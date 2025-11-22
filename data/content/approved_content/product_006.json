@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC013",
+  "title": "Automation Workflows",
+  "category": "Product",
+  "content": "Streamline repetitive tasks with our powerful Automation Workflows feature. Create custom workflows that trigger actions based on specific conditions, saving time and reducing manual effort. Popular automation scenarios include welcome email sequences, task assignments, data synchronization, and report generation. Our visual workflow builder makes it easy to design complex automation without coding knowledge. Advanced users can leverage our API for custom integrations and sophisticated logic. Automation workflows help teams focus on high-value activities while ensuring consistent execution of routine processes. Boost efficiency and accuracy with intelligent automation.",
+  "audience": "Standard",
+  "keywords": ["automation", "workflows", "efficiency", "triggers", "tasks", "processes", "API"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/automation",
+  "metadata": {
+    "author": "Product Team",
+    "version": "1.2",
+    "last_updated": "2025-10-30"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC002",
+  "title": "Essential Widget Package",
+  "category": "Product",
+  "content": "The Essential Widget Package provides all the core functionality you need to get started. Perfect for new customers and those exploring our platform, this package includes: basic dashboard access, standard reporting tools, email support, and comprehensive documentation. The Essential Widget is designed to grow with your business, offering upgrade paths as your needs evolve. With intuitive design and straightforward setup, you can be productive from day one. Our Essential Widget has helped thousands of customers achieve their initial goals and provides a solid foundation for future growth.",
+  "audience": "New Customer",
+  "keywords": ["essential", "basic", "starter", "new", "foundation", "core"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/essential-widget",
+  "metadata": {
+    "author": "Product Team",
+    "version": "1.0",
+    "last_updated": "2025-10-20"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC019",
+  "title": "Collaboration Tools Suite",
+  "category": "Product",
+  "content": "Enhance team productivity with our Collaboration Tools Suite. Share projects, assign tasks, track progress, and communicate seamlessly within the platform. Features include real-time commenting, file sharing, version control, team calendars, and integrated messaging. Perfect for distributed teams that need to stay connected and aligned. Advanced collaboration features include screen sharing, video conferencing integration, and collaborative editing. Team administrators can set permissions, monitor activity, and generate team performance reports. Transform the way your team works together and achieve better results through improved collaboration and communication.",
+  "audience": "Standard",
+  "keywords": ["collaboration", "team", "productivity", "sharing", "communication", "projects", "messaging"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/collaboration-tools",
+  "metadata": {
+    "author": "Product Team",
+    "version": "1.1",
+    "last_updated": "2025-11-07"
+  }
+}

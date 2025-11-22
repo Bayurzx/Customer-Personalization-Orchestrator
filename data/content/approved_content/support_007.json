@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC024",
+  "title": "Performance Optimization Tips",
+  "category": "Support",
+  "content": "Maximize your platform performance with these expert optimization tips. Regular maintenance tasks include clearing browser cache, optimizing database queries, managing file storage, and reviewing account settings. Monitor your usage patterns to identify bottlenecks and optimize workflows accordingly. Use our built-in performance analytics to track load times, identify slow operations, and measure improvement over time. Advanced optimization techniques include data archiving, query optimization, and strategic use of caching. Our performance team is available for consultation on complex optimization challenges. A well-optimized account delivers better user experience and improved productivity for your entire team.",
+  "audience": "All",
+  "keywords": ["performance", "optimization", "speed", "analytics", "maintenance", "productivity", "efficiency"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/performance-tips",
+  "metadata": {
+    "author": "Performance Team",
+    "version": "1.1",
+    "last_updated": "2025-11-02"
+  }
+}

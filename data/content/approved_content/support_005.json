@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC018",
+  "title": "API Documentation Guide",
+  "category": "Support",
+  "content": "Unlock the full potential of our platform with comprehensive API documentation. Our RESTful API provides programmatic access to all core features, enabling custom integrations and automated workflows. The documentation includes detailed endpoint descriptions, request/response examples, authentication guides, and SDK downloads for popular programming languages. Interactive API explorer lets you test endpoints directly from the documentation. Rate limiting, error handling, and best practices are clearly explained to ensure successful implementations. Whether you're building custom applications or integrating with existing systems, our API provides the flexibility and power you need.",
+  "audience": "All",
+  "keywords": ["API", "documentation", "integration", "REST", "SDK", "endpoints", "automation"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/api-docs",
+  "metadata": {
+    "author": "Developer Relations",
+    "version": "2.0",
+    "last_updated": "2025-11-09"
+  }
+}

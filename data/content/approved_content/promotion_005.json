@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC014",
+  "title": "Early Bird Annual Discount",
+  "category": "Promotion",
+  "content": "Save big with our Early Bird Annual Subscription offer. Commit to a full year and receive up to 40% off regular monthly pricing, plus exclusive annual subscriber benefits. Annual subscribers get priority feature access, dedicated account management, enhanced support, and special pricing on add-on services. This limited-time offer is perfect for businesses ready to make a long-term commitment to growth and success. Annual billing also simplifies your budgeting and ensures uninterrupted service. Join thousands of satisfied annual subscribers who have chosen to invest in their future. Offer expires soon – secure your savings today.",
+  "audience": "Standard",
+  "keywords": ["annual", "discount", "savings", "commitment", "priority", "exclusive", "limited-time"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/annual-discount",
+  "metadata": {
+    "author": "Sales Team",
+    "version": "1.0",
+    "last_updated": "2025-11-17"
+  }
+}

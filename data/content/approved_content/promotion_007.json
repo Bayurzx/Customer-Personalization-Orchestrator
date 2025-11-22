@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC020",
+  "title": "Student and Nonprofit Discounts",
+  "category": "Promotion",
+  "content": "We believe in supporting education and social good. Students and nonprofit organizations qualify for special discounted pricing on all our plans. Students receive 60% off with valid student ID verification, while registered nonprofits get 40% off their subscription. These discounts apply to both monthly and annual plans, making our platform accessible to those making a positive impact. Application process is simple and verification is handled securely through our partner services. Educational institutions can also inquire about volume licensing and custom training programs. Invest in your mission with tools that help you achieve greater impact.",
+  "audience": "All",
+  "keywords": ["student", "nonprofit", "discount", "education", "social good", "verification", "impact"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/student-nonprofit",
+  "metadata": {
+    "author": "Social Impact Team",
+    "version": "1.0",
+    "last_updated": "2025-11-06"
+  }
+}

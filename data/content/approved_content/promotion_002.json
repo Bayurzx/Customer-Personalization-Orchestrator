@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC004",
+  "title": "Welcome Back Special Offer",
+  "category": "Promotion",
+  "content": "We've noticed it's been a while since your last visit, and we want to welcome you back with a special offer. Reconnect with our platform and discover the new features and improvements we've made based on customer feedback. For a limited time, returning customers receive 20% off their next purchase, free onboarding assistance, and access to our updated training materials. Our team is here to help you get back on track and achieve your goals. Don't let this opportunity pass by – your success is our priority, and we're committed to supporting your journey.",
+  "audience": "At-Risk",
+  "keywords": ["welcome back", "returning", "special offer", "reconnect", "limited time", "support"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/welcome-back",
+  "metadata": {
+    "author": "Retention Team",
+    "version": "1.0",
+    "last_updated": "2025-11-10"
+  }
+}

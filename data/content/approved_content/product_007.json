@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC016",
+  "title": "Enterprise Security Suite",
+  "category": "Product",
+  "content": "Protect your organization with our comprehensive Enterprise Security Suite. This advanced security package includes multi-factor authentication, single sign-on (SSO), role-based access controls, audit logging, and compliance reporting. Meet industry standards including SOC 2, GDPR, and HIPAA with built-in compliance tools. Advanced threat detection monitors for suspicious activity and automatically responds to potential security incidents. Enterprise customers also receive dedicated security consultations, penetration testing reports, and priority security updates. Your data and your customers' trust are invaluable – invest in enterprise-grade protection that scales with your business needs.",
+  "audience": "High-Value",
+  "keywords": ["enterprise", "security", "compliance", "SSO", "audit", "protection", "threat detection"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/enterprise-security",
+  "metadata": {
+    "author": "Security Team",
+    "version": "1.0",
+    "last_updated": "2025-11-11"
+  }
+}

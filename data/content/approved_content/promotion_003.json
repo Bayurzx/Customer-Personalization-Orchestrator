@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC008",
+  "title": "Limited Time Upgrade Offer",
+  "category": "Promotion",
+  "content": "For a limited time only, upgrade your account and unlock premium features at a special discounted rate. This exclusive offer includes 30% off your first year of premium service, plus bonus features worth $500. Upgrade now to access advanced reporting, priority support, additional storage, and exclusive integrations. This promotion is available for the next 7 days only, so don't wait. Our premium features are designed to accelerate your success and provide the tools you need to achieve your goals faster. Take advantage of this opportunity to elevate your experience.",
+  "audience": "Standard",
+  "keywords": ["limited time", "upgrade", "premium", "discount", "exclusive", "bonus", "accelerate"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/upgrade-offer",
+  "metadata": {
+    "author": "Sales Team",
+    "version": "1.0",
+    "last_updated": "2025-11-18"
+  }
+}

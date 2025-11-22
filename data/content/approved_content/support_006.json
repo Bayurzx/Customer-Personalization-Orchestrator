@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC021",
+  "title": "Data Export and Backup Guide",
+  "category": "Support",
+  "content": "Maintain control of your data with our comprehensive export and backup options. Export your data in multiple formats including CSV, JSON, and XML for easy integration with other systems. Automated backup services ensure your data is protected with daily snapshots stored in secure, geographically distributed locations. Manual export tools let you download specific datasets or complete account backups on demand. Enterprise customers receive additional backup options including custom retention periods and dedicated backup storage. Data portability is a fundamental right – we make it easy to access, export, and backup your valuable information whenever you need it.",
+  "audience": "All",
+  "keywords": ["data export", "backup", "CSV", "JSON", "security", "portability", "retention"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/data-export",
+  "metadata": {
+    "author": "Data Team",
+    "version": "1.3",
+    "last_updated": "2025-11-04"
+  }
+}

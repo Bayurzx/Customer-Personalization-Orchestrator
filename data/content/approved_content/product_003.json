@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC006",
+  "title": "Advanced Analytics Suite",
+  "category": "Product",
+  "content": "Transform your data into actionable insights with our Advanced Analytics Suite. This powerful toolset provides comprehensive reporting, predictive analytics, and real-time dashboards that help you make informed decisions. Features include custom report builders, automated data visualization, trend analysis, and integration with popular business intelligence tools. Perfect for data-driven organizations that need deep insights into their operations. The Advanced Analytics Suite scales with your business, handling everything from small datasets to enterprise-level data processing. Unlock the full potential of your data and drive strategic decision-making.",
+  "audience": "High-Value",
+  "keywords": ["analytics", "data", "insights", "reporting", "dashboards", "business intelligence"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/analytics-suite",
+  "metadata": {
+    "author": "Product Team",
+    "version": "1.3",
+    "last_updated": "2025-10-25"
+  }
+}

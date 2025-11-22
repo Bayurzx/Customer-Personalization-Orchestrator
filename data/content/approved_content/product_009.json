@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC022",
+  "title": "Custom Reporting Engine",
+  "category": "Product",
+  "content": "Create powerful, customized reports with our advanced Custom Reporting Engine. Drag-and-drop report builder lets you design professional reports without technical expertise. Choose from dozens of chart types, apply filters, and schedule automated report delivery. Advanced users can create calculated fields, use custom formulas, and build multi-dimensional analysis reports. White-label options allow you to brand reports with your company logo and colors. Export reports in PDF, Excel, or PowerPoint formats for easy sharing. Transform raw data into compelling visual stories that drive decision-making and demonstrate value to stakeholders.",
+  "audience": "Standard",
+  "keywords": ["custom reports", "reporting", "charts", "analysis", "automation", "white-label", "visual"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/custom-reporting",
+  "metadata": {
+    "author": "Analytics Team",
+    "version": "1.2",
+    "last_updated": "2025-10-28"
+  }
+}

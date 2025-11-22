@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC012",
+  "title": "Security Best Practices",
+  "category": "Support",
+  "content": "Protect your account and data with our comprehensive security guidelines. Enable two-factor authentication, use strong unique passwords, regularly review account activity, and keep your contact information updated. Our platform employs enterprise-grade security measures including encryption, secure data centers, and regular security audits. Be cautious of phishing attempts and never share your login credentials. If you suspect unauthorized access, contact our security team immediately. We also provide security training resources and regular updates on emerging threats. Your data security is our top priority, and we're committed to maintaining the highest standards of protection.",
+  "audience": "All",
+  "keywords": ["security", "protection", "authentication", "passwords", "encryption", "privacy"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/security-practices",
+  "metadata": {
+    "author": "Security Team",
+    "version": "2.1",
+    "last_updated": "2025-11-16"
+  }
+}

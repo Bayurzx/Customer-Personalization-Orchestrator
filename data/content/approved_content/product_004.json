@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC007",
+  "title": "Mobile App Experience",
+  "category": "Product",
+  "content": "Stay connected and productive on the go with our mobile app. Available for iOS and Android, the app brings core functionality to your fingertips with an intuitive, touch-optimized interface. Access your dashboard, receive real-time notifications, manage tasks, and collaborate with your team from anywhere. The mobile app syncs seamlessly with your desktop experience, ensuring you never miss important updates. Features include offline mode, biometric security, push notifications, and optimized performance for mobile networks. Download today and experience the freedom of mobile productivity.",
+  "audience": "All",
+  "keywords": ["mobile", "app", "iOS", "Android", "productivity", "notifications", "sync"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/mobile-app",
+  "metadata": {
+    "author": "Mobile Team",
+    "version": "1.0",
+    "last_updated": "2025-11-15"
+  }
+}

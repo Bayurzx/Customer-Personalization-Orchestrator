@@ -1,0 +1,15 @@
+{
+  "document_id": "DOC009",
+  "title": "Troubleshooting Common Issues",
+  "category": "Support",
+  "content": "Encountering technical difficulties? Our troubleshooting guide covers the most common issues and their solutions. From login problems to feature malfunctions, we provide step-by-step instructions to get you back on track quickly. Common solutions include clearing browser cache, checking internet connectivity, updating your browser, and verifying account permissions. If these steps don't resolve your issue, our support team is available 24/7 to provide personalized assistance. We also offer screen-sharing sessions for complex problems. Your productivity is important to us, and we're committed to minimizing any disruptions.",
+  "audience": "All",
+  "keywords": ["troubleshooting", "issues", "solutions", "support", "technical", "assistance"],
+  "approval_date": "2025-11-01T00:00:00Z",
+  "source_url": "https://example.com/content/troubleshooting",
+  "metadata": {
+    "author": "Support Team",
+    "version": "1.5",
+    "last_updated": "2025-11-12"
+  }
+}
