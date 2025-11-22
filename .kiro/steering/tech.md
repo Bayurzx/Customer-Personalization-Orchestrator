@@ -624,12 +624,12 @@ class TokenTracker:
         self.total_cost = 0.0
         self.call_count = 0
     
-    def record_call(self, tokens: int, model: str = "gpt-4o"):
+    def record_call(self, tokens: int, model: str = "gpt-5-mini"):
         """Record a single API call."""
         self.total_tokens += tokens
         self.call_count += 1
         
-        # GPT-4o pricing (November 2025 estimates)
+        # GPT-5-mini pricing (November 2025 estimates)
         cost_per_token = 0.00003  # ~$0.03 per 1K tokens
         self.total_cost += tokens * cost_per_token
     

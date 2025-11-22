@@ -18,12 +18,12 @@ The core engine for the Generation Agent. We use the **Generative AI** capabilit
 - **Resource Type**: `Microsoft.CognitiveServices/accounts`
 - **Python Package**: `openai>=1.55.0` (Using Azure Provider)
 - **API Version**: `2025-11-01-preview`
-- **Recommended Models**: `gpt-4o` or `gpt-4-turbo`
+- **Recommended Models**: `gpt-5-mini` or `gpt-4o`
 
 ### Environment Variables
 ```bash
 AZURE_OPENAI_ENDPOINT="https://<resource-name>.openai.azure.com/"
-AZURE_OPENAI_DEPLOYMENT_NAME="gpt-4o"
+AZURE_OPENAI_DEPLOYMENT_NAME="gpt-5-mini"
 AZURE_OPENAI_API_VERSION="2025-11-01-preview"
 ```
 

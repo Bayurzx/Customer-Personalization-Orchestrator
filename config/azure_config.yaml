@@ -1,0 +1,76 @@
+# Azure Services Configuration
+# Customer Personalization Orchestrator
+# Last updated: November 22, 2025
+
+azure_openai:
+  # Azure OpenAI endpoint (from environment variable)
+  endpoint: "${AZURE_OPENAI_ENDPOINT}"
+  
+  # Model deployment name (created in Azure OpenAI Studio)
+  deployment_name: "${AZURE_OPENAI_DEPLOYMENT_NAME}"
+  
+  # API version for Azure OpenAI
+  api_version: "${AZURE_OPENAI_API_VERSION}"
+  
+  # Generation parameters
+  max_tokens: 1000
+  temperature: 0.7
+  top_p: 0.9
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+
+azure_search:
+  # Azure AI Search endpoint (from environment variable)
+  endpoint: "${AZURE_SEARCH_ENDPOINT}"
+  
+  # Index name for approved content
+  index_name: "${AZURE_SEARCH_INDEX_NAME}"
+  
+  # API version for Azure AI Search
+  api_version: "2024-11-01-preview"
+  
+  # Search configuration
+  semantic_configuration_name: "default"
+  top_k_results: 5
+  relevance_threshold: 0.5
+
+azure_content_safety:
+  # Azure AI Content Safety endpoint (from environment variable)
+  endpoint: "${AZURE_CONTENT_SAFETY_ENDPOINT}"
+  
+  # API version for Content Safety
+  api_version: "2024-09-01"
+  
+  # Safety policy configuration
+  severity_threshold: 4  # Block if severity > Medium (4)
+  categories:
+    - hate
+    - violence
+    - self_harm
+    - sexual
+
+# Authentication configuration
+authentication:
+  # Method: api_key for POC, managed_identity for production
+  method: "api_key"
+  
+  # Note about production security
+  note: "Using API keys for POC. Production should use Azure Managed Identity for enhanced security."
+
+# Optional services (not implemented in POC)
+azure_ml:
+  subscription_id: "${AZURE_SUBSCRIPTION_ID}"
+  resource_group: "${AZURE_RESOURCE_GROUP}"
+  workspace_name: "${AZURE_ML_WORKSPACE_NAME}"
+
+# Retry and timeout configuration
+retry_config:
+  max_attempts: 3
+  backoff_multiplier: 1
+  min_wait_seconds: 2
+  max_wait_seconds: 10
+
+timeout_config:
+  openai_timeout: 30  # seconds
+  search_timeout: 5   # seconds
+  safety_timeout: 10  # seconds

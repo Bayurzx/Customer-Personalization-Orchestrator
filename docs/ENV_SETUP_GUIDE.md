@@ -70,12 +70,12 @@ AZURE_REGION=eastus2
 ```bash
 # Create Azure OpenAI resource
 az cognitiveservices account create \
-  --name openai-cpo-poc-<your-unique-id> \
+  --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
   --location eastus2 \
   --kind OpenAI \
   --sku S0 \
-  --custom-domain openai-cpo-poc-<your-unique-id>
+  --custom-domain openai-cpo-poc-1337
 
 # Wait for deployment to complete (may take 2-3 minutes)
 ```
@@ -87,7 +87,7 @@ az cognitiveservices account create \
 ```bash
 # Get endpoint
 az cognitiveservices account show \
-  --name openai-cpo-poc-<your-unique-id> \
+  --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
   --query properties.endpoint \
   --output tsv
@@ -97,7 +97,7 @@ az cognitiveservices account show \
 
 **Set in .env**:
 ```bash
-AZURE_OPENAI_ENDPOINT=https://openai-cpo-poc-<your-unique-id>.openai.azure.com/
+AZURE_OPENAI_ENDPOINT=https://openai-cpo-poc-1337.openai.azure.com/
 ```
 
 ### Get Azure OpenAI API Key
@@ -105,7 +105,7 @@ AZURE_OPENAI_ENDPOINT=https://openai-cpo-poc-<your-unique-id>.openai.azure.com/
 ```bash
 # Get API key (Key 1)
 az cognitiveservices account keys list \
-  --name openai-cpo-poc-<your-unique-id> \
+  --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
   --query key1 \
   --output tsv
@@ -118,7 +118,7 @@ az cognitiveservices account keys list \
 AZURE_OPENAI_API_KEY=<your-key-here>
 ```
 
-### Deploy a Model (GPT-4o or GPT-4)
+### Deploy a Model (claude-haiku-4-5 or gpt-5-mini)
 
 **Option A: Using Azure Portal (Recommended for first time)**
 
@@ -127,19 +127,19 @@ AZURE_OPENAI_API_KEY=<your-key-here>
 3. Click **"Model deployments"** → **"Manage Deployments"**
 4. You'll be redirected to **Azure OpenAI Studio**
 5. Click **"Deployments"** → **"Create new deployment"**
-6. Select model: **gpt-4o** or **gpt-4** (gpt-4o recommended - faster, cheaper)
-7. Deployment name: `gpt-4o` (use this exact name for consistency)
+6. Select model: **claude-haiku-4-5** or **gpt-5-mini** (claude-haiku-4-5 recommended - faster, cheaper)
+7. Deployment name: `claude-haiku-4-5` (use this exact name for consistency)
 8. Click **"Create"**
 
 **Option B: Using Azure CLI**
 
 ```bash
-# Deploy GPT-4o model
+# Deploy claude-haiku-4-5 model
 az cognitiveservices account deployment create \
-  --name openai-cpo-poc-<your-unique-id> \
+  --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
-  --deployment-name gpt-4o \
-  --model-name gpt-4o \
+  --deployment-name claude-haiku-4-5 \
+  --model-name claude-haiku-4-5 \
   --model-version "2024-08-06" \
   --model-format OpenAI \
   --sku-capacity 10 \
@@ -148,14 +148,14 @@ az cognitiveservices account deployment create \
 
 **Set in .env**:
 ```bash
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o
+AZURE_OPENAI_DEPLOYMENT_NAME=claude-haiku-4-5
 AZURE_OPENAI_API_VERSION=2024-10-21
 ```
 
 **Verify deployment**:
 ```bash
 az cognitiveservices account deployment list \
-  --name openai-cpo-poc-<your-unique-id> \
+  --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
   --output table
 ```
@@ -169,7 +169,7 @@ az cognitiveservices account deployment list \
 ```bash
 # Create Azure AI Search service
 az search service create \
-  --name search-cpo-poc-<your-unique-id> \
+  --name search-cpo-poc-1337 \
   --resource-group rg-poc \
   --location eastus2 \
   --sku Standard \
@@ -184,7 +184,7 @@ az search service create \
 ```bash
 # Get endpoint
 az search service show \
-  --name search-cpo-poc-<your-unique-id> \
+  --name search-cpo-poc-1337 \
   --resource-group rg-poc \
   --query "hostName" \
   --output tsv
@@ -194,7 +194,7 @@ az search service show \
 
 **Set in .env**:
 ```bash
-AZURE_SEARCH_ENDPOINT=https://search-cpo-poc-<your-unique-id>.search.windows.net
+AZURE_SEARCH_ENDPOINT=https://search-cpo-poc-1337.search.windows.net
 ```
 
 ### Get Azure AI Search API Keys
@@ -202,7 +202,7 @@ AZURE_SEARCH_ENDPOINT=https://search-cpo-poc-<your-unique-id>.search.windows.net
 ```bash
 # Get admin key (for indexing)
 az search admin-key show \
-  --service-name search-cpo-poc-<your-unique-id> \
+  --service-name search-cpo-poc-1337 \
   --resource-group rg-poc \
   --query primaryKey \
   --output tsv
@@ -213,7 +213,7 @@ az search admin-key show \
 ```bash
 # Get query key (for searching)
 az search query-key list \
-  --service-name search-cpo-poc-<your-unique-id> \
+  --service-name search-cpo-poc-1337 \
   --resource-group rg-poc \
   --query "[0].key" \
   --output tsv
@@ -237,7 +237,7 @@ AZURE_SEARCH_INDEX_NAME=approved-content-index
 ```bash
 # Create Content Safety resource
 az cognitiveservices account create \
-  --name safety-cpo-poc-<your-unique-id> \
+  --name safety-cpo-poc-1337 \
   --resource-group rg-poc \
   --location eastus2 \
   --kind ContentSafety \
@@ -251,7 +251,7 @@ az cognitiveservices account create \
 ```bash
 # Get endpoint
 az cognitiveservices account show \
-  --name safety-cpo-poc-<your-unique-id> \
+  --name safety-cpo-poc-1337 \
   --resource-group rg-poc \
   --query properties.endpoint \
   --output tsv
@@ -261,7 +261,7 @@ az cognitiveservices account show \
 
 **Set in .env**:
 ```bash
-AZURE_CONTENT_SAFETY_ENDPOINT=https://safety-cpo-poc-<your-unique-id>.cognitiveservices.azure.com/
+AZURE_CONTENT_SAFETY_ENDPOINT=https://safety-cpo-poc-1337.cognitiveservices.azure.com/
 ```
 
 ### Get Content Safety API Key
@@ -269,7 +269,7 @@ AZURE_CONTENT_SAFETY_ENDPOINT=https://safety-cpo-poc-<your-unique-id>.cognitives
 ```bash
 # Get API key
 az cognitiveservices account keys list \
-  --name safety-cpo-poc-<your-unique-id> \
+  --name safety-cpo-poc-1337 \
   --resource-group rg-poc \
   --query key1 \
   --output tsv
@@ -319,7 +319,7 @@ AZURE_ML_RESOURCE_GROUP=${AZURE_RESOURCE_GROUP}
 ```bash
 # Create Key Vault
 az keyvault create \
-  --name kv-cpo-poc-<your-unique-id> \
+  --name kv-cpo-poc-1337 \
   --resource-group rg-poc \
   --location eastus2 \
   --enable-rbac-authorization false
@@ -334,7 +334,7 @@ az keyvault create \
 ```bash
 # Get vault URL
 az keyvault show \
-  --name kv-cpo-poc-<your-unique-id> \
+  --name kv-cpo-poc-1337 \
   --resource-group rg-poc \
   --query properties.vaultUri \
   --output tsv
@@ -344,7 +344,7 @@ az keyvault show \
 
 **Set in .env**:
 ```bash
-AZURE_KEY_VAULT_URL=https://kv-cpo-poc-<your-unique-id>.vault.azure.net/
+AZURE_KEY_VAULT_URL=https://kv-cpo-poc-1337.vault.azure.net/
 ```
 
 ### Set Access Policy for Your User
@@ -355,7 +355,7 @@ USER_OBJECT_ID=$(az ad signed-in-user show --query id --output tsv)
 
 # Grant yourself access to secrets
 az keyvault set-policy \
-  --name kv-cpo-poc-<your-unique-id> \
+  --name kv-cpo-poc-1337 \
   --resource-group rg-poc \
   --object-id $USER_OBJECT_ID \
   --secret-permissions get list set delete
@@ -450,7 +450,7 @@ AZURE_REGION=eastus2
 
 # AZURE OPENAI
 AZURE_OPENAI_ENDPOINT=https://openai-cpo-poc-abc123.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o
+AZURE_OPENAI_DEPLOYMENT_NAME=claude-haiku-4-5
 AZURE_OPENAI_API_VERSION=2024-10-21
 AZURE_OPENAI_API_KEY=abc123def456...
 
@@ -720,7 +720,7 @@ detect-secrets scan
 ```bash
 # Regenerate Azure OpenAI key (example)
 az cognitiveservices account keys regenerate \
-  --name openai-cpo-poc-<your-unique-id> \
+  --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
   --key-name key1
 ```
@@ -733,7 +733,7 @@ Based on November 2025 pricing:
 
 | Service | Tier | Estimated Cost (1 week) |
 |---------|------|------------------------|
-| Azure OpenAI (GPT-4o) | S0 | $20-50 (depends on usage) |
+| Azure OpenAI (claude-haiku-4-5) | S0 | $20-50 (depends on usage) |
 | Azure AI Search | Standard | ~$75/month (~$18/week) |
 | Content Safety | S0 | ~$5 (low volume) |
 | Azure ML | Basic | Free tier available |

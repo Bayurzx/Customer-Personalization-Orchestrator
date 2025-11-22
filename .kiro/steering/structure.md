@@ -513,7 +513,7 @@ class MessageGenerator:
 
 # Azure OpenAI
 AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-5-mini
 AZURE_OPENAI_API_VERSION=2025-11-01-preview
 
 # Azure AI Search
@@ -542,7 +542,7 @@ AZURE_KEY_VAULT_URL=https://kv-cpo-poc.vault.azure.net/
 
 # Azure OpenAI
 AZURE_OPENAI_ENDPOINT=https://<resource-name>.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-5-mini
 AZURE_OPENAI_API_VERSION=2025-11-01-preview
 
 # Azure AI Search

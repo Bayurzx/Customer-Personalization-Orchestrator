@@ -44,16 +44,16 @@ python -c "from azure.identity import DefaultAzureCredential; DefaultAzureCreden
 ---
 
 ### Task 1.2: Azure Resource Provisioning
-- [ ] **Complete Task 1.2**
+- [x] **Complete Task 1.2**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
 **Dependencies**: Task 1.1
 
-**Description**: Provision and configure required Azure services.
+**Description**: Provision and configure required Azure services. You MUST check `docs/ENV_SETUP_GUIDE.md` to guide you.
 
 **Subtasks**:
-- Create Azure OpenAI resource and deploy GPT-4 model
+- Create Azure OpenAI resource and deploy claude-haiku-4-5 or gpt-5-mini model
 - Create Azure AI Search service
 - Create Azure AI Content Safety resource
 - Configure authentication (Managed Identity or API keys)
