@@ -401,6 +401,283 @@ class TestDocumentValidation:
         assert all(isinstance(kw, str) for kw in keywords)
 
 
+class TestRetrievalAgent:
+    """Test the retrieval agent functionality."""
+    
+    @patch('src.agents.retrieval_agent.get_search_client')
+    def test_content_retriever_initialization(self, mock_get_client):
+        """Test ContentRetriever initialization."""
+        from src.agents.retrieval_agent import ContentRetriever
+        
+        mock_client = Mock()
+        mock_get_client.return_value = mock_client
+        
+        retriever = ContentRetriever()
+        assert retriever.client == mock_client
+    
+    def test_content_retriever_with_custom_client(self):
+        """Test ContentRetriever with custom client."""
+        from src.agents.retrieval_agent import ContentRetriever
+        
+        mock_client = Mock()
+        retriever = ContentRetriever(search_client=mock_client)
+        assert retriever.client == mock_client
+    
+    def test_construct_query_from_segment_high_value(self):
+        """Test query construction for high-value segment."""
+        from src.agents.retrieval_agent import construct_query_from_segment
+        
+        segment = {
+            "name": "High-Value Recent",
+            "features": {
+                "avg_order_value": 275.0,
+                "avg_purchase_frequency": 14.5
+            }
+        }
+        
+        query = construct_query_from_segment(segment)
+        
+        # Should contain high-value related terms
+        assert any(term in query.lower() for term in ['premium', 'exclusive', 'high-value', 'gold'])
+        # Should contain loyalty terms due to high frequency
+        assert 'loyalty' in query.lower()
+    
+    def test_construct_query_from_segment_at_risk(self):
+        """Test query construction for at-risk segment."""
+        from src.agents.retrieval_agent import construct_query_from_segment
+        
+        segment = {
+            "name": "At-Risk",
+            "features": {
+                "engagement_score": 0.2
+            }
+        }
+        
+        query = construct_query_from_segment(segment)
+        
+        # Should contain retention-related terms
+        assert any(term in query.lower() for term in ['retention', 'engagement', 'comeback'])
+    
+    def test_construct_query_from_segment_new_customer(self):
+        """Test query construction for new customer segment."""
+        from src.agents.retrieval_agent import construct_query_from_segment
+        
+        segment = {
+            "name": "New Customer",
+            "features": {}
+        }
+        
+        query = construct_query_from_segment(segment)
+        
+        # Should contain new customer related terms
+        assert any(term in query.lower() for term in ['welcome', 'getting started', 'introduction', 'new customer'])
+    
+    def test_construct_query_fallback(self):
+        """Test query construction fallback for unknown segment."""
+        from src.agents.retrieval_agent import construct_query_from_segment
+        
+        segment = {
+            "name": "Unknown Segment",
+            "features": {}
+        }
+        
+        query = construct_query_from_segment(segment)
+        
+        # Should fallback to segment name or default
+        assert query  # Should not be empty
+    
+    def test_extract_snippet_short_content(self):
+        """Test snippet extraction with short content."""
+        from src.agents.retrieval_agent import extract_snippet
+        
+        content = "This is a short piece of content."
+        snippet = extract_snippet(content)
+        
+        assert snippet == content  # Should return full content
+        assert not snippet.endswith("...")  # No truncation needed
+    
+    def test_extract_snippet_long_content(self):
+        """Test snippet extraction with long content."""
+        from src.agents.retrieval_agent import extract_snippet
+        
+        # Create content longer than SNIPPET_WORD_LIMIT (150 words)
+        words = ["word"] * 200
+        content = " ".join(words)
+        
+        snippet = extract_snippet(content)
+        
+        # Should be truncated
+        assert snippet.endswith("...")
+        assert len(snippet.split()) <= 150  # Should respect word limit
+    
+    def test_extract_snippet_empty_content(self):
+        """Test snippet extraction with empty content."""
+        from src.agents.retrieval_agent import extract_snippet
+        
+        snippet = extract_snippet("")
+        assert snippet == ""
+        
+        snippet = extract_snippet(None)
+        assert snippet == ""
+    
+    def test_extract_snippet_character_limit(self):
+        """Test snippet extraction respects character limit."""
+        from src.agents.retrieval_agent import extract_snippet
+        
+        # Create very long content
+        content = "A" * 1000
+        
+        snippet = extract_snippet(content, max_length=100)
+        
+        assert len(snippet) <= 100
+        assert snippet.endswith("...")
+    
+    @patch('src.agents.retrieval_agent.get_search_client')
+    def test_retrieve_content_success(self, mock_get_client):
+        """Test successful content retrieval."""
+        from src.agents.retrieval_agent import ContentRetriever
+        
+        # Mock search client and results
+        mock_client = Mock()
+        mock_get_client.return_value = mock_client
+        
+        # Mock search results
+        mock_result = Mock()
+        mock_result.get.side_effect = lambda key, default=None: {
+            'document_id': 'DOC001',
+            'title': 'Test Document',
+            'content': 'This is test content for the document.',
+            'category': 'Product',
+            'audience': 'High-Value',
+            '@search.score': 0.85
+        }.get(key, default)
+        
+        mock_client.search.return_value = [mock_result]
+        
+        retriever = ContentRetriever()
+        segment = {"name": "High-Value Recent", "features": {}}
+        
+        results = retriever.retrieve_content(segment, top_k=3)
+        
+        assert len(results) == 1
+        assert results[0]['document_id'] == 'DOC001'
+        assert results[0]['title'] == 'Test Document'
+        assert results[0]['relevance_score'] == 0.85
+        assert 'snippet' in results[0]
+        assert 'retrieved_at' in results[0]
+    
+    @patch('src.agents.retrieval_agent.get_search_client')
+    def test_retrieve_content_low_relevance_filtered(self, mock_get_client):
+        """Test that low relevance results are filtered out."""
+        from src.agents.retrieval_agent import ContentRetriever
+        
+        mock_client = Mock()
+        mock_get_client.return_value = mock_client
+        
+        # Mock result with low relevance score
+        mock_result = Mock()
+        mock_result.get.side_effect = lambda key, default=None: {
+            'document_id': 'DOC001',
+            'title': 'Test Document',
+            'content': 'Test content',
+            '@search.score': 0.3  # Below MIN_RELEVANCE_SCORE (0.5)
+        }.get(key, default)
+        
+        mock_client.search.return_value = [mock_result]
+        
+        retriever = ContentRetriever()
+        segment = {"name": "Test Segment", "features": {}}
+        
+        results = retriever.retrieve_content(segment)
+        
+        # Should be filtered out due to low relevance
+        assert len(results) == 0
+    
+    @patch('src.agents.retrieval_agent.get_search_client')
+    def test_retrieve_content_invalid_segment(self, mock_get_client):
+        """Test error handling for invalid segment."""
+        from src.agents.retrieval_agent import ContentRetriever
+        
+        mock_client = Mock()
+        mock_get_client.return_value = mock_client
+        
+        retriever = ContentRetriever()
+        
+        # Test with empty segment
+        with pytest.raises(ValueError, match="Segment must contain 'name' field"):
+            retriever.retrieve_content({})
+        
+        # Test with None segment
+        with pytest.raises(ValueError, match="Segment must contain 'name' field"):
+            retriever.retrieve_content(None)
+    
+    @patch('src.agents.retrieval_agent.get_search_client')
+    def test_retrieve_content_search_error(self, mock_get_client):
+        """Test error handling for search failures."""
+        from src.agents.retrieval_agent import ContentRetriever
+        from azure.core.exceptions import AzureError
+        
+        mock_client = Mock()
+        mock_get_client.return_value = mock_client
+        mock_client.search.side_effect = AzureError("Search failed")
+        
+        retriever = ContentRetriever()
+        segment = {"name": "Test Segment", "features": {}}
+        
+        with pytest.raises(AzureError):
+            retriever.retrieve_content(segment)
+    
+    def test_convenience_functions(self):
+        """Test convenience functions work correctly."""
+        from src.agents.retrieval_agent import construct_query_from_segment, extract_snippet
+        
+        # Test construct_query_from_segment
+        segment = {"name": "High-Value Recent", "features": {}}
+        query = construct_query_from_segment(segment)
+        assert isinstance(query, str)
+        assert len(query) > 0
+        
+        # Test extract_snippet
+        content = "This is test content for snippet extraction."
+        snippet = extract_snippet(content)
+        assert snippet == content
+
+
+class TestRetrievalIntegration:
+    """Test retrieval agent integration with search client."""
+    
+    @patch('src.agents.retrieval_agent.get_search_client')
+    def test_retrieve_content_function(self, mock_get_client):
+        """Test the convenience retrieve_content function."""
+        from src.agents.retrieval_agent import retrieve_content
+        
+        mock_client = Mock()
+        mock_get_client.return_value = mock_client
+        
+        # Mock search results
+        mock_result = Mock()
+        mock_result.get.side_effect = lambda key, default=None: {
+            'document_id': 'DOC001',
+            'title': 'Test Document',
+            'content': 'Test content',
+            '@search.score': 0.75
+        }.get(key, default)
+        
+        mock_client.search.return_value = [mock_result]
+        
+        segment = {"name": "High-Value Recent", "features": {}}
+        results = retrieve_content(segment, top_k=5)
+        
+        assert len(results) == 1
+        assert results[0]['document_id'] == 'DOC001'
+        
+        # Verify search was called with correct parameters
+        mock_client.search.assert_called_once()
+        call_args = mock_client.search.call_args
+        assert call_args[1]['top'] == 5
+        assert call_args[1]['query_type'] == 'semantic'
+
+
 if __name__ == "__main__":
     # Run tests when executed directly
     pytest.main([__file__, "-v"])
