@@ -31,29 +31,31 @@ This document defines the technology stack, development tools, coding standards,
 
 ```python
 # requirements.txt
+# Last updated: November 2025
+# Python: 3.9+
 
 # Core Data Science
-pandas>=2.0.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
+pandas>=2.2.0
+numpy>=1.26.0
+scikit-learn>=1.7.0
 scipy>=1.11.0
 
 # Azure SDK (Modern Stack - November 2025)
-openai>=1.55.0                      # Azure OpenAI (unified package)
-azure-identity>=1.19.0              # Authentication
-azure-search-documents>=11.6.0      # Azure AI Search
-azure-ai-contentsafety>=1.0.0       # Content Safety
-azure-ai-ml>=1.12.0                 # Azure ML
-azure-keyvault-secrets>=4.7.0       # Key Vault
-azure-monitor-opentelemetry>=1.2.0  # Monitoring
+openai>=2.6.0                       # Azure OpenAI (unified package) - Latest: 2.8.1
+azure-identity>=1.25.0              # Authentication - Latest: 1.25.1
+azure-search-documents>=11.6.0      # Azure AI Search - Latest: 11.6.0
+azure-ai-contentsafety>=1.0.0       # Content Safety - Latest: 1.0.0
+azure-ai-ml>=1.30.0                 # Azure ML - Latest: 1.30.0
+azure-keyvault-secrets>=4.10.0      # Key Vault - Latest: 4.10.0
+azure-monitor-opentelemetry>=1.8.0  # Monitoring - Latest: 1.8.2
 
 # MLflow for Experiment Tracking
 mlflow>=2.9.0
-azureml-mlflow>=1.53.0
+azureml-mlflow>=1.60.0              # Latest: 1.60.0.post1
 
 # Visualization
-matplotlib>=3.7.0
-seaborn>=0.12.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
 plotly>=5.17.0
 
 # Notebook
@@ -68,8 +70,8 @@ tqdm>=4.66.0
 tenacity>=8.2.0                     # Retry logic
 
 # Testing
-pytest>=7.4.0
-pytest-cov>=4.1.0
+pytest>=8.0.0                       # Latest: 8.x
+pytest-cov>=4.0.0                   # Latest: 4.x
 pytest-mock>=3.11.0
 
 # Code Quality
