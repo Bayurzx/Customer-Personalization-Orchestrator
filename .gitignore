@@ -132,3 +132,37 @@ yarn-error.log*
 # ============================
 .kiro/cache/
 .kiro/tmp/
+
+# -------------------------
+# Test & Coverage Artifacts
+# -------------------------
+
+# Pytest cache
+.pytest_cache/
+.cache/
+
+# Coverage reports
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Test outputs
+test-results/
+test_output/
+
+# JUnit XML reports
+junit*.xml
+
+# Hypothesis testing cache
+.hypothesis/
+
+# Profiling / trace data
+prof/
+*.prof
+*.lprof
+*.pstats
+
+# Logs from tests
+*.log
+logs/
