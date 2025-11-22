@@ -10,9 +10,8 @@ azureml-mlflow==1.60.0.post1
 openai==2.8.1
 
 # ML / Data Science
-mlflow==3.6.0
-mlflow-skinny==3.6.0
-mlflow-tracing==3.6.0
+mlflow==2.18.0
+mlflow-skinny==2.18.0
 numpy==2.2.6
 pandas==2.3.3
 scikit-learn==1.7.2

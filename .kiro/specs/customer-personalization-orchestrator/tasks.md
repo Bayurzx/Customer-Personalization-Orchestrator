@@ -18,10 +18,10 @@ This document outlines the discrete, trackable implementation tasks for building
 **Estimated Time**: 1 hour  
 **Dependencies**: None
 
-**Description**: Set up development environment, Azure resources, and project structure.
+**Description**: Set up development environment, Azure resources, and project structure. Alway confirm if exist first before writing.
 
 **Subtasks**:
-- Create Python virtual environment with **Python 3.11**
+- Create Python virtual environment with **Python 3.10+** (3.10.12 or higher)
 - Install dependencies from `requirements.txt`
 - Create `.env` file with Azure credentials
 - Initialize project directory structure (`.kiro/`, `src/`, `config/`, `data/`, `logs/`)
@@ -36,7 +36,7 @@ This document outlines the discrete, trackable implementation tasks for building
 
 **Validation**:
 ```bash
-python --version  # Should show 3.11.x
+python --version  # Should show 3.10.12 or higher
 pip list | grep azure  # Should show azure-* packages
 python -c "from azure.identity import DefaultAzureCredential; DefaultAzureCredential()"
 ```
