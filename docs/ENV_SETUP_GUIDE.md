@@ -118,7 +118,7 @@ az cognitiveservices account keys list \
 AZURE_OPENAI_API_KEY=<your-key-here>
 ```
 
-### Deploy a Model (claude-haiku-4-5 or gpt-5-mini)
+### Deploy a Model (gpt-5-mini - Cost Optimized)
 
 **Option A: Using Azure Portal (Recommended for first time)**
 
@@ -127,28 +127,28 @@ AZURE_OPENAI_API_KEY=<your-key-here>
 3. Click **"Model deployments"** → **"Manage Deployments"**
 4. You'll be redirected to **Azure OpenAI Studio**
 5. Click **"Deployments"** → **"Create new deployment"**
-6. Select model: **claude-haiku-4-5** or **gpt-5-mini** (claude-haiku-4-5 recommended - faster, cheaper)
-7. Deployment name: `claude-haiku-4-5` (use this exact name for consistency)
+6. Select model: **gpt-5-mini** (recommended - most cost-effective at $0.25/1M input tokens)
+7. Deployment name: `gpt-5-mini` (use this exact name for consistency)
 8. Click **"Create"**
 
 **Option B: Using Azure CLI**
 
 ```bash
-# Deploy claude-haiku-4-5 model
+# Deploy gpt-5-mini model (cost-optimized)
 az cognitiveservices account deployment create \
   --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
-  --deployment-name claude-haiku-4-5 \
-  --model-name claude-haiku-4-5 \
-  --model-version "2024-08-06" \
+  --deployment-name gpt-5-mini \
+  --model-name gpt-5-mini \
+  --model-version "2025-08-07" \
   --model-format OpenAI \
-  --sku-capacity 10 \
-  --sku-name Standard
+  --sku-capacity 1 \
+  --sku-name GlobalStandard
 ```
 
 **Set in .env**:
 ```bash
-AZURE_OPENAI_DEPLOYMENT_NAME=claude-haiku-4-5
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-5-mini
 AZURE_OPENAI_API_VERSION=2024-10-21
 ```
 
@@ -450,7 +450,7 @@ AZURE_REGION=eastus2
 
 # AZURE OPENAI
 AZURE_OPENAI_ENDPOINT=https://openai-cpo-poc-abc123.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=claude-haiku-4-5
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-5-mini
 AZURE_OPENAI_API_VERSION=2024-10-21
 AZURE_OPENAI_API_KEY=abc123def456...
 
@@ -733,7 +733,7 @@ Based on November 2025 pricing:
 
 | Service | Tier | Estimated Cost (1 week) |
 |---------|------|------------------------|
-| Azure OpenAI (claude-haiku-4-5) | S0 | $20-50 (depends on usage) |
+| Azure OpenAI (gpt-5-mini) | S0 | $5-15 (cost-optimized at $0.25/1M input tokens) |
 | Azure AI Search | Standard | ~$75/month (~$18/week) |
 | Content Safety | S0 | ~$5 (low volume) |
 | Azure ML | Basic | Free tier available |

@@ -124,12 +124,11 @@ messages = [
 response = client.chat.completions.create(
     model=deployment_name,
     messages=messages,
-    max_tokens=1000,
-    temperature=0.7,
-    top_p=0.9,
-    frequency_penalty=0.0,
-    presence_penalty=0.0,
-    stop=None
+    max_completion_tokens=1000  # gpt-5-mini uses max_completion_tokens
+    # Note: gpt-5-mini has limited parameter support:
+    # - temperature: only default (1.0) supported
+    # - top_p, frequency_penalty, presence_penalty: not supported
+    # - stop: supported
 )
 ```
 
@@ -163,14 +162,15 @@ class TokenTracker:
         self.total_input += prompt_tokens
         self.total_output += completion_tokens
     
-    def calculate_cost(self, model: str = "gpt-4") -> float:
+    def calculate_cost(self, model: str = "gpt-5-mini") -> float:
         """Calculate cost based on token usage."""
         PRICING = {
-            "gpt-4": {"input": 0.03, "output": 0.06},  # per 1K tokens
-            "gpt-4-turbo": {"input": 0.01, "output": 0.03}
+            "gpt-5-mini": {"input": 0.00025, "output": 0.002},  # per 1K tokens ($0.25/$2.00 per 1M)
+            "gpt-4o": {"input": 0.005, "output": 0.015},  # per 1K tokens ($5/$15 per 1M)
+            "gpt-4o-mini": {"input": 0.00015, "output": 0.0006}  # per 1K tokens
         }
         
-        price = PRICING.get(model, PRICING["gpt-4"])
+        price = PRICING.get(model, PRICING["gpt-5-mini"])
         cost_input = (self.total_input / 1000) * price["input"]
         cost_output = (self.total_output / 1000) * price["output"]
         return cost_input + cost_output

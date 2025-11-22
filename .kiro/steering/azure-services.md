@@ -18,7 +18,7 @@ The core engine for the Generation Agent. We use the **Generative AI** capabilit
 - **Resource Type**: `Microsoft.CognitiveServices/accounts`
 - **Python Package**: `openai>=1.55.0` (Using Azure Provider)
 - **API Version**: `2025-11-01-preview`
-- **Recommended Models**: `gpt-5-mini` or `gpt-4o`
+- **Recommended Models**: `gpt-5-mini` (cost-optimized at $0.25/1M input tokens, $2.00/1M output tokens)
 
 ### Environment Variables
 ```bash

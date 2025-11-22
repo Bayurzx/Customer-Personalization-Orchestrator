@@ -32,6 +32,7 @@ This document tracks all changes, decisions, and progress throughout the Custome
 4. **Safety Threshold**: Block content with severity > Medium (4)
 5. **Experiment Design**: 3 treatment arms + 1 control
 6. **Azure Services**: OpenAI + Cognitive Search + Content Safety
+7. **Model Choice**: gpt-5-mini for cost optimization ($0.25/1M input vs $5/1M for gpt-4o)
 
 **Deliverables**:
 - Complete project structure
@@ -290,6 +291,53 @@ To request changes to project scope or requirements:
 ## Updates
 
 *All project updates will be appended below with timestamp and description*
+
+### 2025-11-22 02:50: Cost Optimization - Switched to gpt-5-mini
+
+**Status**: ✅ Complete
+
+**Changes**:
+- Deployed gpt-5-mini model (version 2025-08-07) to Azure OpenAI resource
+- Updated all configuration files to use gpt-5-mini instead of gpt-4o
+- Modified API calls to use gpt-5-mini specific parameters:
+  - `max_completion_tokens` instead of `max_tokens`
+  - Removed temperature/top_p parameters (not supported by gpt-5-mini)
+- Updated cost calculations and estimates throughout codebase
+- Updated documentation in ENV_SETUP_GUIDE.md and steering files
+
+**Impact**:
+- **Massive cost reduction**: $0.25/1M input tokens vs $5/1M for gpt-4o (20x cheaper)
+- **Output cost**: $2.00/1M output tokens vs $15/1M for gpt-4o (7.5x cheaper)
+- **Estimated POC cost**: Reduced from $50-100 to $25-50 for 1 week
+- **Parameter limitations**: gpt-5-mini has fewer tuning options but sufficient for POC
+
+**Next Actions**:
+- ✅ All Azure services tested and working with gpt-5-mini
+- → Ready to proceed with Task 1.3: Sample Data Preparation
+
+### 2025-11-22 04:30: Azure Resource Provisioning Script - Converted to Bash
+
+**Status**: ✅ Complete
+
+**Changes**:
+- Converted `scripts/setup_azure_resources.py` to `scripts/setup_azure_resources.sh`
+- Implemented proper bash error handling with `set -euo pipefail`
+- Added fail-fast behavior - script exits immediately on any error
+- Made script fully idempotent - can be run multiple times safely
+- Added colored output and better logging functions
+- Improved error messages and user guidance
+- Script now properly handles all edge cases and prerequisites
+
+**Impact**:
+- **Robust error handling**: Script fails fast and provides clear error messages
+- **Idempotent execution**: Safe to run multiple times without side effects
+- **Better user experience**: Colored output and clear progress indicators
+- **Production ready**: Follows bash best practices for enterprise scripts
+
+**Next Actions**:
+- ✅ Bash script ready for Azure resource provisioning
+- → Users can now run `bash scripts/setup_azure_resources.sh` safely
+- → Ready to proceed with Task 1.2: Azure Resource Provisioning
 
 ### Update Template
 ```

@@ -137,10 +137,10 @@ deploy_openai_model() {
             --resource-group "$RESOURCE_GROUP" \
             --deployment-name "gpt-5-mini" \
             --model-name "gpt-5-mini" \
-            --model-version "2025-08-07" \
+            --model-version "2024-08-06" \
             --model-format OpenAI \
-            --sku-capacity 1 \
-            --sku-name GlobalStandard > /dev/null; then
+            --sku-capacity 10 \
+            --sku-name Standard > /dev/null; then
             log_success "Deployed gpt-5-mini model"
         else
             log_warning "Failed to deploy model automatically. You may need to deploy manually in Azure OpenAI Studio"

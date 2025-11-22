@@ -61,14 +61,20 @@ def test_openai():
         response = client.chat.completions.create(
             model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
             messages=[{"role": "user", "content": "Say 'Azure OpenAI connection successful'"}],
-            max_tokens=20,
-            temperature=0
+            max_completion_tokens=20
+            # Note: gpt-5-mini only supports default temperature (1)
         )
         
         result = response.choices[0].message.content.strip()
         print(f"✅ Azure OpenAI: {result}")
-        print(f"   Model: {os.getenv('AZURE_OPENAI_DEPLOYMENT_NAME')}")
+        print(f"   Model: {os.getenv('AZURE_OPENAI_DEPLOYMENT_NAME')} (cost-optimized)")
         print(f"   Tokens used: {response.usage.total_tokens}")
+        
+        # Calculate cost with gpt-5-mini pricing
+        input_cost = (response.usage.prompt_tokens / 1000) * 0.00025  # $0.25 per 1M tokens
+        output_cost = (response.usage.completion_tokens / 1000) * 0.002  # $2.00 per 1M tokens
+        total_cost = input_cost + output_cost
+        print(f"   Estimated cost: ${total_cost:.6f} (input: ${input_cost:.6f}, output: ${output_cost:.6f})")
         return True
         
     except Exception as e:
@@ -220,7 +226,8 @@ def main():
         
         print(f"\n💰 Cost Monitoring:")
         print(f"- Monitor usage in Azure Portal → Cost Management")
-        print(f"- Estimated POC cost: $50-100 for 1 week")
+        print(f"- Estimated POC cost: $25-50 for 1 week (using cost-optimized gpt-5-mini)")
+        print(f"- gpt-5-mini pricing: $0.25/1M input tokens, $2.00/1M output tokens")
         
         sys.exit(0)
     else:

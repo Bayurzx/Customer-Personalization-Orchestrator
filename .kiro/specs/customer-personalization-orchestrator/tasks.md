@@ -53,7 +53,7 @@ python -c "from azure.identity import DefaultAzureCredential; DefaultAzureCreden
 **Description**: Provision and configure required Azure services. You MUST check `docs/ENV_SETUP_GUIDE.md` to guide you.
 
 **Subtasks**:
-- Create Azure OpenAI resource and deploy claude-haiku-4-5 or gpt-5-mini model
+- Create Azure OpenAI resource and deploy gpt-5-mini model (cost-optimized)
 - Create Azure AI Search service
 - Create Azure AI Content Safety resource
 - Configure authentication (Managed Identity or API keys)

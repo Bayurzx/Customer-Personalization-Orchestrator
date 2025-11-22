@@ -52,8 +52,8 @@ def test_connection() -> str:
     response = client.chat.completions.create(
         model=deployment_name,
         messages=[{"role": "user", "content": "Say 'Connection successful'"}],
-        max_tokens=10,
-        temperature=0
+        max_completion_tokens=10
+        # Note: gpt-5-mini only supports default temperature (1)
     )
     
     return response.choices[0].message.content.strip()
