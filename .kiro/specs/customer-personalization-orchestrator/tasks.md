@@ -170,7 +170,7 @@ assert segments['customer_id'].is_unique
 ## Day 2: Content Retrieval & Indexing
 
 ### Task 2.1: Azure AI Search Index Setup
-- [ ] **Complete Task 2.1**
+- [x] **Complete Task 2.1**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
