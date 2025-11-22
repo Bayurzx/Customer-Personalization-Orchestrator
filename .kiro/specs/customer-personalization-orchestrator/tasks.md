@@ -151,7 +151,7 @@ assert segments['customer_id'].is_unique
 **Description**: Analyze segment quality and document findings.
 
 **Subtasks**:
-- Create `notebooks/02_segmentation_analysis.ipynb`
+- Create `notebooks/02_segmentation_analysis.ipynb` (Create .py file then convert it with jupytext like `notebooks/py/01_data_exploration.py`)
 - Visualize segment distribution
 - Calculate segment statistics (mean, median per feature)
 - Validate segments are balanced (no segment <10% of total)
