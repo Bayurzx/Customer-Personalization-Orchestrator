@@ -323,7 +323,7 @@ assert all('document_id' in r for r in results)
 ---
 
 ### Task 3.2: Azure OpenAI Integration
-- [ ] **Complete Task 3.2**
+- [x] **Complete Task 3.2**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
