@@ -42,7 +42,10 @@ class ExperimentationAgent:
         Args:
             config: Optional configuration dictionary
         """
-        self.config = config or {}
+        # Normalize configuration to fix structure issues
+        raw_config = config or {}
+        self.config = self._normalize_config(raw_config)
+        
         self.experiment_id = None
         self.assignments = []
         self.engagement_data = []
@@ -53,7 +56,61 @@ class ExperimentationAgent:
         random.seed(random_seed)
         np.random.seed(random_seed)
         
-        logger.info("ExperimentationAgent initialized")
+        logger.info("ExperimentationAgent initialized with normalized config")
+    
+    def _normalize_config(self, config: Dict) -> Dict:
+        """
+        Normalize configuration structure for backward compatibility.
+        
+        This method fixes the configuration issues identified in Task 4.3:
+        - Moves experiment.simulation to top-level simulation
+        - Adds missing default values
+        - Ensures consistent structure
+        
+        Args:
+            config: Raw configuration dictionary
+            
+        Returns:
+            Normalized configuration dictionary
+        """
+        normalized = config.copy()
+        
+        # Fix nested experiment.simulation structure
+        if 'experiment' in config and 'simulation' in config['experiment']:
+            normalized.setdefault('simulation', config['experiment']['simulation'])
+        
+        # Ensure simulation config exists with defaults
+        if 'simulation' not in normalized:
+            normalized['simulation'] = {}
+        
+        sim_config = normalized['simulation']
+        
+        # Add default baseline rates
+        sim_config.setdefault('baseline_rates', {
+            'open_rate': 0.25,
+            'click_rate': 0.05,
+            'conversion_rate': 0.01
+        })
+        
+        # Add default uplift config
+        sim_config.setdefault('expected_uplift', {
+            'mean': 0.15,
+            'std_dev': 0.05,
+            'min_uplift': 0.05,
+            'max_uplift': 0.30
+        })
+        
+        # Add other simulation defaults
+        sim_config.setdefault('noise_factor', 0.02)
+        sim_config.setdefault('random_seed', 42)
+        
+        # Ensure segments config exists
+        normalized.setdefault('segments', {})
+        
+        # Add top-level random seed
+        normalized.setdefault('random_seed', 42)
+        
+        return normalized
     
     def design_experiment(self, variants: List[Dict], config: Dict) -> Dict:
         """
