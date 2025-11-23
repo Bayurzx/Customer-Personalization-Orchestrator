@@ -1,15 +1,81 @@
 #!/usr/bin/env bash
-# search.sh - Manage Azure Cognitive Search tier + deletion + .env updates
-# Usage:
-#   ./search.sh check
-#   ./search.sh delete [--force]
-#   ./search.sh switch <free|basic|standard> [--force] [--replicas N] [--partitions M] [--index-name NAME]
+# manage_search.sh - Azure Cognitive Search Management Tool
 #
-# Defaults (change via env or flags):
-#   AZURE_RESOURCE_GROUP (default: rg-poc)
-#   AZURE_REGION (default: eastus2)
-#   AZURE_SEARCH_SERVICE (default: search-cpo1337)
-#   .env file in current directory (optional, updated with new keys)
+# DESCRIPTION:
+#   Manage Azure Cognitive Search service tiers to control costs. Easily switch between
+#   Free ($0/month), Basic (~$250/month), and Standard (~$2500/month) tiers.
+#   Automatically updates .env file with new endpoints and keys after tier changes.
+#
+# FEATURES:
+#   - Check current service tier and configuration
+#   - Switch between tiers (Free/Basic/Standard) with proper scaling options
+#   - Delete service to stop billing completely
+#   - Cost estimation for each tier before switching
+#   - Backup reminders and data loss warnings
+#   - Index recreation helper for post-switch content reindexing
+#   - Automatic .env file updates with new credentials
+#   - Interactive confirmations with --force override
+#   - Comprehensive error handling and progress tracking
+#
+# USAGE:
+#   ./manage_search.sh check
+#   ./manage_search.sh delete [--force]
+#   ./manage_search.sh switch <free|basic|standard> [OPTIONS]
+#   ./manage_search.sh reindex [--batch-size N]
+#
+# OPTIONS:
+#   --force                Skip all confirmation prompts
+#   --replicas N          Number of replicas (Basic: max 1, Standard: max 12)
+#   --partitions M        Number of partitions (Basic: max 1, Standard: max 12)
+#   --index-name NAME     Set new index name in .env
+#   --rg RG              Override resource group
+#   --region REGION      Override Azure region
+#   --service NAME       Override service name
+#   --env-file FILE      Override .env file path (default: .env)
+#   --batch-size N       Documents per batch for reindexing (default: 100)
+#
+# EXAMPLES:
+#   # Check current service status and costs
+#   ./manage_search.sh check
+#
+#   # Switch to Free tier (development, $0/month)
+#   ./manage_search.sh switch free
+#
+#   # Switch to Basic tier (small production, ~$250/month)
+#   ./manage_search.sh switch basic
+#
+#   # Switch to Standard with scaling (large production, ~$2500+/month)
+#   ./manage_search.sh switch standard --replicas 3 --partitions 2
+#
+#   # Delete service completely (stops all billing)
+#   ./manage_search.sh delete
+#
+#   # Force operations without prompts (automation)
+#   ./manage_search.sh switch free --force
+#   ./manage_search.sh delete --force
+#
+#   # Reindex content after tier switch
+#   ./manage_search.sh reindex --batch-size 50
+#
+#   # Use custom configuration
+#   ./manage_search.sh switch standard --rg my-rg --service my-search --env-file .env.prod
+#
+# COST ESTIMATES (as of November 2025):
+#   Free:     $0/month      - 50MB storage, 3 indexes, 10K docs, shared resources
+#   Basic:    ~$250/month   - 2GB storage, 15 indexes, 1M docs, dedicated resources
+#   Standard: ~$2500/month  - 25GB storage, 200 indexes, 15M docs, scalable
+#
+# DEFAULTS (override via environment variables or flags):
+#   AZURE_RESOURCE_GROUP=rg-poc
+#   AZURE_REGION=eastus2
+#   AZURE_SEARCH_SERVICE=search-cpo1337
+#   ENV_FILE=.env
+#
+# REQUIREMENTS:
+#   - Azure CLI installed and authenticated (az login)
+#   - Subscription set (az account set --subscription <id>)
+#   - Contributor access to resource group
+#   - Python environment for reindexing (optional)
 
 set -euo pipefail
 
@@ -37,6 +103,7 @@ PARTITIONS=1
 NEW_INDEX_NAME=""
 ACTION=""
 TARGET_TIER=""
+BATCH_SIZE=100
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -44,11 +111,12 @@ while [[ $# -gt 0 ]]; do
     --replicas) REPLICAS="$2"; shift 2 ;;
     --partitions) PARTITIONS="$2"; shift 2 ;;
     --index-name) NEW_INDEX_NAME="$2"; shift 2 ;;
+    --batch-size) BATCH_SIZE="$2"; shift 2 ;;
     --rg) RG="$2"; shift 2 ;;
     --region) REGION="$2"; shift 2 ;;
     --service) SERVICE="$2"; shift 2 ;;
     --env-file) ENV_FILE="$2"; shift 2 ;;
-    check|delete|switch) ACTION="$1"; shift ;;
+    check|delete|switch|reindex) ACTION="$1"; shift ;;
     free|basic|standard) TARGET_TIER="$1"; shift ;;
     *) die "Unknown argument: $1" ;;
   esac
@@ -56,22 +124,64 @@ done
 
 if [[ -z "$ACTION" ]]; then
   cat <<EOF
-Usage:
-  $0 check
-  $0 delete [--force] [--rg RG] [--service NAME] [--env-file .env]
-  $0 switch <free|basic|standard> [--force] [--replicas N] [--partitions M] [--index-name NAME] [--rg RG] [--service NAME]
+Azure Cognitive Search Management Tool
 
-Defaults:
+USAGE:
+  $0 check                                    # Check current service status
+  $0 delete [--force]                        # Delete service (stops billing)
+  $0 switch <tier> [OPTIONS]                 # Switch to different tier
+  $0 reindex [--batch-size N]                # Reindex content after tier switch
+
+TIERS:
+  free      \$0/month      - 50MB, 3 indexes, development only
+  basic     ~\$250/month   - 2GB, 15 indexes, small production
+  standard  ~\$2500/month  - 25GB, 200 indexes, scalable production
+
+OPTIONS:
+  --force                Skip confirmations
+  --replicas N          Number of replicas (1-12, tier dependent)
+  --partitions M        Number of partitions (1-12, tier dependent)
+  --index-name NAME     Set new index name in .env
+  --batch-size N        Documents per batch for reindexing (default: 100)
+
+EXAMPLES:
+  # Check status and costs
+  $0 check
+
+  # Development (free)
+  $0 switch free
+
+  # Small production
+  $0 switch basic
+
+  # Large production with scaling
+  $0 switch standard --replicas 3 --partitions 2
+
+  # Stop billing completely
+  $0 delete
+
+  # Reindex after tier change
+  $0 reindex
+
+CURRENT DEFAULTS:
   Resource group: ${RG}
   Region: ${REGION}
   Service name: ${SERVICE}
   Env file: ${ENV_FILE}
 
-Notes:
-  - "switch" will DELETE and then CREATE the service at the requested tier.
-  - Switching to "free" will remove all indexes/data. A warning is shown.
-  - After creation the script updates ${ENV_FILE} (AZURE_SEARCH_ENDPOINT, ADMIN/QUERY keys).
-  - Requires: Azure CLI authenticated (az login) and subscription set.
+COPY-PASTE EXAMPLES:
+  ./manage_search.sh check
+  ./manage_search.sh switch free
+  ./manage_search.sh switch basic
+  ./manage_search.sh switch standard --replicas 2 --partitions 2
+  ./manage_search.sh delete --force
+  ./manage_search.sh reindex --batch-size 50
+
+NOTES:
+  - Switching tiers DELETES and RECREATES the service (data loss warning shown)
+  - Free tier has strict limits but costs \$0 (perfect for development)
+  - Script automatically updates ${ENV_FILE} with new endpoints and keys
+  - Requires Azure CLI authentication: az login && az account set --subscription <id>
 EOF
   exit 1
 fi
@@ -188,6 +298,83 @@ confirm() {
   return 0
 }
 
+show_cost_estimate() {
+  local tier="$1"
+  local replicas="$2"
+  local partitions="$3"
+  
+  echo
+  info "Cost Estimate for $tier tier:"
+  case "${tier,,}" in
+    free)
+      echo "  Monthly Cost: \$0"
+      echo "  Storage: 50MB"
+      echo "  Max Indexes: 3"
+      echo "  Max Documents: 10,000"
+      echo "  Search Units: Shared"
+      echo "  Replicas: 0 (not supported)"
+      echo "  Partitions: 1 (fixed)"
+      ;;
+    basic)
+      echo "  Monthly Cost: ~\$250"
+      echo "  Storage: 2GB"
+      echo "  Max Indexes: 15"
+      echo "  Max Documents: 1,000,000"
+      echo "  Search Units: 1 (fixed)"
+      echo "  Replicas: 1 (max)"
+      echo "  Partitions: 1 (max)"
+      ;;
+    standard)
+      local units=$((replicas * partitions))
+      local monthly_cost=$((units * 250))
+      echo "  Monthly Cost: ~\$${monthly_cost} (${units} search units × \$250)"
+      echo "  Storage: 25GB per partition"
+      echo "  Max Indexes: 200"
+      echo "  Max Documents: 15,000,000"
+      echo "  Search Units: ${units} (${replicas} replicas × ${partitions} partitions)"
+      echo "  Replicas: ${replicas} (max 12)"
+      echo "  Partitions: ${partitions} (max 12)"
+      ;;
+  esac
+  echo
+}
+
+show_backup_warning() {
+  warn "BACKUP REMINDER:"
+  warn "Switching tiers will DELETE all indexes and documents."
+  warn "If you have important data, consider:"
+  warn "  1. Export your index schema and documents"
+  warn "  2. Save any custom scoring profiles or synonyms"
+  warn "  3. Document your current configuration"
+  warn "  4. Use 'reindex' command after tier switch to restore content"
+  echo
+}
+
+reindex_content() {
+  info "Reindexing content after tier switch..."
+  
+  # Check if Python indexing script exists
+  if [[ -f "scripts/index_content.py" ]]; then
+    info "Found indexing script, running with batch size ${BATCH_SIZE}..."
+    if command -v python >/dev/null 2>&1; then
+      python scripts/index_content.py --batch-size "$BATCH_SIZE" --verbose
+      ok "Reindexing completed successfully"
+    else
+      warn "Python not found. Please run manually:"
+      echo "  python scripts/index_content.py --batch-size $BATCH_SIZE --verbose"
+    fi
+  else
+    warn "Indexing script not found at scripts/index_content.py"
+    info "To reindex your content manually:"
+    echo "  1. Ensure your Azure Search service is running"
+    echo "  2. Run your content indexing pipeline"
+    echo "  3. Verify indexes are created and populated"
+    echo
+    info "If you have the indexing script, you can run:"
+    echo "  python scripts/index_content.py --batch-size $BATCH_SIZE"
+  fi
+}
+
 # ---------- Main actions ----------
 az_check_cli
 check_resource_group
@@ -199,6 +386,9 @@ fi
 if ! [[ "$PARTITIONS" =~ ^[0-9]+$ ]] || [[ "$PARTITIONS" -lt 1 ]]; then
   die "--partitions must be a positive integer"
 fi
+if ! [[ "$BATCH_SIZE" =~ ^[0-9]+$ ]] || [[ "$BATCH_SIZE" -lt 1 ]]; then
+  die "--batch-size must be a positive integer"
+fi
 
 case "$ACTION" in
   check)
@@ -207,14 +397,24 @@ case "$ACTION" in
       warn "Service '$SERVICE' not found in resource group '$RG'."
       echo "Resource group: $RG"
       echo "Region: $REGION"
+      show_cost_estimate "free" 1 1
+      show_cost_estimate "basic" 1 1
+      show_cost_estimate "standard" 2 1
       exit 0
     fi
     echo "Service: $SERVICE"
     echo "Resource group: $RG"
     echo "Region: $REGION"
     echo "Current tier (sku): $CURRENT"
-    # show some metrics
-    az search service show --name "$SERVICE" --resource-group "$RG" --query "{name:name, hostName:hostName, sku:sku, provisioningState:provisioningState, replicaCount:replicaCount, partitionCount:partitionCount}" -o json
+    
+    # Get current configuration
+    service_info=$(az search service show --name "$SERVICE" --resource-group "$RG" --query "{name:name, hostName:hostName, sku:sku, provisioningState:provisioningState, replicaCount:replicaCount, partitionCount:partitionCount}" -o json)
+    echo "$service_info"
+    
+    # Show cost estimate for current tier
+    current_replicas=$(echo "$service_info" | grep -o '"replicaCount":[0-9]*' | cut -d: -f2)
+    current_partitions=$(echo "$service_info" | grep -o '"partitionCount":[0-9]*' | cut -d: -f2)
+    show_cost_estimate "$CURRENT" "${current_replicas:-1}" "${current_partitions:-1}"
     ;;
 
   delete)
@@ -249,6 +449,12 @@ case "$ACTION" in
     if [[ "$tier" != "free" && "$tier" != "basic" && "$tier" != "standard" ]]; then
       die "Unknown tier: $TARGET_TIER. Allowed: free, basic, standard"
     fi
+
+    # Show cost estimate for target tier
+    show_cost_estimate "$tier" "$REPLICAS" "$PARTITIONS"
+    
+    # Show backup warning
+    show_backup_warning
 
     # Strong warning for free
     if [[ "$tier" == "free" ]]; then
@@ -337,6 +543,29 @@ case "$ACTION" in
     else
       echo " - Existing AZURE_SEARCH_INDEX_NAME preserved in ${ENV_FILE} (or set if absent)."
     fi
+    
+    # Offer to reindex content
+    echo
+    info "Service is ready. You may want to reindex your content now."
+    if confirm "Run content reindexing now?"; then
+      reindex_content
+    else
+      info "To reindex later, run: $0 reindex --batch-size $BATCH_SIZE"
+    fi
+    ;;
+
+  reindex)
+    CURRENT=$(get_current_tier)
+    if [[ "$CURRENT" == "NotFound" ]]; then
+      die "Service '$SERVICE' not found. Create a service first with: $0 switch <tier>"
+    fi
+    
+    info "Current service: $SERVICE (tier: $CURRENT)"
+    if ! confirm "Reindex content with batch size $BATCH_SIZE?"; then
+      die "Aborted by user."
+    fi
+    
+    reindex_content
     ;;
 
   *)
@@ -345,3 +574,10 @@ case "$ACTION" in
 esac
 
 # End of script
+
+# COST MANAGEMENT TIPS:
+# 1. Use Free tier for development ($0/month)
+# 2. Use Basic tier for small production workloads (~$250/month)
+# 3. Delete service when not in use to stop billing completely
+# 4. Monitor usage in Azure portal to optimize tier selection
+# 5. Standard tier costs scale with replicas × partitions × $250/month
