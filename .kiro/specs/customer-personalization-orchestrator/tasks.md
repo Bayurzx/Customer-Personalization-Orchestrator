@@ -422,7 +422,7 @@ assert len(variant['citations']) >= 1
 ---
 
 ### Task 3.5: Content Safety Integration
-- [ ] **Complete Task 3.5**
+- [x] **Complete Task 3.5**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  

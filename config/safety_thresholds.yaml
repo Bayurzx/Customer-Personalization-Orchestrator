@@ -1,0 +1,42 @@
+# Safety Policy Configuration
+# Customer Personalization Orchestrator
+# Last updated: November 23, 2025
+
+safety_policy:
+  # Severity threshold - block if any category severity > Medium (4)
+  threshold: 4
+  
+  # Content categories to check
+  categories:
+    - hate
+    - violence
+    - self_harm
+    - sexual
+  
+  # Severity level definitions (Azure AI Content Safety)
+  severity_levels:
+    safe: 0
+    low: 2
+    medium: 4
+    high: 6
+  
+  # Action mapping by severity level
+  action_by_severity:
+    0: "approve"      # Safe
+    2: "approve"      # Low
+    4: "block"        # Medium
+    6: "block"        # High
+  
+  # Audit logging configuration
+  audit_logging:
+    enabled: true
+    log_file: "logs/safety_audit.log"
+    format: "csv"
+    include_content: false  # Don't log actual content for privacy
+  
+  # Retry configuration for transient failures
+  retry_config:
+    max_attempts: 3
+    backoff_multiplier: 1
+    min_wait_seconds: 2
+    max_wait_seconds: 10
