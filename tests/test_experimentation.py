@@ -215,7 +215,11 @@ class TestExperimentationAgent:
         """Test agent initialization with default config."""
         agent = ExperimentationAgent()
         
-        assert agent.config == {}
+        # Config should be normalized with defaults
+        assert 'simulation' in agent.config
+        assert 'baseline_rates' in agent.config['simulation']
+        assert 'segments' in agent.config
+        assert 'random_seed' in agent.config
         assert agent.experiment_id is None
     
     def test_design_experiment(self, sample_variants, sample_config):

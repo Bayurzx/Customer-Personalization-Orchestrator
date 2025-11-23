@@ -604,7 +604,11 @@ class ExperimentationAgent:
                 'p_value': 1.0,
                 'significant': False,
                 'test_type': 'failed',
-                'error': str(e)
+                'error': str(e),
+                'confidence_interval': {
+                    'lower': 0.0,
+                    'upper': 0.0
+                }
             }
     
     def _calculate_segment_breakdown(self, engagement_data: List[Dict]) -> List[Dict]:
