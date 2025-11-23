@@ -35,7 +35,8 @@ FORCE=0
 REPLICAS=1
 PARTITIONS=1
 NEW_INDEX_NAME=""
-ARGS=()
+ACTION=""
+TARGET_TIER=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -47,13 +48,13 @@ while [[ $# -gt 0 ]]; do
     --region) REGION="$2"; shift 2 ;;
     --service) SERVICE="$2"; shift 2 ;;
     --env-file) ENV_FILE="$2"; shift 2 ;;
-    check|delete|switch) ARGS+=("$1"); shift ;;
-    free|basic|standard) ARGS+=("$1"); shift ;;
+    check|delete|switch) ACTION="$1"; shift ;;
+    free|basic|standard) TARGET_TIER="$1"; shift ;;
     *) die "Unknown argument: $1" ;;
   esac
 done
 
-if [[ ${#ARGS[@]} -eq 0 ]]; then
+if [[ -z "$ACTION" ]]; then
   cat <<EOF
 Usage:
   $0 check
@@ -75,9 +76,6 @@ EOF
   exit 1
 fi
 
-ACTION="${ARGS[0]}"
-TARGET_TIER="${ARGS[1]:-}"
-
 # ---------- AZ helpers ----------
 az_check_cli() {
   if ! command -v az >/dev/null 2>&1; then
@@ -86,6 +84,12 @@ az_check_cli() {
   # Basic check that user is logged in and subscription is set
   if ! az account show >/dev/null 2>&1; then
     die "Not logged in to Azure CLI. Run 'az login' and set the subscription with 'az account set --subscription <id>'."
+  fi
+}
+
+check_resource_group() {
+  if ! az group show --name "$RG" >/dev/null 2>&1; then
+    die "Resource group '$RG' not found or no access"
   fi
 }
 
@@ -107,18 +111,17 @@ wait_for_provisioning() {
   local waited=0
   local interval=5
   info "Waiting for service '$SERVICE' provisioningState == $target_state ..."
-  while true; do
+  
+  while [[ $waited -lt $((timeout_minutes*60)) ]]; do
     state=$(az search service show --name "$SERVICE" --resource-group "$RG" --query "provisioningState" -o tsv 2>/dev/null || echo "")
     if [[ "${state,,}" == "${target_state,,}" ]]; then
       ok "Service provisioningState = $state"
-      break
-    fi
-    if [[ $waited -ge $((timeout_minutes*60)) ]]; then
-      die "Timeout waiting for provisioningState == $target_state (last state: $state)"
+      return 0
     fi
     sleep $interval
     waited=$((waited + interval))
   done
+  die "Timeout waiting for provisioningState == $target_state (last state: $state)"
 }
 
 get_endpoint_and_keys() {
@@ -130,11 +133,21 @@ get_endpoint_and_keys() {
   fi
   endpoint="https://${host}"
 
-  # Admin key
-  admin_key=$(az search admin-key show --service-name "$SERVICE" --resource-group "$RG" --query "primaryKey" -o tsv 2>/dev/null || echo "")
-  # Query key (may be empty if none)
-  # Try list, take first
+  # Admin key with better error handling
+  admin_key=$(az search admin-key show --service-name "$SERVICE" --resource-group "$RG" --query "primaryKey" -o tsv 2>/dev/null)
+  if [[ -z "$admin_key" ]]; then
+    die "Failed to retrieve admin key for service $SERVICE"
+  fi
+  
+  # Query key creation if missing
   query_key=$(az search query-key list --service-name "$SERVICE" --resource-group "$RG" --query "[0].key" -o tsv 2>/dev/null || echo "")
+  if [[ -z "$query_key" ]]; then
+    info "No query key found, creating default..."
+    query_key=$(az search query-key create --service-name "$SERVICE" --resource-group "$RG" --name "default-query-key" --query "key" -o tsv)
+    if [[ -z "$query_key" ]]; then
+      die "Failed to create query key"
+    fi
+  fi
 
   echo "$endpoint" "$admin_key" "$query_key"
 }
@@ -149,6 +162,10 @@ set_env_var() {
       # Escape slashes in value
       esc_value=$(printf '%s\n' "$value" | sed -e 's/[\/&]/\\&/g')
       sed -i.bak -E "s~^(${key}=).*~\1${esc_value}~" "$ENV_FILE"
+      # Clean up backup file
+      if [[ -f "${ENV_FILE}.bak" ]]; then
+        rm "${ENV_FILE}.bak"
+      fi
     else
       echo "${key}=${value}" >> "$ENV_FILE"
     fi
@@ -173,6 +190,15 @@ confirm() {
 
 # ---------- Main actions ----------
 az_check_cli
+check_resource_group
+
+# Validate numeric inputs
+if ! [[ "$REPLICAS" =~ ^[0-9]+$ ]] || [[ "$REPLICAS" -lt 1 ]]; then
+  die "--replicas must be a positive integer"
+fi
+if ! [[ "$PARTITIONS" =~ ^[0-9]+$ ]] || [[ "$PARTITIONS" -lt 1 ]]; then
+  die "--partitions must be a positive integer"
+fi
 
 case "$ACTION" in
   check)
@@ -262,17 +288,22 @@ case "$ACTION" in
     # For free, do not pass replica/partition counts (not supported)
     if [[ "$tier" == "free" ]]; then
       az search service create --name "$SERVICE" --resource-group "$RG" --location "$REGION" --sku Free -o none
-    else
-      # Basic or Standard: set sku name appropriately
-      sku_name=""
-      if [[ "$tier" == "basic" ]]; then
-        sku_name="Basic"
-        # Basic doesn't support scaling beyond 1x1 in many cases; we'll still set partition/replica if passed as 1
-        az search service create --name "$SERVICE" --resource-group "$RG" --location "$REGION" --sku "$sku_name" --partition-count "$PARTITIONS" --replica-count "$REPLICAS" -o none
-      else
-        sku_name="Standard"
-        az search service create --name "$SERVICE" --resource-group "$RG" --location "$REGION" --sku "$sku_name" --partition-count "$PARTITIONS" --replica-count "$REPLICAS" -o none
+    elif [[ "$tier" == "basic" ]]; then
+      # Basic doesn't support scaling beyond 1x1
+      if [[ "$PARTITIONS" -gt 1 || "$REPLICAS" -gt 1 ]]; then
+        warn "Basic tier only supports 1 partition and 1 replica. Adjusting to defaults."
+        PARTITIONS=1
+        REPLICAS=1
       fi
+      az search service create --name "$SERVICE" --resource-group "$RG" --location "$REGION" --sku "Basic" --partition-count "$PARTITIONS" --replica-count "$REPLICAS" -o none
+    else
+      # Standard tier
+      az search service create --name "$SERVICE" --resource-group "$RG" --location "$REGION" --sku "Standard" --partition-count "$PARTITIONS" --replica-count "$REPLICAS" -o none
+    fi
+
+    # Verify service was created
+    if [[ $(get_current_tier) == "NotFound" ]]; then
+      die "Service creation failed - service not found after create command"
     fi
 
     # Wait for succeeded
@@ -282,11 +313,7 @@ case "$ACTION" in
     read -r endpoint admin_key query_key < <(get_endpoint_and_keys)
     ok "Endpoint: $endpoint"
     ok "Admin key length: ${#admin_key}"
-    if [[ -z "$query_key" ]]; then
-      warn "No query key found. Creating a new query key 'default-query-key'..."
-      query_key=$(az search query-key create --service-name "$SERVICE" --resource-group "$RG" --name "default-query-key" --query "key" -o tsv)
-      ok "Created query key (length ${#query_key})"
-    fi
+    ok "Query key length: ${#query_key}"
 
     # Update .env
     info "Updating ${ENV_FILE} with new values..."
