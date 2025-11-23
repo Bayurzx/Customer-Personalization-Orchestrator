@@ -269,7 +269,7 @@ assert all('document_id' in r for r in results)
 ---
 
 ### Task 2.4: Retrieval Quality Testing
-- [ ] **Complete Task 2.4**
+- [x] **Complete Task 2.4**
 
 **Priority**: P1 (Important)  
 **Estimated Time**: 1 hour  
@@ -278,7 +278,7 @@ assert all('document_id' in r for r in results)
 **Description**: Test retrieval quality across different segment types.
 
 **Subtasks**:
-- Create `notebooks/03_retrieval_testing.ipynb`
+- Create `notebooks/03_retrieval_testing.ipynb`  (Create .py file then convert it with jupytext like `notebooks/py/01_data_exploration.py`)
 - Test retrieval for each segment type
 - Visualize relevance scores distribution
 - Manually review top 3 results per segment for quality
