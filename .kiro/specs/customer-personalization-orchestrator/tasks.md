@@ -53,7 +53,7 @@ python -c "from azure.identity import DefaultAzureCredential; DefaultAzureCreden
 **Description**: Provision and configure required Azure services. You MUST check `docs/ENV_SETUP_GUIDE.md` to guide you.
 
 **Subtasks**:
-- Create Azure OpenAI resource and deploy gpt-5-mini model (cost-optimized)
+- Create Azure OpenAI resource and deploy gpt-4o-mini model (cost-optimized)
 - Create Azure AI Search service
 - Create Azure AI Content Safety resource
 - Configure authentication (Managed Identity or API keys)
@@ -297,7 +297,7 @@ assert all('document_id' in r for r in results)
 ## Day 3: Message Generation & Safety
 
 ### Task 3.1: Prompt Template Creation
-- [ ] **Complete Task 3.1**
+- [x] **Complete Task 3.1**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1 hour  

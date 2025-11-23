@@ -122,26 +122,26 @@ create_openai_resource() {
 
 # Deploy OpenAI model
 deploy_openai_model() {
-    log_step "Deploying gpt-5-mini model..."
+    log_step "Deploying gpt-4o-mini model..."
     
     # Check if deployment already exists
     if az cognitiveservices account deployment show \
         --name "$OPENAI_NAME" \
         --resource-group "$RESOURCE_GROUP" \
-        --deployment-name "gpt-5-mini" &> /dev/null; then
-        log_success "Model deployment gpt-5-mini already exists"
+        --deployment-name "gpt-4o-mini" &> /dev/null; then
+        log_success "Model deployment gpt-4o-mini already exists"
     else
-        log_info "Deploying gpt-5-mini model (this may take a few minutes)..."
+        log_info "Deploying gpt-4o-mini model (this may take a few minutes)..."
         if az cognitiveservices account deployment create \
             --name "$OPENAI_NAME" \
             --resource-group "$RESOURCE_GROUP" \
-            --deployment-name "gpt-5-mini" \
-            --model-name "gpt-5-mini" \
+            --deployment-name "gpt-4o-mini" \
+            --model-name "gpt-4o-mini" \
             --model-version "2024-08-06" \
             --model-format OpenAI \
             --sku-capacity 10 \
             --sku-name Standard > /dev/null; then
-            log_success "Deployed gpt-5-mini model"
+            log_success "Deployed gpt-4o-mini model"
         else
             log_warning "Failed to deploy model automatically. You may need to deploy manually in Azure OpenAI Studio"
         fi
@@ -278,7 +278,7 @@ update_env_file() {
     update_env_var "AZURE_REGION" "$LOCATION"
     update_env_var "AZURE_OPENAI_ENDPOINT" "$OPENAI_ENDPOINT"
     update_env_var "AZURE_OPENAI_API_KEY" "$OPENAI_API_KEY"
-    update_env_var "AZURE_OPENAI_DEPLOYMENT_NAME" "gpt-5-mini"
+    update_env_var "AZURE_OPENAI_DEPLOYMENT_NAME" "gpt-4o-mini"
     update_env_var "AZURE_OPENAI_API_VERSION" "2024-10-21"
     update_env_var "AZURE_SEARCH_ENDPOINT" "$SEARCH_ENDPOINT"
     update_env_var "AZURE_SEARCH_ADMIN_KEY" "$SEARCH_ADMIN_KEY"
@@ -307,8 +307,8 @@ azure_openai:
   deployment_name: \${AZURE_OPENAI_DEPLOYMENT_NAME}
   api_version: \${AZURE_OPENAI_API_VERSION}
   max_completion_tokens: 1000
-  # Note: gpt-5-mini has limited parameter support
-  # temperature, top_p, frequency_penalty, presence_penalty not supported
+  # Note: gpt-4o-mini supports full Chat Completions API
+  # All standard parameters supported
 
 azure_search:
   endpoint: \${AZURE_SEARCH_ENDPOINT}
@@ -382,7 +382,7 @@ main() {
     echo "3. Proceed to Task 1.3: Sample Data Preparation"
     
     echo ""
-    echo "💰 Estimated Cost: \$25-50 for 1 week POC (with gpt-5-mini)"
+    echo "💰 Estimated Cost: \$15-30 for 1 week POC (with gpt-4o-mini)"
     echo "💡 Monitor usage in Azure Portal → Cost Management"
 }
 

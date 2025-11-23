@@ -18,7 +18,7 @@ This document defines the technology stack, development tools, coding standards,
 
 | Service | Purpose | Package | Version |
 |---------|---------|---------|---------|
-| **Azure OpenAI** | Message generation | `openai` | >=1.55.0 |
+| **Azure OpenAI** | Message generation (Responses API) | `openai` | >=1.55.0 |
 | **Azure AI Search** | Content retrieval | `azure-search-documents` | >=11.6.0 |
 | **Azure AI Content Safety** | Safety enforcement | `azure-ai-contentsafety` | >=1.0.0 |
 | **Azure Machine Learning** | Experiment tracking | `azure-ai-ml`, `mlflow` | Latest |
@@ -624,13 +624,13 @@ class TokenTracker:
         self.total_cost = 0.0
         self.call_count = 0
     
-    def record_call(self, tokens: int, model: str = "gpt-5-mini"):
+    def record_call(self, tokens: int, model: str = "gpt-4o-mini"):
         """Record a single API call."""
         self.total_tokens += tokens
         self.call_count += 1
         
-        # GPT-5-mini pricing (November 2025 estimates)
-        cost_per_token = 0.00003  # ~$0.03 per 1K tokens
+        # GPT-4o-mini pricing (November 2025 estimates)
+        cost_per_token = 0.00015  # ~$0.15 per 1K tokens
         self.total_cost += tokens * cost_per_token
     
     def summary(self) -> dict:

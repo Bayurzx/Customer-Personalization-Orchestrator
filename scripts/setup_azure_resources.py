@@ -155,7 +155,7 @@ def create_openai_resource(name: str, resource_group: str, location: str) -> Opt
         print(f"❌ Error creating Azure OpenAI resource: {e}")
         return None
 
-def deploy_openai_model(resource_name: str, resource_group: str, deployment_name: str = "gpt-5-mini") -> bool:
+def deploy_openai_model(resource_name: str, resource_group: str, deployment_name: str = "gpt-4o-mini") -> bool:
     """Deploy model to Azure OpenAI resource."""
     try:
         print(f"\n🚀 Deploying model: {deployment_name}")
@@ -179,7 +179,7 @@ def deploy_openai_model(resource_name: str, resource_group: str, deployment_name
             "--name", resource_name,
             "--resource-group", resource_group,
             "--deployment-name", deployment_name,
-            "--model-name", "gpt-5-mini",
+            "--model-name", "gpt-4o-mini",
             "--model-version", "2024-08-06",
             "--model-format", "OpenAI",
             "--sku-capacity", "10",
@@ -375,7 +375,7 @@ def update_env_file(resources: Dict) -> bool:
             updates.update({
                 "AZURE_OPENAI_ENDPOINT": resources["openai"]["endpoint"],
                 "AZURE_OPENAI_API_KEY": resources["openai"]["api_key"],
-                "AZURE_OPENAI_DEPLOYMENT_NAME": "gpt-5-mini",
+                "AZURE_OPENAI_DEPLOYMENT_NAME": "gpt-4o-mini",
                 "AZURE_OPENAI_API_VERSION": "2024-10-21"
             })
         
@@ -511,7 +511,7 @@ def main():
     if openai_info:
         resources["openai"] = openai_info
         # Deploy model
-        deploy_openai_model(openai_name, resource_group, "gpt-5-mini")
+        deploy_openai_model(openai_name, resource_group, "gpt-4o-mini")
     else:
         print("⚠️ Failed to create Azure OpenAI resource")
     

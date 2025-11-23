@@ -17,34 +17,47 @@ The core engine for the Generation Agent. We use the **Generative AI** capabilit
 ### Configuration
 - **Resource Type**: `Microsoft.CognitiveServices/accounts`
 - **Python Package**: `openai>=1.55.0` (Using Azure Provider)
-- **API Version**: `2025-11-01-preview`
-- **Recommended Models**: `gpt-5-mini` (cost-optimized at $0.25/1M input tokens, $2.00/1M output tokens)
+- **API Version**: `2025-04-01-preview` (for Responses API)
+- **Recommended Models**: `gpt-4o-mini` (cost-optimized at $0.15/1M input tokens, $0.60/1M output tokens)
+- **API Format**: Responses API (`client.responses.create`)
 
 ### Environment Variables
 ```bash
-AZURE_OPENAI_ENDPOINT="https://<resource-name>.openai.azure.com/"
-AZURE_OPENAI_DEPLOYMENT_NAME="gpt-5-mini"
-AZURE_OPENAI_API_VERSION="2025-11-01-preview"
+AZURE_OPENAI_ENDPOINT="https://eastus2.api.cognitive.microsoft.com/"
+AZURE_OPENAI_DEPLOYMENT_NAME="gpt-4o-mini"
+AZURE_OPENAI_API_VERSION="2025-04-01-preview"
 ```
 
 ### Implementation Pattern
 ```python
 import os
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from openai import AzureOpenAI
 
 def get_openai_client():
-    # Secure AD Auth (Preferred over API Keys)
-    token_provider = get_bearer_token_provider(
-        DefaultAzureCredential(), 
-        "https://cognitiveservices.azure.com/.default"
-    )
-    
     return AzureOpenAI(
         azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-        azure_ad_token_provider=token_provider,
-        api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2025-11-01-preview")
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+        api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2025-04-01-preview")
     )
+
+def generate_completion(prompt: str, max_tokens: int = 400):
+    """Generate completion using Responses API."""
+    client = get_openai_client()
+    deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
+    
+    response = client.responses.create(
+        model=deployment_name,
+        input=prompt,
+        max_output_tokens=max_tokens
+    )
+    
+    # Extract text from response
+    output_text = ""
+    if hasattr(response, 'output_text'):
+        output_text = response.output_text or ""
+    # Handle other response formats as needed
+    
+    return output_text
 ```
 
 ---

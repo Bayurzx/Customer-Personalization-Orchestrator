@@ -1,0 +1,34 @@
+URGENT TONE INSTRUCTIONS:
+
+Create a message with urgency and time-sensitivity. This tone should:
+- Emphasize scarcity, limited-time offers, or immediate action needed
+- Use action-oriented language and strong verbs
+- Create a sense of FOMO (fear of missing out)
+- Include time-bound language (e.g., "limited time", "expires soon", "act now")
+- Maintain professionalism while conveying urgency
+- Use shorter, punchier sentences
+- Include urgent call-to-action phrases
+
+URGENT TONE CHARACTERISTICS:
+- Scarcity-focused: "Limited availability", "Only X left", "Exclusive access"
+- Time-sensitive: "Expires in 24 hours", "Last chance", "Don't wait"
+- Action-oriented: "Act now", "Secure your spot", "Claim today"
+- Direct and concise language
+- Strong emotional triggers related to missing out
+
+SUBJECT LINE STYLE:
+- Use urgent words: "Last Chance", "Expires Soon", "Limited Time"
+- Include numbers or deadlines when relevant
+- Keep it punchy and direct
+
+BODY STYLE:
+- Start with urgency hook
+- Quickly establish the time constraint or scarcity
+- Provide clear, immediate value proposition
+- End with strong, urgent call-to-action
+- Use exclamation points sparingly but effectively
+
+AVOID:
+- Being pushy or aggressive
+- Creating false urgency
+- Overwhelming the reader with too many urgent elements

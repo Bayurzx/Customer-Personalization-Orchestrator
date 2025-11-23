@@ -107,16 +107,34 @@ log_api_call("azure_openai", "generate_completion", request, response, duration)
 
 ## Azure OpenAI API Standards
 
-### Request Format
+### Request Format (Responses API - Current)
 
 ```python
+# Using Responses API format for gpt-4o-mini
+# Endpoint: https://eastus2.api.cognitive.microsoft.com/openai/responses?api-version=2025-04-01-preview
+
+# Combine system message and user prompt
+full_prompt = f"{system_message}\n\n{user_prompt}"
+
+response = client.responses.create(
+    model=deployment_name,  # gpt-4o-mini
+    input=full_prompt,
+    max_output_tokens=1000
+    # gpt-4o-mini supports all standard parameters via Responses API
+)
+```
+
+### Legacy Chat Completions Format (Reference)
+
+```python
+# This format may not work with all Azure deployments
 messages = [
     {
         "role": "system",
         "content": "You are a marketing copywriter."
     },
     {
-        "role": "user",
+        "role": "user", 
         "content": prompt_text
     }
 ]
@@ -124,19 +142,46 @@ messages = [
 response = client.chat.completions.create(
     model=deployment_name,
     messages=messages,
-    max_completion_tokens=1000  # gpt-5-mini uses max_completion_tokens
-    # Note: gpt-5-mini has limited parameter support:
-    # - temperature: only default (1.0) supported
-    # - top_p, frequency_penalty, presence_penalty: not supported
-    # - stop: supported
+    max_tokens=1000
 )
 ```
 
-### Response Parsing
+### Response Parsing (Responses API)
 
 ```python
-def parse_openai_response(response) -> dict:
-    """Parse Azure OpenAI response."""
+def parse_responses_api_response(response) -> dict:
+    """Parse Azure OpenAI Responses API response."""
+    # Extract text from Responses API format
+    output_text = ""
+    if hasattr(response, 'output_text'):
+        output_text = response.output_text or ""
+    elif hasattr(response, 'output') and response.output:
+        # Handle structured output format
+        if isinstance(response.output, list) and len(response.output) > 0:
+            first_output = response.output[0]
+            if hasattr(first_output, 'content') and first_output.content:
+                if isinstance(first_output.content, list) and len(first_output.content) > 0:
+                    text_content = first_output.content[0]
+                    if hasattr(text_content, 'text') and hasattr(text_content.text, 'value'):
+                        output_text = text_content.text.value or ""
+    
+    return {
+        "text": output_text,
+        "finish_reason": getattr(response, 'finish_reason', 'completed'),
+        "tokens": {
+            "input": getattr(response.usage, 'input_tokens', 0) if hasattr(response, 'usage') else 0,
+            "output": getattr(response.usage, 'output_tokens', 0) if hasattr(response, 'usage') else 0,
+            "total": getattr(response.usage, 'total_tokens', 0) if hasattr(response, 'usage') else 0
+        },
+        "model": getattr(response, 'model', 'gpt-4o-mini')
+    }
+```
+
+### Legacy Chat Completions Response Parsing
+
+```python
+def parse_chat_completions_response(response) -> dict:
+    """Parse Azure OpenAI Chat Completions response (legacy)."""
     return {
         "text": response.choices[0].message.content,
         "finish_reason": response.choices[0].finish_reason,
@@ -162,7 +207,7 @@ class TokenTracker:
         self.total_input += prompt_tokens
         self.total_output += completion_tokens
     
-    def calculate_cost(self, model: str = "gpt-5-mini") -> float:
+    def calculate_cost(self, model: str = "gpt-4o-mini") -> float:
         """Calculate cost based on token usage."""
         PRICING = {
             "gpt-5-mini": {"input": 0.00025, "output": 0.002},  # per 1K tokens ($0.25/$2.00 per 1M)
@@ -170,7 +215,7 @@ class TokenTracker:
             "gpt-4o-mini": {"input": 0.00015, "output": 0.0006}  # per 1K tokens
         }
         
-        price = PRICING.get(model, PRICING["gpt-5-mini"])
+        price = PRICING.get(model, PRICING["gpt-4o-mini"])
         cost_input = (self.total_input / 1000) * price["input"]
         cost_output = (self.total_output / 1000) * price["output"]
         return cost_input + cost_output

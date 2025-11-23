@@ -118,7 +118,7 @@ az cognitiveservices account keys list \
 AZURE_OPENAI_API_KEY=<your-key-here>
 ```
 
-### Deploy a Model (gpt-5-mini - Cost Optimized)
+### Deploy a Model (gpt-4o-mini - Cost Optimized)
 
 **Option A: Using Azure Portal (Recommended for first time)**
 
@@ -127,19 +127,19 @@ AZURE_OPENAI_API_KEY=<your-key-here>
 3. Click **"Model deployments"** → **"Manage Deployments"**
 4. You'll be redirected to **Azure OpenAI Studio**
 5. Click **"Deployments"** → **"Create new deployment"**
-6. Select model: **gpt-5-mini** (recommended - most cost-effective at $0.25/1M input tokens)
-7. Deployment name: `gpt-5-mini` (use this exact name for consistency)
+6. Select model: **gpt-4o-mini** (recommended - most cost-effective at $0.25/1M input tokens)
+7. Deployment name: `gpt-4o-mini` (use this exact name for consistency)
 8. Click **"Create"**
 
 **Option B: Using Azure CLI**
 
 ```bash
-# Deploy gpt-5-mini model (cost-optimized)
+# Deploy gpt-4o-mini model (cost-optimized)
 az cognitiveservices account deployment create \
   --name openai-cpo-poc-1337 \
   --resource-group rg-poc \
-  --deployment-name gpt-5-mini \
-  --model-name gpt-5-mini \
+  --deployment-name gpt-4o-mini \
+  --model-name gpt-4o-mini \
   --model-version "2025-08-07" \
   --model-format OpenAI \
   --sku-capacity 1 \
@@ -148,7 +148,7 @@ az cognitiveservices account deployment create \
 
 **Set in .env**:
 ```bash
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-5-mini
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o-mini
 AZURE_OPENAI_API_VERSION=2024-10-21
 ```
 
@@ -450,7 +450,7 @@ AZURE_REGION=eastus2
 
 # AZURE OPENAI
 AZURE_OPENAI_ENDPOINT=https://openai-cpo-poc-abc123.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-5-mini
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o-mini
 AZURE_OPENAI_API_VERSION=2024-10-21
 AZURE_OPENAI_API_KEY=abc123def456...
 
@@ -733,7 +733,7 @@ Based on November 2025 pricing:
 
 | Service | Tier | Estimated Cost (1 week) |
 |---------|------|------------------------|
-| Azure OpenAI (gpt-5-mini) | S0 | $5-15 (cost-optimized at $0.25/1M input tokens) |
+| Azure OpenAI (gpt-4o-mini) | S0 | $3-8 (cost-optimized at $0.15/1M input tokens) |
 | Azure AI Search | Standard | ~$75/month (~$18/week) |
 | Content Safety | S0 | ~$5 (low volume) |
 | Azure ML | Basic | Free tier available |

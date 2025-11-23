@@ -1,6 +1,6 @@
 # Azure Services Configuration
 # Customer Personalization Orchestrator
-# Last updated: November 22, 2025
+# Last updated: November 23, 2025
 
 azure_openai:
   # Azure OpenAI endpoint (from environment variable)
@@ -12,11 +12,9 @@ azure_openai:
   # API version for Azure OpenAI
   api_version: "${AZURE_OPENAI_API_VERSION}"
   
-  # Generation parameters (gpt-5-mini specific)
-  max_completion_tokens: 1000  # gpt-5-mini uses max_completion_tokens instead of max_tokens
-  # Note: gpt-5-mini only supports default temperature (1.0) and limited parameters
-  # temperature: 1.0  # Default only - cannot be changed
-  # top_p: Not supported
+  # Generation parameters (gpt-4o-mini specific)
+  max_output_tokens: 1000  # Responses API uses max_output_tokens
+  # temperature and top_p can still be used
   # frequency_penalty: Not supported  
   # presence_penalty: Not supported
 
