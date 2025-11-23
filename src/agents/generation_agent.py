@@ -43,6 +43,8 @@ class MessageGenerator:
         """
         self.client = openai_client or AzureOpenAIClient()
         self.tones = VARIANT_TONES
+        # Calculate project root once during initialization
+        self.project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         logger.info("MessageGenerator initialized")
     
     def generate_variants(
@@ -188,8 +190,9 @@ class MessageGenerator:
         with open(template_path, 'r', encoding='utf-8') as f:
             base_template = f.read()
         
-        # Load tone-specific instructions
-        tone_template_path = f"config/prompts/variants/{tone}.txt"
+        # Load tone-specific instructions - use absolute path from project root
+        tone_template_path = os.path.join(self.project_root, f"config/prompts/variants/{tone}.txt")
+        
         if not os.path.exists(tone_template_path):
             raise FileNotFoundError(f"Tone template not found: {tone_template_path}")
         
@@ -311,8 +314,9 @@ class MessageGenerator:
         Returns:
             Formatted prompt string
         """
-        # Load prompt template
-        base_template_path = "config/prompts/generation_prompt.txt"
+        # Load prompt template - use absolute path from project root
+        base_template_path = os.path.join(self.project_root, "config/prompts/generation_prompt.txt")
+        
         template = self.load_prompt_template(base_template_path, tone)
         
         # Format segment features for prompt

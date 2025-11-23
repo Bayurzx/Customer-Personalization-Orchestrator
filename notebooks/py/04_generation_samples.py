@@ -39,7 +39,8 @@ from collections import Counter, defaultdict
 from typing import Dict, List, Any
 
 # Add project root to path for imports
-sys.path.insert(0, os.path.abspath('..'))
+project_root = os.path.abspath('..')
+sys.path.insert(0, project_root)
 
 # Import project modules
 from src.agents.generation_agent import MessageGenerator, generate_variants
@@ -53,6 +54,7 @@ sns.set_palette("husl")
 plt.rcParams['figure.figsize'] = (12, 8)
 
 print("✅ Imports completed successfully")
+print(f"📁 Project root: {project_root}")
 
 # ## Load Data
 # 
@@ -60,7 +62,8 @@ print("✅ Imports completed successfully")
 
 # Load segment data
 print("📊 Loading segment data...")
-with open('../data/processed/segments.json', 'r') as f:
+segments_file = os.path.join(project_root, 'data/processed/segments.json')
+with open(segments_file, 'r') as f:
     segments_data = json.load(f)
 
 segments_df = pd.DataFrame(segments_data)
@@ -74,7 +77,8 @@ for _, segment in unique_segments.iterrows():
 
 # Load customer data for context
 print("\n👥 Loading customer data...")
-customers_df = load_customer_data('../data/raw/customers.csv')
+customers_file = os.path.join(project_root, 'data/raw/customers.csv')
+customers_df = load_customer_data(customers_file)
 print(f"Loaded {len(customers_df)} customers")
 
 # ## Initialize Generation Components
@@ -99,9 +103,22 @@ except Exception as e:
     print("   Using mock content for testing")
     retriever = None
 
-# Initialize message generator
-generator = MessageGenerator(openai_client)
-print("✅ Message generator initialized")
+# Initialize message generator with proper path handling
+try:
+    # Check if template file exists
+    template_path = os.path.join(project_root, 'config/prompts/generation_prompt.txt')
+    if os.path.exists(template_path):
+        print(f"✅ Template file found: {template_path}")
+        generator = MessageGenerator(openai_client)
+        print("✅ Message generator initialized")
+    else:
+        print(f"❌ Template file not found: {template_path}")
+        print("   Please check the file path")
+        generator = None
+except Exception as e:
+    print(f"⚠️  Message generator initialization failed: {e}")
+    print("   Check template file path and permissions")
+    generator = None
 
 # ## Content Retrieval for Each Segment
 # 
@@ -170,64 +187,68 @@ all_variants = []
 generation_stats = []
 generation_errors = []
 
-for _, segment_row in unique_segments.iterrows():
-    segment_name = segment_row['segment']
-    segment_dict = {
-        'name': segment_name,
-        'features': segment_row['features']
-    }
-    
-    content = segment_content.get(segment_name, [])
-    
-    if not content:
-        print(f"⚠️  Skipping {segment_name} - no content available")
-        continue
-    
-    print(f"\n📝 Generating variants for: {segment_name}")
-    
-    try:
-        # Generate all 3 variants for this segment
-        start_time = datetime.now()
-        variants = generator.generate_variants(segment_dict, content)
-        generation_time = (datetime.now() - start_time).total_seconds()
+if generator is None:
+    print("❌ Cannot generate variants - message generator not initialized")
+    print("💡 Check if config/prompts/generation_prompt.txt exists in the project root")
+else:
+    for _, segment_row in unique_segments.iterrows():
+        segment_name = segment_row['segment']
+        segment_dict = {
+            'name': segment_name,
+            'features': segment_row['features']
+        }
         
-        # Track successful variants
-        for variant in variants:
-            variant['segment_features'] = segment_dict['features']
-            all_variants.append(variant)
+        content = segment_content.get(segment_name, [])
         
-        # Calculate statistics
-        total_tokens = sum([v['generation_metadata']['tokens_total'] for v in variants])
-        total_cost = sum([v['generation_metadata']['cost_usd'] for v in variants])
+        if not content:
+            print(f"⚠️  Skipping {segment_name} - no content available")
+            continue
         
-        generation_stats.append({
-            'segment': segment_name,
-            'variants_generated': len(variants),
-            'generation_time_sec': generation_time,
-            'total_tokens': total_tokens,
-            'total_cost_usd': total_cost,
-            'avg_tokens_per_variant': total_tokens / len(variants) if variants else 0,
-            'avg_cost_per_variant': total_cost / len(variants) if variants else 0
-        })
+        print(f"\n📝 Generating variants for: {segment_name}")
         
-        print(f"   ✅ Generated {len(variants)} variants")
-        print(f"   📊 Total tokens: {total_tokens}, Cost: ${total_cost:.4f}")
-        
-        # Display variant summaries
-        for variant in variants:
-            validation = variant.get('validation', {})
-            print(f"      {variant['tone'].title()}: {variant['variant_id']} "
-                  f"({validation.get('word_count', 0)} words, "
-                  f"{validation.get('citation_count', 0)} citations)")
-        
-    except Exception as e:
-        error_msg = f"Generation failed for {segment_name}: {str(e)}"
-        print(f"   ❌ {error_msg}")
-        generation_errors.append({
-            'segment': segment_name,
-            'error': str(e),
-            'timestamp': datetime.now().isoformat()
-        })
+        try:
+            # Generate all 3 variants for this segment
+            start_time = datetime.now()
+            variants = generator.generate_variants(segment_dict, content)
+            generation_time = (datetime.now() - start_time).total_seconds()
+            
+            # Track successful variants
+            for variant in variants:
+                variant['segment_features'] = segment_dict['features']
+                all_variants.append(variant)
+            
+            # Calculate statistics
+            total_tokens = sum([v['generation_metadata']['tokens_total'] for v in variants])
+            total_cost = sum([v['generation_metadata']['cost_usd'] for v in variants])
+            
+            generation_stats.append({
+                'segment': segment_name,
+                'variants_generated': len(variants),
+                'generation_time_sec': generation_time,
+                'total_tokens': total_tokens,
+                'total_cost_usd': total_cost,
+                'avg_tokens_per_variant': total_tokens / len(variants) if variants else 0,
+                'avg_cost_per_variant': total_cost / len(variants) if variants else 0
+            })
+            
+            print(f"   ✅ Generated {len(variants)} variants")
+            print(f"   📊 Total tokens: {total_tokens}, Cost: ${total_cost:.4f}")
+            
+            # Display variant summaries
+            for variant in variants:
+                validation = variant.get('validation', {})
+                print(f"      {variant['tone'].title()}: {variant['variant_id']} "
+                      f"({validation.get('word_count', 0)} words, "
+                      f"{validation.get('citation_count', 0)} citations)")
+            
+        except Exception as e:
+            error_msg = f"Generation failed for {segment_name}: {str(e)}"
+            print(f"   ❌ {error_msg}")
+            generation_errors.append({
+                'segment': segment_name,
+                'error': str(e),
+                'timestamp': datetime.now().isoformat()
+            })
 
 print(f"\n🎉 Generation completed!")
 print(f"   Total variants generated: {len(all_variants)}")
@@ -252,7 +273,10 @@ if generation_stats:
     print(f"   Total variants: {total_variants}")
     print(f"   Total tokens: {total_tokens:,}")
     print(f"   Total cost: ${total_cost:.4f}")
-    print(f"   Average cost per variant: ${total_cost/total_variants:.4f}")
+    if total_variants > 0:
+        print(f"   Average cost per variant: ${total_cost/total_variants:.4f}")
+    else:
+        print(f"   Average cost per variant: $0.0000")
     print(f"   Average generation time per segment: {avg_time_per_segment:.2f} seconds")
     
     # Visualize generation statistics
@@ -395,11 +419,13 @@ if all_variants:
 # 
 # Validate that citations are correctly extracted and mapped to source content.
 
+citation_errors = []  # Initialize to avoid NameError
+
 if all_variants:
     print(f"\n📚 Validating citations...")
     
     citation_analysis = []
-    citation_errors = []
+    citation_errors = []  # Re-initialize for this scope
     
     for variant in all_variants:
         variant_id = variant['variant_id']
@@ -549,8 +575,8 @@ if generation_errors:
 else:
     print(f"\n✅ No generation errors!")
 
-# Citation issues
-if citation_errors:
+# Citation issues - use the citation_errors variable that's now properly initialized
+if 'citation_errors' in locals() and citation_errors:
     print(f"\n❌ Citation Issues ({len(citation_errors)}):")
     
     # Group citation errors by type
@@ -601,25 +627,25 @@ if all_variants:
     print(f"\n💾 Saving generation results...")
     
     # Save all variants
-    output_file = '../data/processed/generation_samples.json'
+    output_file = os.path.join(project_root, 'data/processed/generation_samples.json')
     with open(output_file, 'w') as f:
         json.dump(all_variants, f, indent=2, default=str)
     print(f"   Saved {len(all_variants)} variants to {output_file}")
     
     # Save generation statistics
-    stats_file = '../data/processed/generation_stats.json'
+    stats_file = os.path.join(project_root, 'data/processed/generation_stats.json')
     results_summary = {
         'generation_timestamp': datetime.now().isoformat(),
         'total_variants': len(all_variants),
         'segments_processed': len(generation_stats),
         'generation_errors': len(generation_errors),
-        'citation_errors': len(citation_errors) if citation_analysis else 0,
+        'citation_errors': len(citation_errors) if 'citation_errors' in locals() and citation_errors else 0,
         'total_cost_usd': sum([s['total_cost_usd'] for s in generation_stats]),
         'avg_cost_per_variant': avg_cost_per_variant if 'avg_cost_per_variant' in locals() else 0,
         'validation_pass_rate': variants_df['is_valid'].mean() if 'variants_df' in locals() else 0,
         'generation_stats': generation_stats,
         'generation_errors': generation_errors,
-        'citation_errors': citation_errors if citation_analysis else []
+        'citation_errors': citation_errors if 'citation_errors' in locals() else []
     }
     
     with open(stats_file, 'w') as f:
@@ -670,7 +696,7 @@ if all_variants and generation_stats:
     print(f"\n💡 RECOMMENDATIONS:")
     if validation_rate < 0.9:
         print(f"   • Review and improve prompt templates for better validation rates")
-    if citation_analysis and len(citation_errors) > 0:
+    if 'citation_errors' in locals() and len(citation_errors) > 0:
         print(f"   • Improve citation extraction regex patterns")
     if total_cost / total_variants > 0.01:
         print(f"   • Consider cost optimization for large-scale deployment")
