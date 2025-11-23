@@ -455,7 +455,7 @@ assert 'hate_severity' in result
 ---
 
 ### Task 3.6: Safety Agent Implementation
-- [ ] **Complete Task 3.6**
+- [x] **Complete Task 3.6**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
@@ -491,7 +491,7 @@ assert 'hate_severity' in result
 ---
 
 ### Task 3.7: Safety Screening Testing
-- [ ] **Complete Task 3.7**
+- [x] **Complete Task 3.7**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 30 minutes  
