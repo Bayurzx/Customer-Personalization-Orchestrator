@@ -520,7 +520,7 @@ assert 'hate_severity' in result
 ## Day 4: Experimentation
 
 ### Task 4.1: Experiment Design
-- [ ] **Complete Task 4.1**
+- [x] **Complete Task 4.1**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1 hour  

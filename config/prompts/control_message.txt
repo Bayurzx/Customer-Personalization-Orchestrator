@@ -1,0 +1,29 @@
+# Control Message Template
+# Generic baseline message for experiment control arm
+# Task 4.1: Experiment Design
+
+Subject: Special Offer: Upgrade Your Experience Today
+
+Body:
+Dear Valued Customer,
+
+We're excited to share a special offer with you! Upgrade your experience with our premium features and enjoy enhanced capabilities designed to meet your needs.
+
+Our premium offerings include advanced features, priority support, and exclusive access to new capabilities. Take advantage of this limited-time opportunity to enhance your experience.
+
+Don't miss out on this chance to upgrade and enjoy all the benefits we have to offer.
+
+Click here to learn more and upgrade today!
+
+Best regards,
+The Team
+
+---
+# Control Message Characteristics:
+# - Generic, one-size-fits-all messaging
+# - No personalization based on customer segment
+# - No citations to specific approved content
+# - Neutral tone (not urgent, informational, or friendly)
+# - Standard marketing language
+# - No segment-specific features or benefits mentioned
+# - Approximately 150 words (similar length to personalized variants)
