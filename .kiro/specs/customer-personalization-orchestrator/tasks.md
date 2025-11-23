@@ -580,7 +580,7 @@ arm_counts = Counter(a['arm'] for a in assignments)
 ---
 
 ### Task 4.3: Engagement Simulation
-- [ ] **Complete Task 4.3**
+- [x] **Complete Task 4.3**
 
 **Priority**: P0 (Blocker)  
 **Estimated Time**: 1.5 hours  
