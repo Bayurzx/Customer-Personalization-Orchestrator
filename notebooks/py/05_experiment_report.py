@@ -5,7 +5,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.16.4
+#       jupytext_version: 1.18.1
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -21,8 +21,10 @@
 # **Total Customers**: 248  
 # **Experiment Arms**: 4 (1 control + 3 treatments)
 
+# %% [markdown]
 # ## Setup and Data Loading
 
+# %%
 import os
 import sys
 import json
@@ -147,8 +149,10 @@ else:
 print("📊 Customer Personalization Orchestrator - Experiment Report")
 print("=" * 60)
 
+# %% [markdown]
 # ## 1. Executive Summary
 
+# %%
 # Load experiment summary
 with open(os.path.join(project_root, 'data/processed/experiment_summary.json'), 'r') as f:
     experiment_summary = json.load(f)
@@ -167,8 +171,10 @@ print(f"Safety Pass Rate: {experiment_summary['pipeline_results']['safety_screen
 print(f"Segments Created: {experiment_summary['pipeline_results']['segmentation']['segments_created']}")
 print(f"Message Variants: {experiment_summary['pipeline_results']['message_generation']['total_variants_generated']}")
 
+# %% [markdown]
 # ## 2. Experiment Design Overview
 
+# %%
 print("\n🔬 EXPERIMENT DESIGN")
 print("-" * 30)
 
@@ -201,8 +207,10 @@ save_and_show_plot('experiment_design.png')
 
 print(f"✅ Balanced assignment achieved: {arm_sizes[0]} ± {max(arm_sizes) - min(arm_sizes)} customers per arm")
 
+# %% [markdown]
 # ## 3. Primary Results - Lift Analysis
 
+# %%
 print("\n📈 PRIMARY RESULTS - LIFT ANALYSIS")
 print("-" * 40)
 
@@ -271,8 +279,10 @@ print(f"• Best Open Rate Lift: {best_open_lift['treatment']} (+{best_open_lift
 print(f"• Best Click Rate Lift: {best_click_lift['treatment']} ({best_click_lift['lift_percent']:.1f}%)")
 print(f"• Statistical Significance: {'None achieved' if not any(lift_df['significant']) else 'Achieved'}")
 
+# %% [markdown]
 # ## 4. Detailed Metrics by Experiment Arm
 
+# %%
 print("\n📊 DETAILED METRICS BY EXPERIMENT ARM")
 print("-" * 45)
 
@@ -343,8 +353,10 @@ for bar, count in zip(bars4, clicks):
 plt.tight_layout()
 save_and_show_plot('detailed_metrics.png')
 
+# %% [markdown]
 # ## 5. Segment-Level Performance Analysis
 
+# %%
 print("\n🎯 SEGMENT-LEVEL PERFORMANCE ANALYSIS")
 print("-" * 45)
 
@@ -426,8 +438,10 @@ for segment in segment_breakdown:
     print(f"• {segment['segment']}: Best arm = {segment['best_performing_arm'].replace('_', ' ').title()}, "
           f"Sample size = {segment['sample_size']}")
 
+# %% [markdown]
 # ## 6. Statistical Significance Analysis
 
+# %%
 print("\n📊 STATISTICAL SIGNIFICANCE ANALYSIS")
 print("-" * 45)
 
@@ -511,8 +525,10 @@ print(f"\n⚠️  STATISTICAL POWER NOTE:")
 print(f"With sample sizes of ~62 per arm, this experiment has limited statistical power.")
 print(f"Results should be interpreted as directional insights rather than definitive conclusions.")
 
+# %% [markdown]
 # ## 7. Safety Audit Summary
 
+# %%
 print("\n🛡️  SAFETY AUDIT SUMMARY")
 print("-" * 30)
 
@@ -586,8 +602,10 @@ print(f"• Zero blocked variants (0% block rate)")
 print(f"• All severity scores were 0 (Safe level)")
 print(f"• Complete audit trail maintained in CSV format")
 
+# %% [markdown]
 # ## 8. Citation Frequency Analysis
 
+# %%
 print("\n📚 CITATION FREQUENCY ANALYSIS")
 print("-" * 35)
 
@@ -686,8 +704,10 @@ print(f"• Average citations per variant: {np.mean(all_citations):.1f}")
 print(f"• Most cited document: {doc_counts[0][0]} ({doc_counts[0][1]} citations)")
 print(f"• Content diversity varies by segment: {min(segment_unique_docs.values())}-{max(segment_unique_docs.values())} unique docs")
 
+# %% [markdown]
 # ## 9. Key Insights and Recommendations
 
+# %%
 print("\n💡 KEY INSIGHTS AND RECOMMENDATIONS")
 print("-" * 45)
 
@@ -723,8 +743,10 @@ print("4. **Content Optimization**: Expand content corpus for New Customer segme
 print("5. **Click Rate Investigation**: Analyze why click rates were lower than expected")
 print("6. **Production Deployment**: Safety and generation systems ready for production")
 
+# %% [markdown]
 # ## 10. Technical Performance Summary
 
+# %%
 print("\n⚙️  TECHNICAL PERFORMANCE SUMMARY")
 print("-" * 40)
 
