@@ -4,7 +4,7 @@
 This file tracks task completion, key lessons, and critical insights to prevent repeating mistakes and ensure smooth project progression.
 
 **Last Updated**: 2025-11-24  
-**Current Status**: Day 5 - Task 5.2 Complete (Feature Attribution & Explainability - Comprehensive Feature Analysis with Statistical Validation)
+**Current Status**: Day 5 - Task 5.3 Complete (Notebook Cell Boundary Fix & Report Generation Enhancement - Complete PDF Reports with All Visualizations)
 
 ---
 
@@ -278,6 +278,18 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 
 ### Experimentation Agent Development
 1. **Small Sample Assignment Logic**: With small customer counts, allocation calculations (int(n * 0.25)) can result in 0 assignments per arm - implement minimum allocation of 1 customer per arm and adjust for total capacity
+
+### Notebook & Report Generation Development
+1. **Jupytext Format Selection Critical**: NEVER use `py:light` format for notebooks with matplotlib - use `py:percent` format with `# %%` markers to ensure proper cell boundaries
+2. **Cell Marker Placement**: Use `# %%` only at START of cells, never at end - each marker automatically ends previous cell and starts new one
+3. **Matplotlib Cell Isolation**: Each `plt.subplots()` call MUST be in separate cell - prevents figures displaying immediately instead of waiting for `plt.show()`
+4. **Configuration File Required**: Always create `jupytext.toml` with `formats = "ipynb,py:percent"` - without it, jupytext falls back to problematic default behavior
+5. **Notebook Execution Before Conversion**: NEVER convert notebook to PDF without executing first - results in empty reports (0.01 MB vs 0.52 MB with content)
+6. **Sequential Process Mandatory**: Execute → HTML → PDF conversion order cannot be skipped - each step depends on previous step's outputs
+7. **Empty Report Diagnosis**: Small PDF file size indicates missing notebook outputs, not conversion failure - always check execution step first
+8. **Markdown Cell Format**: Use `# %% [markdown]` for section headers, not `# ##` comments - ensures proper markdown rendering in notebook cells
+9. **Format Metadata Consistency**: Jupytext metadata must match actual format used - mismatch between `light` and `percent` breaks cell boundaries
+10. **Automatic Execution Integration**: Build notebook execution into report generation scripts - eliminates manual steps and prevents empty reports
 
 ### Feature Attribution & Explainability Development
 1. **Data Merging NaN Handling**: When merging experiment data with customer data, missing engagement values must be filled with False (not left as NaN) to prevent "cannot convert float NaN to integer" errors
@@ -600,6 +612,22 @@ This file tracks task completion, key lessons, and critical insights to prevent 
   - **Visualization Integration**: 4-panel feature attribution visualization effectively communicates correlations, importance, segment performance, and treatment effects in single view
 - **Risk Mitigation**: Robust data validation, NaN handling, and type conversion prevented analysis failures and ensured reliable statistical results
 
+### Task 5.3: Notebook Cell Boundary Fix & Report Generation Enhancement
+- **Status**: ✅ Complete (November 24, 2025)
+- **Key Achievement**: Fixed Jupyter notebook cell boundaries and enhanced PDF report generation - notebook now displays matplotlib figures correctly and generates complete reports with all visualizations
+- **Lessons**:
+  - **Jupytext Format Critical**: Must use `py:percent` format with proper `# %%` and `# %% [markdown]` markers - `py:light` format with `# +` markers caused markdown sections to render as comments
+  - **Cell Marker Placement**: Use `# %%` only at the START of cells, never at the end - each marker automatically ends the previous cell and starts a new one
+  - **Matplotlib Cell Isolation**: Each `plt.subplots()` call must be in its own separate cell to prevent figures displaying immediately instead of waiting for `plt.show()`
+  - **Configuration File Essential**: `jupytext.toml` with `formats = "ipynb,py:percent"` is required to maintain consistent cell boundary behavior across conversions
+  - **Notebook Execution Required**: PDF generation was failing because notebook wasn't executed first - must run `jupyter nbconvert --execute` before HTML/PDF conversion
+  - **Sequential Process Critical**: Execute notebook → Convert to HTML → Convert to PDF - skipping execution results in empty reports (0.01 MB vs 0.52 MB)
+  - **Automatic Execution Integration**: Enhanced `generate_report.py` to automatically execute notebook before conversion - eliminates manual step and prevents empty reports
+  - **Error Diagnosis Strategy**: Small PDF file size (0.01 MB) indicates missing outputs, not conversion failure - check execution step first
+  - **Timeout Management**: Notebook execution needs 5-minute timeout for complex analysis with multiple matplotlib plots and statistical calculations
+  - **Format Metadata Consistency**: Jupytext metadata must match actual format used - inconsistency between `light` and `percent` causes cell boundary issues
+- **Risk Mitigation**: Added automatic notebook execution to report generation script prevents future empty report issues, proper jupytext configuration ensures consistent cell boundaries
+
 ---
 
 ## 🎯 Success Patterns
@@ -687,6 +715,12 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 52. **Visualization Persistence**: Always save plots to files (`plt.savefig()`) alongside `plt.show()` to ensure visualizations are preserved regardless of execution context
 53. **Cross-Platform Visualization**: Use `matplotlib.use()` to set backend before importing pyplot to prevent display issues in different environments
 54. **Dual-Mode Notebook Design**: Create notebooks that work both as interactive Jupyter notebooks and standalone Python scripts for maximum flexibility and debugging
+55. **Jupytext Format Excellence**: Use `py:percent` format with proper `# %%` and `# %% [markdown]` markers for reliable cell boundary control
+56. **Configuration File Strategy**: Always create `jupytext.toml` to enforce consistent format behavior across team members and future conversions
+57. **Automatic Notebook Execution**: Build execution step into report generation scripts to eliminate manual steps and prevent empty reports
+58. **Cell Boundary Isolation**: Isolate matplotlib plotting code in separate cells to ensure proper figure display timing in Jupyter notebooks
+59. **Sequential Process Design**: Design report generation as Execute → HTML → PDF pipeline with proper error handling at each step
+60. **File Size Validation**: Use PDF file size as early indicator of successful content generation - small files indicate missing outputs
 
 ### Recommended Practices
 1. **Test-Driven Development**: Write tests that cover edge cases and business rules
@@ -727,7 +761,7 @@ This file tracks task completion, key lessons, and critical insights to prevent 
 ## 📊 Project Health Metrics
 
 ### Current Status
-- **Tasks Completed**: 20/27 (74%) - Task 5.1 Complete (Experiment Report Generation)
+- **Tasks Completed**: 21/27 (78%) - Task 5.3 Complete (Notebook Cell Boundary Fix & Report Generation Enhancement)
 - **Test Coverage**: 85% (all tests passing through Task 5.1 - Comprehensive reporting validated)
 - **Estimated Cost**: $15-30 for POC (actual execution cost: $0.0027 for full pipeline with 250 customers)
 - **Timeline**: On schedule - Day 5 Task 5.1 complete, ready for remaining finalization tasks
