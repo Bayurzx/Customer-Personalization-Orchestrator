@@ -34,36 +34,115 @@ from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
-# Set up paths
-if 'notebooks' in os.getcwd():
-    project_root = os.path.abspath(os.path.join(os.getcwd(), '..', '..'))
+# Set up paths - robust detection for both script and notebook execution
+current_dir = os.getcwd()
+print(f"Current working directory: {current_dir}")
+
+# Detect project root more reliably
+if 'notebooks' in current_dir:
+    # Running from notebooks directory or subdirectory
+    if current_dir.endswith('notebooks/py'):
+        project_root = os.path.abspath(os.path.join(current_dir, '..', '..'))
+    elif current_dir.endswith('notebooks'):
+        project_root = os.path.abspath(os.path.join(current_dir, '..'))
+    else:
+        # Find the project root by looking for key files
+        test_dir = current_dir
+        while test_dir != os.path.dirname(test_dir):  # Not at filesystem root
+            if os.path.exists(os.path.join(test_dir, 'src')) and os.path.exists(os.path.join(test_dir, 'config')):
+                project_root = test_dir
+                break
+            test_dir = os.path.dirname(test_dir)
+        else:
+            project_root = os.path.abspath(os.path.join(current_dir, '..', '..'))
 else:
-    project_root = os.path.abspath(os.getcwd())
+    # Running from project root or other location
+    if os.path.exists(os.path.join(current_dir, 'src')) and os.path.exists(os.path.join(current_dir, 'config')):
+        project_root = current_dir
+    else:
+        # Look for project root
+        test_dir = current_dir
+        while test_dir != os.path.dirname(test_dir):
+            if os.path.exists(os.path.join(test_dir, 'src')) and os.path.exists(os.path.join(test_dir, 'config')):
+                project_root = test_dir
+                break
+            test_dir = os.path.dirname(test_dir)
+        else:
+            project_root = current_dir
+
 sys.path.insert(0, project_root)
+print(f"Project root detected: {project_root}")
 
-print("project_root", project_root)
+# Verify project root is correct
+if not os.path.exists(os.path.join(project_root, 'src')):
+    print("⚠️  Warning: Project root detection may be incorrect - 'src' directory not found")
+if not os.path.exists(os.path.join(project_root, 'data')):
+    print("⚠️  Warning: Project root detection may be incorrect - 'data' directory not found")
 
-# Configure plotting
+# Configure matplotlib backend before importing pyplot
 import matplotlib
-# Detect if running in Jupyter notebook
-try:
-    get_ipython()
-    # Running in Jupyter - use inline backend
+
+# Detect execution environment more reliably
+def detect_jupyter_environment():
+    """Detect if running in Jupyter notebook."""
+    try:
+        # Check if we're in Jupyter
+        shell = get_ipython().__class__.__name__
+        if shell == 'ZMQInteractiveShell':
+            return True
+        else:
+            return False
+    except NameError:
+        # Not in IPython/Jupyter
+        return False
+
+is_jupyter = detect_jupyter_environment()
+
+if is_jupyter:
     matplotlib.use('inline')
-    print("📊 Running in Jupyter notebook - plots will display inline")
-except NameError:
-    # Running as script - use Agg backend
+    print("📊 Detected Jupyter notebook - using inline backend")
+else:
     matplotlib.use('Agg')
-    print("📊 Running as script - plots will be saved to reports/visualizations/")
+    print("📊 Running as Python script - using Agg backend")
+
+# Import pyplot after setting backend
+import matplotlib.pyplot as plt
 
 plt.style.use('default')
 sns.set_palette("husl")
 plt.rcParams['figure.figsize'] = (12, 8)
 plt.rcParams['font.size'] = 11
 
-# Create reports directory if it doesn't exist
+# Helper function for consistent plot display and saving
+def save_and_show_plot(filename, fig=None):
+    """Save plot to file and display if in Jupyter."""
+    fig_path = os.path.join(reports_dir, filename)
+    if fig is not None:
+        fig.savefig(fig_path, dpi=300, bbox_inches='tight')
+    else:
+        plt.savefig(fig_path, dpi=300, bbox_inches='tight')
+    print(f"💾 Saved: {fig_path}")
+    
+    if is_jupyter:
+        plt.show()
+    else:
+        print("📊 Figure saved (not displayed in script mode)")
+        plt.close()  # Close to free memory
+
+# Create reports directory structure
 reports_dir = os.path.join(project_root, 'reports', 'visualizations')
 os.makedirs(reports_dir, exist_ok=True)
+print(f"📁 Reports directory: {reports_dir}")
+
+# Verify reports directory was created
+if os.path.exists(reports_dir):
+    print("✅ Reports directory created successfully")
+else:
+    print("❌ Failed to create reports directory")
+    # Try alternative location
+    reports_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'reports', 'visualizations')
+    os.makedirs(reports_dir, exist_ok=True)
+    print(f"📁 Alternative reports directory: {reports_dir}")
 
 print("📊 Customer Personalization Orchestrator - Experiment Report")
 print("=" * 60)
@@ -118,8 +197,7 @@ for i, size in enumerate(arm_sizes):
     ax2.text(i, size + 1, str(size), ha='center', va='bottom', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig(os.path.join(reports_dir, 'experiment_design.png'), dpi=300, bbox_inches='tight')
-plt.show()
+save_and_show_plot('experiment_design.png')
 
 print(f"✅ Balanced assignment achieved: {arm_sizes[0]} ± {max(arm_sizes) - min(arm_sizes)} customers per arm")
 
@@ -182,8 +260,7 @@ for bar, lift_val in zip(bars2, click_lift['lift_percent']):
              fontweight='bold', fontsize=11)
 
 plt.tight_layout()
-plt.savefig(os.path.join(reports_dir, 'lift_analysis.png'), dpi=300, bbox_inches='tight')
-plt.show()
+save_and_show_plot('lift_analysis.png')
 
 # Print key findings
 print("🎯 KEY FINDINGS:")
@@ -264,8 +341,7 @@ for bar, count in zip(bars4, clicks):
                    str(count), ha='center', va='bottom', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig(os.path.join(reports_dir, 'detailed_metrics.png'), dpi=300, bbox_inches='tight')
-plt.show()
+save_and_show_plot('detailed_metrics.png')
 
 # ## 5. Segment-Level Performance Analysis
 
@@ -342,8 +418,7 @@ axes[1,1].pie(best_arm_counts.values, labels=[arm.replace('_', ' ').title() for 
 axes[1,1].set_title('Best Performing Arm by Segment Count', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig(os.path.join(reports_dir, 'segment_performance.png'), dpi=300, bbox_inches='tight')
-plt.show()
+save_and_show_plot('segment_performance.png')
 
 # Print segment insights
 print("🔍 SEGMENT INSIGHTS:")
@@ -430,8 +505,7 @@ ax2.set_title('95% Confidence Intervals for Open Rate Lift', fontweight='bold')
 ax2.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(os.path.join(reports_dir, 'statistical_significance.png'), dpi=300, bbox_inches='tight')
-plt.show()
+save_and_show_plot('statistical_significance.png')
 
 print(f"\n⚠️  STATISTICAL POWER NOTE:")
 print(f"With sample sizes of ~62 per arm, this experiment has limited statistical power.")
@@ -504,8 +578,7 @@ if len(latest_variants) > 0:
         ax4.set_title('Safety Results by Segment', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig(os.path.join(reports_dir, 'safety_audit.png'), dpi=300, bbox_inches='tight')
-plt.show()
+save_and_show_plot('safety_audit.png')
 
 print("✅ SAFETY COMPLIANCE:")
 print(f"• All {len(latest_variants)} message variants passed safety screening")
@@ -605,8 +678,7 @@ ax4.set_title('Citation Count Distribution\n(per Message Variant)', fontweight='
 ax4.set_xticks(range(min(all_citations), max(all_citations) + 1))
 
 plt.tight_layout()
-plt.savefig(os.path.join(reports_dir, 'citation_analysis.png'), dpi=300, bbox_inches='tight')
-plt.show()
+save_and_show_plot('citation_analysis.png')
 
 print("📖 CITATION INSIGHTS:")
 print(f"• Total unique documents cited: {len(document_usage)}")
