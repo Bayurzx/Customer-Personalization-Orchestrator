@@ -3,8 +3,8 @@
 #   jupytext:
 #     text_representation:
 #       extension: .py
-#       format_name: light
-#       format_version: '1.5'
+#       format_name: percent
+#       format_version: '1.3'
 #       jupytext_version: 1.18.1
 #   kernelspec:
 #     display_name: Python 3
@@ -12,6 +12,7 @@
 #     name: python3
 # ---
 
+# %% [markdown]
 # # Customer Personalization Orchestrator - Experiment Report
 # 
 # **Executive Summary**: Comprehensive analysis of the personalization experiment results, including lift analysis, segment performance, safety audit, and citation analysis.
@@ -21,9 +22,10 @@
 # **Total Customers**: 248  
 # **Experiment Arms**: 4 (1 control + 3 treatments)
 
+# %% [markdown]
 # ## Setup and Data Loading
 
-# +
+# %%
 import os
 import sys
 import json
@@ -35,10 +37,12 @@ from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
+# %%
 # Set up paths - robust detection for both script and notebook execution
 current_dir = os.getcwd()
 print(f"Current working directory: {current_dir}")
 
+# %%
 # Detect project root more reliably
 if 'notebooks' in current_dir:
     # Running from notebooks directory or subdirectory
@@ -80,6 +84,7 @@ if not os.path.exists(os.path.join(project_root, 'src')):
 if not os.path.exists(os.path.join(project_root, 'data')):
     print("⚠️  Warning: Project root detection may be incorrect - 'data' directory not found")
 
+# %%
 # Configure matplotlib backend before importing pyplot
 import matplotlib
 
@@ -106,6 +111,7 @@ else:
     matplotlib.use('Agg')
     print("📊 Running as Python script - using Agg backend")
 
+# %%
 # Import pyplot after setting backend
 import matplotlib.pyplot as plt
 
@@ -148,9 +154,13 @@ else:
 print("📊 Customer Personalization Orchestrator - Experiment Report")
 print("=" * 60)
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 1. Executive Summary
 
-# +
+# %%
 # Load experiment summary
 with open(os.path.join(project_root, 'data/processed/experiment_summary.json'), 'r') as f:
     experiment_summary = json.load(f)
@@ -169,13 +179,17 @@ print(f"Safety Pass Rate: {experiment_summary['pipeline_results']['safety_screen
 print(f"Segments Created: {experiment_summary['pipeline_results']['segmentation']['segments_created']}")
 print(f"Message Variants: {experiment_summary['pipeline_results']['message_generation']['total_variants_generated']}")
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 2. Experiment Design Overview
 
-# +
+# %%
 print("\n🔬 EXPERIMENT DESIGN")
 print("-" * 30)
 
-# +
+# %%
 # Create experiment design visualization
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
 
@@ -205,9 +219,13 @@ save_and_show_plot('experiment_design.png')
 
 print(f"✅ Balanced assignment achieved: {arm_sizes[0]} ± {max(arm_sizes) - min(arm_sizes)} customers per arm")
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 3. Primary Results - Lift Analysis
 
-# +
+# %%
 print("\n📈 PRIMARY RESULTS - LIFT ANALYSIS")
 print("-" * 40)
 
@@ -227,7 +245,7 @@ for lift in experiment_metrics['lift_analysis']:
 
 lift_df = pd.DataFrame(lift_data)
 
-# +
+# %%
 # Create lift visualization
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
@@ -277,9 +295,13 @@ print(f"• Best Open Rate Lift: {best_open_lift['treatment']} (+{best_open_lift
 print(f"• Best Click Rate Lift: {best_click_lift['treatment']} ({best_click_lift['lift_percent']:.1f}%)")
 print(f"• Statistical Significance: {'None achieved' if not any(lift_df['significant']) else 'Achieved'}")
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 4. Detailed Metrics by Experiment Arm
 
-# +
+# %%
 print("\n📊 DETAILED METRICS BY EXPERIMENT ARM")
 print("-" * 45)
 
@@ -300,7 +322,7 @@ for arm_name, arm_data in experiment_metrics['arms'].items():
 metrics_df = pd.DataFrame(metrics_data)
 print(metrics_df.to_string(index=False))
 
-# +
+# %%
 # Visualize raw metrics
 fig, axes = plt.subplots(2, 2, figsize=(16, 12))
 
@@ -351,13 +373,17 @@ for bar, count in zip(bars4, clicks):
 plt.tight_layout()
 save_and_show_plot('detailed_metrics.png')
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 5. Segment-Level Performance Analysis
 
-# +
+# %%
 print("\n🎯 SEGMENT-LEVEL PERFORMANCE ANALYSIS")
 print("-" * 45)
 
-# +
+# %%
 # Create segment performance visualization
 segment_breakdown = experiment_metrics['segment_breakdown']
 
@@ -436,9 +462,13 @@ for segment in segment_breakdown:
     print(f"• {segment['segment']}: Best arm = {segment['best_performing_arm'].replace('_', ' ').title()}, "
           f"Sample size = {segment['sample_size']}")
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 6. Statistical Significance Analysis
 
-# +
+# %%
 print("\n📊 STATISTICAL SIGNIFICANCE ANALYSIS")
 print("-" * 45)
 
@@ -459,7 +489,7 @@ for lift in experiment_metrics['lift_analysis']:
 sig_df = pd.DataFrame(sig_data)
 print(sig_df.to_string(index=False))
 
-# +
+# %%
 # Visualize p-values
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
@@ -523,11 +553,13 @@ print(f"\n⚠️  STATISTICAL POWER NOTE:")
 print(f"With sample sizes of ~62 per arm, this experiment has limited statistical power.")
 print(f"Results should be interpreted as directional insights rather than definitive conclusions.")
 
+# %% [markdown]
+# ## ---
 
+# %% [markdown]
 # ## 7. Safety Audit Summary
 
-
-# +
+# %%
 print("\n🛡️  SAFETY AUDIT SUMMARY")
 print("-" * 30)
 
@@ -543,7 +575,7 @@ print(f"Latest Experiment Variants: {len(latest_variants)}")
 print(f"Overall Pass Rate: {(safety_df['status'] == 'pass').mean():.1%}")
 print(f"Experiment Pass Rate: {(latest_variants['status'] == 'pass').mean():.1%}")
 
-# +
+# %%
 # Safety metrics visualization
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
 
@@ -602,9 +634,13 @@ print(f"• Zero blocked variants (0% block rate)")
 print(f"• All severity scores were 0 (Safe level)")
 print(f"• Complete audit trail maintained in CSV format")
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 8. Citation Frequency Analysis
 
-# +
+# %%
 print("\n📚 CITATION FREQUENCY ANALYSIS")
 print("-" * 35)
 
@@ -635,7 +671,7 @@ for variant in variants_data:
         # Track segment citations
         segment_citations[segment].append(doc_id)
 
-# +
+# %%
 # Create citation visualizations
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
 
@@ -704,9 +740,13 @@ print(f"• Average citations per variant: {np.mean(all_citations):.1f}")
 print(f"• Most cited document: {doc_counts[0][0]} ({doc_counts[0][1]} citations)")
 print(f"• Content diversity varies by segment: {min(segment_unique_docs.values())}-{max(segment_unique_docs.values())} unique docs")
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 9. Key Insights and Recommendations
 
-# +
+# %%
 print("\n💡 KEY INSIGHTS AND RECOMMENDATIONS")
 print("-" * 45)
 
@@ -742,9 +782,13 @@ print("4. **Content Optimization**: Expand content corpus for New Customer segme
 print("5. **Click Rate Investigation**: Analyze why click rates were lower than expected")
 print("6. **Production Deployment**: Safety and generation systems ready for production")
 
+# %% [markdown]
+# ## ---
+
+# %% [markdown]
 # ## 10. Technical Performance Summary
 
-# +
+# %%
 print("\n⚙️  TECHNICAL PERFORMANCE SUMMARY")
 print("-" * 40)
 

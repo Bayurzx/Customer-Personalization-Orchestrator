@@ -19,6 +19,35 @@ from datetime import datetime
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
+def execute_notebook(notebook_path):
+    """Execute notebook to generate outputs."""
+    print(f"⚡ Executing notebook to generate outputs...")
+    
+    cmd = [
+        "jupyter", "nbconvert",
+        "--to", "notebook",
+        "--execute",
+        "--inplace",
+        str(notebook_path)
+    ]
+    
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        
+        if result.returncode == 0:
+            print("✓ Notebook execution successful")
+            return True
+        else:
+            print(f"❌ Notebook execution failed: {result.stderr}")
+            return False
+            
+    except subprocess.TimeoutExpired:
+        print("❌ Notebook execution timed out (5 minutes)")
+        return False
+    except Exception as e:
+        print(f"❌ Error during notebook execution: {e}")
+        return False
+
 def convert_to_html(notebook_path, html_path):
     """Convert notebook to HTML."""
     print(f"🌐 Converting {notebook_path} to HTML...")
@@ -227,6 +256,13 @@ def main():
     
     # Create output directory
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # Execute notebook first to generate outputs
+    if not execute_notebook(notebook_path):
+        print("❌ Notebook execution failed")
+        return 1
+    
+    print()
     
     # Convert notebook to HTML
     if not convert_to_html(notebook_path, html_path):
