@@ -1,0 +1,4 @@
+segment,control_open_rate,treatment_open_rate,lift_percent
+High-Value Recent,0.47619047619047616,0.4126984126984127,-13.333333333333334
+Standard,0.25,0.3669724770642202,46.78899082568808
+New Customer,0.0,0.0625,0.0

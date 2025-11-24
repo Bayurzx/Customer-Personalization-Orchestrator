@@ -1,0 +1,4 @@
+segment,opened,clicked,avg_order_value,purchase_frequency,engagement_score
+High-Value Recent,0.429,0.048,333.036,18.19,0.346
+New Customer,0.048,0.0,72.381,2.0,0.103
+Standard,0.338,0.0,142.276,6.572,0.194

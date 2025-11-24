@@ -711,7 +711,7 @@ python scripts/run_experiment.py
 ---
 
 ### Task 5.2: Feature Attribution & Explainability
-- [ ] **Complete Task 5.2**
+- [x] **Complete Task 5.2**
 
 **Priority**: P1 (Important)  
 **Estimated Time**: 1.5 hours  
