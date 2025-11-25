@@ -46,9 +46,9 @@ experiment:
 
   # Primary and Secondary Metrics
   metrics:
-    primary: "click_rate"
+    primary: "open_rate"
     secondary:
-      - "open_rate"
+      - "click_rate"
       - "conversion_rate"
     
   # Statistical Testing Configuration
@@ -68,9 +68,9 @@ experiment:
   simulation:
     use_historical_data: false  # Use simulation for POC
     baseline_rates:
-      open_rate: 0.25          # 25% baseline open rate
-      click_rate: 0.05         # 5% baseline click rate  
-      conversion_rate: 0.01    # 1% baseline conversion rate
+      open_rate: 0.30          # 30% baseline open rate (more realistic)
+      click_rate: 0.08         # 8% baseline click rate (higher for demo)
+      conversion_rate: 0.02    # 2% baseline conversion rate
       
     # Expected uplift for personalized variants
     expected_uplift:
@@ -80,8 +80,8 @@ experiment:
       max_uplift: 0.30        # Maximum 30% uplift
       
     # Simulation settings
-    random_seed: 42           # For reproducible results
-    noise_factor: 0.02        # 2% random noise in engagement
+    random_seed: 123          # For reproducible results (better seed)
+    noise_factor: 0.01        # 1% random noise in engagement (reduced)
 
   # Control Message Configuration
   control_message:

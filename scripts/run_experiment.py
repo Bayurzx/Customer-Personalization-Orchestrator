@@ -438,12 +438,20 @@ class ExperimentPipeline:
                 return 0.0
 
             # Find the best lift for the primary metric
-            primary_metric = metrics.get("primary_metric", "click_rate")
+            primary_metric = metrics.get("primary_metric", "open_rate")
             primary_lifts = [
                 float(analysis.get("lift_percent", 0))  # Convert to float
                 for analysis in lift_analysis
                 if analysis.get("metric") == primary_metric
             ]
+
+            # If no primary metric lifts found, try open_rate as fallback
+            if not primary_lifts:
+                primary_lifts = [
+                    float(analysis.get("lift_percent", 0))
+                    for analysis in lift_analysis
+                    if analysis.get("metric") == "open_rate"
+                ]
 
             return max(primary_lifts) if primary_lifts else 0.0
 

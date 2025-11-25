@@ -481,10 +481,14 @@ class ExperimentationAgent:
         # Calculate segment breakdown
         segment_breakdown = self._calculate_segment_breakdown(engagement_data)
 
+        # Get primary metric from config
+        primary_metric = self.config.get("experiment", {}).get("metrics", {}).get("primary", "open_rate")
+        
         experiment_metrics = {
             "experiment_id": self.experiment_id,
             "experiment_name": self.config.get("experiment", {}).get("name", "personalization_poc"),
             "total_customers": len(engagement_data),
+            "primary_metric": primary_metric,
             "arms": arm_metrics,
             "lift_analysis": lift_analysis,
             "segment_breakdown": segment_breakdown,
