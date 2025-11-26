@@ -48,10 +48,10 @@ The system follows a modular, agent-based architecture with 5 core agents:
 ### Technical Diagrams
 
 For detailed technical architecture, see:
-- [System Architecture](demo/System_Architecture.mermaid) - High-level system overview
-- [Detailed Flow](demo/Detailed_Architecture_Flow.mermaid) - Complete pipeline flow
-- [Sequence Diagram](demo/Pipeline_Execution_Sequence.mermaid) - Agent interaction sequence
-- [System Context](demo/System_Context_Diagram.mermaid) - External system integration
+- [System Architecture](demo/System_Architecture.png) - High-level system overview
+- [Detailed Flow](demo/Detailed_Architecture_Flow.png) - Complete pipeline flow
+- [Sequence Diagram](demo/Pipeline_Execution_Sequence.png) - Agent interaction sequence
+- [System Context](demo/System_Context_Diagram.png) - External system integration
 
 ## 🚀 Quick Start
 
