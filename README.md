@@ -2,7 +2,24 @@
 
 An AI-powered agent system that enables marketing teams to deliver compliant, on-brand personalized outbound messages at scale while maintaining safety standards and providing comprehensive measurement capabilities through rigorous experimentation.
 
-**Repository**: https://github.com/Bayurzx/cpo.git
+## 🏆 Competition Submission
+
+**📹 Demo Video**: [Watch the complete demo and presentation](https://youtu.be/jOk0ejjpL3o)  
+**📊 Presentation**: [Interactive HTML Slides](demo/presentation-slides.html)  
+**💻 Repository**: https://github.com/Bayurzx/cpo.git  
+
+### The Challenge
+
+Marketing teams struggle with personalization at scale - manual approaches don't work beyond hundreds of customers, while generic messages have poor engagement. Existing AI solutions create brand risks through off-brand content generation and lack proper safety screening or measurement frameworks to prove ROI.
+
+### Our Solution
+
+The Customer Personalization Orchestrator solves this through a novel 5-agent architecture that combines:
+- **Citation-grounded generation** to eliminate brand risks
+- **Fail-closed safety screening** for enterprise compliance  
+- **Built-in experimentation** to prove measurable business impact
+
+**Demonstrated Results**: Treatment 3 achieved 38.7% open rate vs 30.6% control baseline, with 100% safety compliance and 280 customers/minute processing speed.
 
 ## 🎯 Project Overview
 
@@ -224,10 +241,19 @@ Built with Azure AI services:
 
 ---
 
+## 📋 Competition Requirements Checklist
+
+✅ **Short Description**: AI-powered 5-agent system for enterprise marketing personalization with safety compliance  
+✅ **Challenge Solved**: Customer Personalization at Scale with Brand Safety and Measurement  
+✅ **Demo Video**: https://youtu.be/jOk0ejjpL3o (Complete system demo + presentation)  
+✅ **Presentation**: [Interactive HTML Slides](demo/presentation-slides.html) (PowerPoint equivalent)  
+✅ **Code Repository**: https://github.com/Bayurzx/cpo.git (Public GitHub repository)  
+
+---
+
 **Project Status**: Production Ready POC  
 **Last Updated**: November 2025  
 **Version**: 1.0.0  
-**Repository**: https://github.com/Bayurzx/cpo.git
 
 ## 🎯 Demo Results
 
