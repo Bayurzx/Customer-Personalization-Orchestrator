@@ -1,0 +1,85 @@
+graph TB
+    %% External Systems
+    Customer[("👥 Customer<br/>Database<br/>250 records")]:::external
+    Content[("📄 Approved<br/>Content<br/>25 documents")]:::external
+    
+    %% Main System
+    subgraph System["CUSTOMER PERSONALIZATION ORCHESTRATOR"]
+        direction TB
+        
+        Pipeline["🔄 Orchestration Pipeline"]:::core
+        
+        subgraph Agents["5-Agent Architecture"]
+            A1["🎯 Segmentation"]:::agent
+            A2["🔍 Retrieval"]:::agent
+            A3["✍️ Generation"]:::agent
+            A4["🛡️ Safety ⭐"]:::agent
+            A5["📊 Experimentation"]:::agent
+        end
+        
+        subgraph Azure["☁️ Azure AI Services"]
+            AZ1["Azure OpenAI<br/>gpt-4o-mini"]:::azure
+            AZ2["Azure AI Search<br/>Semantic"]:::azure
+            AZ3["Azure Content Safety<br/>Policy Enforcement"]:::azure
+        end
+        
+        subgraph Storage["💾 Data Storage"]
+            Seg["Segments<br/>JSON"]:::storage
+            Var["Variants<br/>JSON"]:::storage
+            Audit["Audit Trail<br/>CSV"]:::storage
+            Results["Results<br/>JSON"]:::storage
+        end
+    end
+    
+    %% Output
+    Report["📊 Experiment Report<br/>Treatment 3: 38.7% open rate<br/>Measurement capability demonstrated"]:::output
+    Email["📧 Email Campaign<br/>Personalized messages<br/>Ready to send"]:::output
+    
+    %% Connections
+    Customer -->|Load data| Pipeline
+    Content -->|Index| AZ2
+    
+    Pipeline --> A1
+    A1 --> A2
+    A2 --> A3
+    A3 --> A4
+    A4 --> A5
+    
+    A2 <-.->|Query| AZ2
+    A3 <-.->|Generate| AZ1
+    A4 <-.->|Screen| AZ3
+    
+    A1 -->|Save| Seg
+    A3 -->|Save| Var
+    A4 -->|Log| Audit
+    A5 -->|Save| Results
+    
+    A5 --> Report
+    A5 --> Email
+    
+    %% Innovations
+    I1["💡 Citation-Grounded"]:::innovation
+    I2["💡 Fail-Closed Safety"]:::innovation
+    I3["💡 Built-in A/B/n"]:::innovation
+    
+    A3 -.-> I1
+    A4 -.-> I2
+    A5 -.-> I3
+    
+    %% Metrics
+    M1["⚡ 280/min<br/>processing"]:::metric
+    M2["💰 $0.01<br/>per customer"]:::metric
+    M3["✅ 100%<br/>safety rate"]:::metric
+    
+    Pipeline -.-> M1
+    Pipeline -.-> M2
+    A4 -.-> M3
+    
+    classDef external fill:#e2e8f0,stroke:#475569,stroke-width:3px,color:#0f172a
+    classDef core fill:#6366f1,stroke:#4338ca,stroke-width:4px,color:#fff,font-weight:bold
+    classDef agent fill:#3b82f6,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef azure fill:#0078D4,stroke:#004E89,stroke-width:3px,color:#fff,font-weight:bold
+    classDef storage fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155
+    classDef output fill:#10b981,stroke:#047857,stroke-width:3px,color:#fff,font-weight:bold
+    classDef innovation fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#78350f,font-weight:bold
+    classDef metric fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af,font-weight:bold

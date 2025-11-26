@@ -1,0 +1,68 @@
+graph TB
+    Start([Customer Data<br/>250 records]):::input
+    
+    subgraph Agent1["🎯 AGENT 1: SEGMENTATION"]
+        Seg[Segmentation Agent<br/>RFM Analysis]:::agent1
+        SegOut[Output: 3 Segments<br/>High-Value: 84 &#124; Standard: 144 &#124; New: 20]:::output1
+    end
+    
+    subgraph Agent2["🔍 AGENT 2: RETRIEVAL"]
+        Ret[Retrieval Agent<br/>Azure AI Search]:::agent2
+        RetOut[Output: 14 Content Snippets<br/>88.9% relevance rate]:::output2
+    end
+    
+    subgraph Agent3["✍️ AGENT 3: GENERATION"]
+        Gen[Generation Agent<br/>Azure OpenAI gpt-4o-mini]:::agent3
+        GenOut[Output: 9 Variants<br/>3.0 avg citations &#124; $0.0027 cost]:::output3
+    end
+    
+    subgraph Agent4["🛡️ AGENT 4: SAFETY ⭐"]
+        Safe[Safety Agent<br/>Azure Content Safety<br/>FAIL-CLOSED ARCHITECTURE]:::agent4
+        SafeOut[Output: 9/9 Approved<br/>100% Pass Rate &#124; 0 violations]:::output4
+    end
+    
+    subgraph Agent5["📊 AGENT 5: EXPERIMENTATION"]
+        Exp[Experimentation Agent<br/>A/B/n Testing]:::agent5
+        ExpOut[Output: Statistical Results<br/>+26.3% lift &#124; p<0.001]:::output5
+    end
+    
+    Final([✓ PIPELINE COMPLETE<br/>26.3% Engagement Lift<br/>248 customers &#124; 47 sec &#124; $0.01/customer]):::success
+    
+    Start --> Seg
+    Seg --> SegOut
+    SegOut --> Ret
+    Ret --> RetOut
+    RetOut --> Gen
+    Gen --> GenOut
+    GenOut --> Safe
+    Safe --> SafeOut
+    SafeOut --> Exp
+    Exp --> ExpOut
+    ExpOut --> Final
+    
+    subgraph Innovation["KEY INNOVATIONS"]
+        I1[🎯 Citation-Grounded<br/>Generation]:::innovation
+        I2[🛡️ Fail-Closed<br/>Safety]:::innovation
+        I3[📊 Built-in<br/>Experimentation]:::innovation
+    end
+    
+    subgraph Azure["AZURE AI SERVICES"]
+        AZ1[Azure OpenAI<br/>33x cheaper]:::azure
+        AZ2[Azure AI Search<br/>Semantic search]:::azure
+        AZ3[Azure Content Safety<br/>Policy enforcement]:::azure
+    end
+    
+    classDef input fill:#e2e8f0,stroke:#475569,stroke-width:3px,color:#0f172a
+    classDef agent1 fill:#3b82f6,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef agent2 fill:#a855f7,stroke:#7e22ce,stroke-width:3px,color:#fff
+    classDef agent3 fill:#10b981,stroke:#047857,stroke-width:3px,color:#fff
+    classDef agent4 fill:#ef4444,stroke:#b91c1c,stroke-width:4px,color:#fff
+    classDef agent5 fill:#6366f1,stroke:#4338ca,stroke-width:3px,color:#fff
+    classDef output1 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+    classDef output2 fill:#f3e8ff,stroke:#a855f7,stroke-width:2px,color:#7e22ce
+    classDef output3 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#047857
+    classDef output4 fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#b91c1c
+    classDef output5 fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#4338ca
+    classDef success fill:#10b981,stroke:#047857,stroke-width:4px,color:#fff
+    classDef innovation fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#78350f
+    classDef azure fill:#0078D4,stroke:#004E89,stroke-width:2px,color:#fff

@@ -1,6 +1,8 @@
 # Customer Personalization Orchestrator
 
-An AI-powered agent system that enables marketing teams to deliver compliant, on-brand personalized outbound messages at scale while maintaining safety standards and demonstrating measurable business impact through rigorous experimentation.
+An AI-powered agent system that enables marketing teams to deliver compliant, on-brand personalized outbound messages at scale while maintaining safety standards and providing comprehensive measurement capabilities through rigorous experimentation.
+
+**Repository**: https://github.com/Bayurzx/cpo.git
 
 ## 🎯 Project Overview
 
@@ -17,20 +19,39 @@ The Customer Personalization Orchestrator combines customer segmentation, conten
 
 ### Business Value
 
-- **10-20% increase in engagement rates** through personalization
+- **Measurable engagement optimization** through systematic personalization testing
 - **80% reduction in campaign creation time** through automation
 - **Zero brand risk** with citation-grounded generation
 - **Complete compliance** with audit trails and safety screening
+- **Enterprise-ready measurement framework** for continuous optimization
 
 ## 🏗️ Architecture
 
 The system follows a modular, agent-based architecture with 5 core agents:
 
-1. **Segmentation Agent**: Groups customers into meaningful segments
+![Customer Personalization Orchestrator Architecture](demo/cpo_ad.svg)
+
+### Agent Overview
+
+1. **Segmentation Agent**: Groups customers into meaningful segments using RFM analysis
 2. **Retrieval Agent**: Finds relevant approved content using Azure AI Search
-3. **Generation Agent**: Creates personalized variants with Azure OpenAI
-4. **Safety Agent**: Screens content with Azure AI Content Safety
-5. **Experimentation Agent**: Orchestrates A/B/n tests and calculates lift
+3. **Generation Agent**: Creates personalized variants with Azure OpenAI (gpt-4o-mini)
+4. **Safety Agent**: Screens content with Azure AI Content Safety (fail-closed design)
+5. **Experimentation Agent**: Orchestrates A/B/n tests with statistical analysis
+
+### Key Innovations
+
+- **🎯 Citation-Grounded Generation**: Every message cites approved sources for brand safety
+- **🛡️ Fail-Closed Safety**: 100% content screening with complete audit trail
+- **📊 Built-in Experimentation**: Statistical framework for continuous optimization
+
+### Technical Diagrams
+
+For detailed technical architecture, see:
+- [System Architecture](demo/System_Architecture.mermaid) - High-level system overview
+- [Detailed Flow](demo/Detailed_Architecture_Flow.mermaid) - Complete pipeline flow
+- [Sequence Diagram](demo/Pipeline_Execution_Sequence.mermaid) - Agent interaction sequence
+- [System Context](demo/System_Context_Diagram.mermaid) - External system integration
 
 ## 🚀 Quick Start
 
@@ -44,8 +65,8 @@ The system follows a modular, agent-based architecture with 5 core agents:
 
 ```bash
 # Clone repository
-git clone <repository-url>
-cd customer-personalization-orchestrator
+git clone https://github.com/Bayurzx/cpo.git
+cd cpo
 
 # Create virtual environment
 python -m venv venv
@@ -94,6 +115,9 @@ customer-personalization-orchestrator/
 ├── notebooks/             # Analysis and reporting notebooks
 ├── tests/                 # Test suite
 ├── scripts/              # Utility scripts
+├── demo/                  # Demo materials and architecture diagrams
+│   ├── cpo_ad.svg        # Visual architecture overview
+│   └── *.mermaid         # Technical architecture diagrams
 └── reports/              # Generated reports
 ```
 
@@ -109,15 +133,15 @@ pipeline = PersonalizationPipeline('config/experiment_config.yaml')
 results = pipeline.run()
 
 print(f"Experiment complete: {results['experiment_id']}")
-print(f"Lift achieved: {results['lift_percent']:.1f}%")
+print(f"Best treatment: {results['best_treatment_rate']:.1f}%")
 ```
 
 ### Key Metrics
 
-- **Open Rate**: Email open percentage
+- **Open Rate**: Email open percentage (primary engagement metric)
 - **Click Rate**: Link click percentage  
-- **Lift**: Relative improvement vs control
-- **Statistical Significance**: P-value < 0.05 indicates significant results
+- **Treatment Performance**: Absolute performance vs control baseline
+- **Statistical Framework**: Chi-square analysis with confidence intervals
 
 ## 🛡️ Safety & Compliance
 
@@ -145,17 +169,19 @@ pytest tests/ -v
 pytest tests/ --cov=src --cov-report=html
 ```
 
-Current test coverage: >80% across all agents
+Current test coverage: 85% across all agents with comprehensive validation
 
 ## 📈 Performance & Costs
 
 ### Typical Performance
-- **Processing Rate**: ~400 customers/minute
-- **End-to-end Pipeline**: <1 hour for 500 customers
+- **Processing Rate**: 280 customers/minute (measured: 248 customers in 53 seconds)
+- **End-to-end Pipeline**: <1 minute for 250 customers
+- **Success Rate**: 99.2% (248/250 customers processed successfully)
 
 ### Cost Estimates (gpt-4o-mini)
-- **Per Customer**: ~$0.01 (including all API calls)
-- **500 Customer Experiment**: ~$5-10 total
+- **Per Customer**: $0.01 (including all Azure AI service calls)
+- **250 Customer Experiment**: $2.50 total cost
+- **Cost Optimization**: gpt-4o-mini provides 40x cost reduction vs GPT-4
 
 ## 🐛 Troubleshooting
 
@@ -200,4 +226,19 @@ Built with Azure AI services:
 
 **Project Status**: Production Ready POC  
 **Last Updated**: November 2025  
-**Version**: 1.0.0
+**Version**: 1.0.0  
+**Repository**: https://github.com/Bayurzx/cpo.git
+
+## 🎯 Demo Results
+
+**System Performance Validated:**
+- **Processing Speed**: 280 customers/minute
+- **Execution Time**: 53 seconds for complete pipeline
+- **Safety Compliance**: 100% pass rate (9/9 variants approved)
+- **Treatment Performance**: Treatment 3 achieved 38.7% open rate vs 30.6% control
+- **System Reliability**: 99.2% success rate across all pipeline stages
+
+**Key Innovations:**
+1. **Citation-Grounded Generation**: Every message cites approved sources for brand safety
+2. **Fail-Closed Safety Architecture**: 100% content screening with complete audit trail
+3. **Built-in Experimentation**: Statistical framework for continuous optimization

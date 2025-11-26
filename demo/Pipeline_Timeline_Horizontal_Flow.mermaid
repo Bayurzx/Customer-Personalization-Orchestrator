@@ -1,0 +1,50 @@
+graph LR
+    Input["📊 INPUT<br/>250 Customers"]:::input
+    
+    subgraph S1["AGENT 1"]
+        A1["🎯 Segmentation<br/>RFM Analysis"]:::seg
+        O1["3 Segments<br/>Created"]:::out
+    end
+    
+    subgraph S2["AGENT 2"]
+        A2["🔍 Retrieval<br/>Azure AI Search"]:::ret
+        O2["14 Snippets<br/>88.9% quality"]:::out
+    end
+    
+    subgraph S3["AGENT 3"]
+        A3["✍️ Generation<br/>Azure OpenAI"]:::gen
+        O3["9 Variants<br/>3.0 citations"]:::out
+    end
+    
+    subgraph S4["AGENT 4 ⭐"]
+        A4["🛡️ Safety<br/>Azure Content<br/>Safety"]:::safe
+        O4["9/9 Approved<br/>100% pass"]:::out
+    end
+    
+    subgraph S5["AGENT 5"]
+        A5["📊 Experiment<br/>A/B/n Testing"]:::exp
+        O5["38.7% vs 30.6%<br/>Measurement validated"]:::out
+    end
+    
+    Result["✅ SUCCESS<br/>53 sec<br/>$0.01/customer"]:::success
+    
+    Input --> A1
+    A1 --> O1
+    O1 --> A2
+    A2 --> O2
+    O2 --> A3
+    A3 --> O3
+    O3 --> A4
+    A4 --> O4
+    O4 --> A5
+    A5 --> O5
+    O5 --> Result
+    
+    classDef input fill:#e2e8f0,stroke:#475569,stroke-width:3px,color:#0f172a
+    classDef seg fill:#3b82f6,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef ret fill:#a855f7,stroke:#7e22ce,stroke-width:3px,color:#fff
+    classDef gen fill:#10b981,stroke:#047857,stroke-width:3px,color:#fff
+    classDef safe fill:#ef4444,stroke:#b91c1c,stroke-width:4px,color:#fff
+    classDef exp fill:#6366f1,stroke:#4338ca,stroke-width:3px,color:#fff
+    classDef out fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#78350f
+    classDef success fill:#10b981,stroke:#047857,stroke-width:4px,color:#fff

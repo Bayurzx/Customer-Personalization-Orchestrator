@@ -1,0 +1,64 @@
+sequenceDiagram
+    actor User as 👤 Marketing Team
+    participant Pipeline as 🔄 Orchestrator
+    participant Seg as 🎯 Segmentation
+    participant Ret as 🔍 Retrieval
+    participant AzSearch as ☁️ Azure AI Search
+    participant Gen as ✍️ Generation
+    participant AzOpenAI as ☁️ Azure OpenAI
+    participant Safe as 🛡️ Safety
+    participant AzSafety as ☁️ Content Safety
+    participant Exp as 📊 Experimentation
+    participant Report as 📄 Report
+    
+    User->>+Pipeline: Run Experiment (250 customers)
+    
+    Note over Pipeline: PHASE 1: SEGMENTATION
+    Pipeline->>+Seg: Load customer data
+    Seg->>Seg: Apply RFM analysis
+    Seg-->>-Pipeline: 3 segments (84, 144, 20)
+    Note right of Seg: <1 second
+    
+    Note over Pipeline: PHASE 2: RETRIEVAL
+    Pipeline->>+Ret: Get content for segments
+    Ret->>+AzSearch: Semantic search query
+    AzSearch-->>-Ret: 14 relevant snippets
+    Ret-->>-Pipeline: Content with citations
+    Note right of AzSearch: 88.9% relevance
+    
+    Note over Pipeline: PHASE 3: GENERATION
+    loop For each segment (3x)
+        Pipeline->>+Gen: Generate 3 tone variants
+        loop For each tone (3x)
+            Gen->>+AzOpenAI: Create personalized message
+            AzOpenAI-->>-Gen: Message with citations
+        end
+        Gen-->>-Pipeline: 3 variants per segment
+    end
+    Note right of AzOpenAI: 9 total variants<br/>Cost: $0.0027
+    
+    Note over Pipeline: PHASE 4: SAFETY SCREENING ⭐
+    loop For each variant (9x)
+        Pipeline->>+Safe: Screen content
+        Safe->>+AzSafety: Check hate/violence/harm/sexual
+        AzSafety-->>-Safe: Severity scores (all 0)
+        Safe->>Safe: Log to audit trail (CSV)
+        Safe-->>-Pipeline: APPROVED ✅
+    end
+    Note right of Safe: 100% pass rate<br/>Fail-closed design
+    
+    Note over Pipeline: PHASE 5: EXPERIMENTATION
+    Pipeline->>+Exp: Run A/B/n test
+    Exp->>Exp: Stratified random assignment
+    Exp->>Exp: Simulate engagement
+    Exp->>Exp: Calculate metrics & lift
+    Exp->>Exp: Chi-square significance test
+    Exp-->>-Pipeline: Results: Treatment 3 = 38.7% vs Control = 30.6%
+    Note right of Exp: 248/250 processed<br/>Measurement framework validated
+    
+    Pipeline->>+Report: Generate experiment report
+    Report-->>-Pipeline: HTML + visualizations
+    
+    Pipeline-->>-User: ✅ Complete: 53 seconds, $0.01/customer
+    
+    Note over User,Report: KEY INNOVATIONS:<br/>1. Citation-Grounded Generation<br/>2. Fail-Closed Safety (100% screening)<br/>3. Built-in Statistical Testing

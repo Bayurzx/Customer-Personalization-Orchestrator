@@ -1,0 +1,69 @@
+flowchart TD
+    Start([📊 INPUT<br/>Customer Data<br/>250 records with demographics & behavior]):::start
+    
+    %% Agent 1: Segmentation
+    A1{{"🎯 AGENT 1<br/>Segmentation Agent"}}:::agent1
+    A1Details["<b>Algorithm:</b> RFM Analysis<br/><b>Processing:</b> <1 second<br/><b>Method:</b> Rule-based segmentation"]:::details
+    A1Out["<b>OUTPUT</b><br/>3 Segments Created:<br/>• High-Value Recent: 84 (33.9%)<br/>• Standard: 144 (58.1%)<br/>• New Customer: 20 (8.1%)"]:::output
+    
+    %% Agent 2: Retrieval
+    A2{{"🔍 AGENT 2<br/>Retrieval Agent"}}:::agent2
+    A2Azure["☁️ Azure AI Search<br/>Semantic search<br/>25 documents indexed"]:::azure
+    A2Out["<b>OUTPUT</b><br/>14 Content Snippets<br/>• Avg relevance: 0.78<br/>• 88.9% quality rate<br/>• Threshold: >0.5"]:::output
+    
+    %% Agent 3: Generation
+    A3{{"✍️ AGENT 3<br/>Generation Agent"}}:::agent3
+    A3Azure["☁️ Azure OpenAI<br/>gpt-4o-mini<br/>$0.15/1M tokens"]:::azure
+    A3Out["<b>OUTPUT</b><br/>9 Message Variants<br/>• 3 tones per segment<br/>• 3.0 avg citations<br/>• Cost: $0.0027 total"]:::output
+    
+    %% Agent 4: Safety
+    A4{{"🛡️ AGENT 4<br/>Safety Agent<br/>⭐ RESPONSIBLE AI"}}:::agent4
+    A4Azure["☁️ Azure Content Safety<br/>4 categories checked<br/>Fail-closed design"]:::azure
+    A4Out["<b>OUTPUT</b><br/>9/9 Approved (100%)<br/>• 0 hate violations<br/>• 0 violence violations<br/>• Complete audit trail"]:::output
+    
+    %% Agent 5: Experimentation
+    A5{{"📊 AGENT 5<br/>Experimentation Agent"}}:::agent5
+    A5Details["<b>Design:</b> 4 arms (3T + 1C)<br/><b>Assignment:</b> Stratified random<br/><b>Analysis:</b> Chi-square tests"]:::details
+    A5Out["<b>OUTPUT</b><br/>Statistical Results<br/>• Treatment 3: 38.7% open rate<br/>• Control: 30.6% baseline<br/>• 248/250 processed (99.2%)"]:::output
+    
+    Final([✅ SUCCESS<br/><b>System Performance Validated</b><br/>53 seconds • $0.01/customer]):::success
+    
+    %% Flow
+    Start --> A1
+    A1 -.-> A1Details
+    A1 --> A1Out
+    A1Out --> A2
+    A2 -.-> A2Azure
+    A2 --> A2Out
+    A2Out --> A3
+    A3 -.-> A3Azure
+    A3 --> A3Out
+    A3Out --> A4
+    A4 -.-> A4Azure
+    A4 --> A4Out
+    A4Out --> A5
+    A5 -.-> A5Details
+    A5 --> A5Out
+    A5Out --> Final
+    
+    %% Annotations
+    Note1["<b>INNOVATION #1</b><br/>Citation-Grounded<br/>Generation"]:::innovation
+    Note2["<b>INNOVATION #2</b><br/>Fail-Closed<br/>Safety Architecture"]:::innovation
+    Note3["<b>INNOVATION #3</b><br/>Integrated<br/>Experimentation"]:::innovation
+    
+    A3 -.-> Note1
+    A4 -.-> Note2
+    A5 -.-> Note3
+    
+    %% Style definitions
+    classDef start fill:#e2e8f0,stroke:#475569,stroke-width:4px,color:#0f172a,font-weight:bold
+    classDef agent1 fill:#3b82f6,stroke:#1e40af,stroke-width:4px,color:#fff,font-weight:bold
+    classDef agent2 fill:#a855f7,stroke:#7e22ce,stroke-width:4px,color:#fff,font-weight:bold
+    classDef agent3 fill:#10b981,stroke:#047857,stroke-width:4px,color:#fff,font-weight:bold
+    classDef agent4 fill:#ef4444,stroke:#b91c1c,stroke-width:5px,color:#fff,font-weight:bold
+    classDef agent5 fill:#6366f1,stroke:#4338ca,stroke-width:4px,color:#fff,font-weight:bold
+    classDef azure fill:#0078D4,stroke:#004E89,stroke-width:2px,color:#fff
+    classDef details fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155
+    classDef output fill:#fef3c7,stroke:#f59e0b,stroke-width:3px,color:#78350f,font-weight:bold
+    classDef success fill:#10b981,stroke:#047857,stroke-width:5px,color:#fff,font-size:18px,font-weight:bold
+    classDef innovation fill:#fef3c7,stroke:#f59e0b,stroke-width:3px,color:#78350f,font-weight:bold
