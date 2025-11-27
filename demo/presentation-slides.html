@@ -36,7 +36,7 @@
             left: 0;
             opacity: 0;
             transition: opacity 0.5s ease;
-            padding: 60px 80px;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -56,13 +56,16 @@
         /* Navigation */
         .nav-controls {
             position: fixed;
-            bottom: 40px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 10px;
         }
 
         .nav-btn {
@@ -70,12 +73,13 @@
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 50px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             transition: all 0.3s ease;
+            flex: 0 0 auto;
         }
 
         .nav-btn:hover {
@@ -88,43 +92,44 @@
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
+            flex: 0 0 auto;
         }
 
         /* Typography */
         h1 {
-            font-size: 72px;
+            font-size: 2.5rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.2;
         }
 
         h2 {
-            font-size: 48px;
+            font-size: 2rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         h3 {
-            font-size: 32px;
+            font-size: 1.5rem;
             font-weight: 600;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         p {
-            font-size: 24px;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .subtitle {
-            font-size: 36px;
+            font-size: 1.25rem;
             color: rgba(255, 255, 255, 0.8);
             font-weight: 300;
         }
@@ -132,62 +137,63 @@
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
+            width: 100%;
         }
 
         .stat-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 15px;
+            padding: 25px 20px;
             text-align: center;
         }
 
         .stat-number {
-            font-size: 72px;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #10b981;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 24px;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
         }
 
         /* Feature boxes */
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .feature-box {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 15px;
+            padding: 25px 20px;
         }
 
         .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .feature-title {
-            font-size: 28px;
-            font-weight: 600;
-            color: white;
+            font-size: 2rem;
             margin-bottom: 15px;
         }
 
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 10px;
+        }
+
         .feature-text {
-            font-size: 18px;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.5;
         }
@@ -196,8 +202,8 @@
         .arch-flow {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .arch-step {
@@ -205,27 +211,27 @@
             backdrop-filter: blur(10px);
             border-left: 5px solid #10b981;
             border-radius: 10px;
-            padding: 25px 30px;
+            padding: 20px 15px;
             display: flex;
-            align-items: center;
-            gap: 30px;
+            align-items: flex-start;
+            gap: 15px;
         }
 
         .arch-number {
-            font-size: 48px;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #10b981;
-            min-width: 60px;
+            min-width: 40px;
         }
 
         .arch-content h4 {
-            font-size: 28px;
+            font-size: 1.25rem;
             color: white;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .arch-content p {
-            font-size: 18px;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
             margin: 0;
         }
@@ -234,24 +240,24 @@
             display: inline-block;
             background: #0078D4;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         /* Bullet points */
         ul {
             list-style: none;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         li {
-            font-size: 24px;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
-            padding-left: 40px;
+            margin-bottom: 15px;
+            padding-left: 35px;
             position: relative;
         }
 
@@ -261,38 +267,38 @@
             left: 0;
             color: #10b981;
             font-weight: 700;
-            font-size: 28px;
+            font-size: 1.25rem;
         }
 
         /* Highlight box */
         .highlight-box {
             background: rgba(16, 185, 129, 0.2);
             border: 3px solid #10b981;
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 40px;
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin-top: 30px;
         }
 
         /* Logo area */
         .logo-area {
             margin-top: auto;
             text-align: center;
-            padding-top: 40px;
+            padding-top: 30px;
             border-top: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .azure-logos {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .azure-logo {
             background: rgba(255, 255, 255, 0.1);
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 20px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #0078D4;
         }
@@ -300,15 +306,15 @@
         /* Comparison slide */
         .comparison {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .compare-box {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 15px;
+            padding: 25px 20px;
         }
 
         .compare-before {
@@ -320,43 +326,168 @@
         }
 
         .compare-label {
-            font-size: 18px;
+            font-size: 0.9rem;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .before-label { color: #ef4444; }
         .after-label { color: #10b981; }
 
         .compare-value {
-            font-size: 64px;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .before-value { color: #ef4444; }
         .after-value { color: #10b981; }
 
         /* Responsive Design for Better Scrolling */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .slide {
-                padding: 30px 20px;
-                min-height: 100vh;
+                padding: 60px 80px;
             }
             
             h1 {
-                font-size: 2rem !important;
+                font-size: 4.5rem;
             }
             
             h2 {
-                font-size: 1.5rem !important;
+                font-size: 3rem;
             }
             
-            .metric-grid {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
+            h3 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 2.25rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .stat-card {
+                padding: 40px;
+            }
+            
+            .stat-number {
+                font-size: 4.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .feature-box {
+                padding: 30px;
+            }
+            
+            .feature-icon {
+                font-size: 3rem;
+            }
+            
+            .feature-title {
+                font-size: 1.75rem;
+            }
+            
+            .feature-text {
+                font-size: 1.125rem;
+            }
+            
+            .arch-flow {
+                gap: 20px;
+                margin-top: 40px;
+            }
+            
+            .arch-step {
+                padding: 25px 30px;
+                gap: 30px;
+            }
+            
+            .arch-number {
+                font-size: 3rem;
+                min-width: 60px;
+            }
+            
+            .arch-content h4 {
+                font-size: 1.75rem;
+            }
+            
+            .arch-content p {
+                font-size: 1.125rem;
+            }
+            
+            li {
+                font-size: 1.5rem;
+            }
+            
+            .highlight-box {
+                padding: 40px;
+                margin-top: 40px;
+            }
+            
+            .azure-logos {
+                gap: 40px;
+            }
+            
+            .azure-logo {
+                padding: 15px 30px;
+                font-size: 1.25rem;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-top: 40px;
+            }
+            
+            .compare-box {
+                padding: 40px;
+            }
+            
+            .compare-label {
+                font-size: 1.125rem;
+            }
+            
+            .compare-value {
+                font-size: 4rem;
+            }
+            
+            .nav-controls {
+                bottom: 40px;
+                gap: 20px;
+            }
+            
+            .nav-btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            .slide-counter {
+                padding: 12px 24px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -379,15 +510,15 @@
         <div class="slide slide-title active" data-slide="1">
             <h1>Customer Personalization<br>Orchestrator</h1>
             <p class="subtitle">AI-Powered Marketing at Scale with Enterprise Safety</p>
-            <p style="font-size: 24px; margin-top: 30px; color: rgba(255,255,255,0.8);">Competition Submission - November 2025</p>
-            <div class="stats-grid" style="margin-top: 60px;">
+            <p>Competition Submission - November 2025</p>
+            <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">26.3%</div>
-                    <div class="stat-label">Open Rate Improvement<br><small style="font-size: 16px;">(Treatment 3: 38.7% vs Control: 30.6%)</small></div>
+                    <div class="stat-label">Open Rate Improvement<br><small>(Treatment 3: 38.7% vs Control: 30.6%)</small></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Safety Pass Rate<br><small style="font-size: 16px;">(9/9 variants approved)</small></div>
+                    <div class="stat-label">Safety Pass Rate<br><small>(9/9 variants approved)</small></div>
                 </div>
             </div>
             <div class="logo-area">
@@ -411,8 +542,8 @@
                 <li>Compliance gaps - no audit trail for AI-generated content</li>
             </ul>
             <div class="highlight-box">
-                <h3 style="margin-bottom: 20px;">The $50B+ Opportunity</h3>
-                <p style="font-size: 28px;">Companies using AI personalization see <strong style="color: #10b981;">19% increase in sales</strong> (McKinsey), but 73% struggle with safety and compliance challenges</p>
+                <h3>The $50B+ Opportunity</h3>
+                <p>Companies using AI personalization see <strong style="color: #10b981;">19% increase in sales</strong> (McKinsey), but 73% struggle with safety and compliance challenges</p>
             </div>
         </div>
 
@@ -469,8 +600,8 @@
                 </div>
             </div>
             <div class="highlight-box">
-                <h3 style="margin-bottom: 20px;">🎯 Key Innovation: Fail-Closed Architecture</h3>
-                <p style="font-size: 24px;">100% of generated content undergoes mandatory safety screening. No content reaches customers without approval. Complete audit trail for compliance.</p>
+                <h3>🎯 Key Innovation: Fail-Closed Architecture</h3>
+                <p>100% of generated content undergoes mandatory safety screening. No content reaches customers without approval. Complete audit trail for compliance.</p>
             </div>
         </div>
 
@@ -484,7 +615,7 @@
                     <div class="arch-content">
                         <h4>Pipeline Execution</h4>
                         <p>Watch 250 customers processed through 5 agents in 47 seconds</p>
-                        <code style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 5px; font-size: 16px;">python scripts/run_experiment.py</code>
+                        <code style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem;">python scripts/run_experiment.py</code>
                     </div>
                 </div>
                 <div class="arch-step">
@@ -503,8 +634,8 @@
                 </div>
             </div>
             <div class="highlight-box">
-                <h3 style="margin-bottom: 20px;">🚀 What You'll See</h3>
-                <p style="font-size: 22px;">Real Azure API calls • Personalized message generation • Safety screening • Statistical significance testing • Complete audit trail</p>
+                <h3>🚀 What You'll See</h3>
+                <p>Real Azure API calls • Personalized message generation • Safety screening • Statistical significance testing • Complete audit trail</p>
             </div>
         </div>
 
@@ -530,37 +661,37 @@
                     <div class="stat-label">Cost per Customer<br>(gpt-4o-mini optimization)</div>
                 </div>
             </div>
-            <div class="highlight-box" style="margin-top: 40px;">
-                <p style="font-size: 24px; text-align: center;"><strong>Live Demo:</strong> Complete pipeline execution in 53 seconds with real Azure AI services</p>
-                <p style="font-size: 18px; text-align: center; margin-top: 15px;"><strong>Focus:</strong> System capability, enterprise safety, and measurement framework demonstration</p>
+            <div class="highlight-box">
+                <p><strong>Live Demo:</strong> Complete pipeline execution in 53 seconds with real Azure AI services</p>
+                <p><strong>Focus:</strong> System capability, enterprise safety, and measurement framework demonstration</p>
             </div>
         </div>
 
         <!-- Slide 7: Innovation #1 -->
         <div class="slide slide-content" data-slide="7">
             <h2>Innovation #1</h2>
-            <h3 style="color: #10b981; font-size: 56px;">Citation-Grounded Generation</h3>
+            <h3 style="color: #10b981;">Citation-Grounded Generation</h3>
             <div class="comparison">
                 <div class="compare-box compare-before">
                     <div class="compare-label before-label">❌ Traditional AI</div>
-                    <p style="font-size: 20px;">"Black-box" AI generation with no source verification. Risk of off-brand, inaccurate, or hallucinated content.</p>
-                    <p style="margin-top: 30px; font-style: italic; color: #ef4444;">"Check out our amazing deals on products you'll love..."</p>
+                    <p>"Black-box" AI generation with no source verification. Risk of off-brand, inaccurate, or hallucinated content.</p>
+                    <p style="margin-top: 15px; font-style: italic; color: #ef4444;">"Check out our amazing deals on products you'll love..."</p>
                 </div>
                 <div class="compare-box compare-after">
                     <div class="compare-label after-label">✓ Our Approach</div>
-                    <p style="font-size: 20px;">Every message cites approved source documents. 3.0 average citations per variant ensures brand safety.</p>
-                    <p style="margin-top: 30px; font-style: italic; color: #10b981;">"Based on your premium membership, explore our new Enterprise Dashboard [Source: Product Guide, Section 3]..."</p>
+                    <p>Every message cites approved source documents. 3.0 average citations per variant ensures brand safety.</p>
+                    <p style="margin-top: 15px; font-style: italic; color: #10b981;">"Based on your premium membership, explore our new Enterprise Dashboard [Source: Product Guide, Section 3]..."</p>
                 </div>
             </div>
             <div class="highlight-box">
-                <p style="font-size: 24px; text-align: center;"><strong>Result:</strong> 100% brand consistency with AI creativity</p>
+                <p><strong>Result:</strong> 100% brand consistency with AI creativity</p>
             </div>
         </div>
 
         <!-- Slide 8: Innovation #2 -->
         <div class="slide slide-content" data-slide="8">
             <h2>Innovation #2</h2>
-            <h3 style="color: #ef4444; font-size: 56px;">🛡️ Fail-Closed Safety</h3>
+            <h3 style="color: #ef4444;">🛡️ Fail-Closed Safety</h3>
             <div class="feature-grid">
                 <div class="feature-box">
                     <div class="feature-icon">✓</div>
@@ -578,9 +709,9 @@
                     <div class="feature-text">API errors block content, never allow through</div>
                 </div>
             </div>
-            <div class="highlight-box" style="margin-top: 60px;">
-                <h3 style="margin-bottom: 20px;">Safety Results</h3>
-                <ul style="margin-top: 20px;">
+            <div class="highlight-box">
+                <h3>Safety Results</h3>
+                <ul>
                     <li>0 hate violations (severity: 0/6)</li>
                     <li>0 violence violations (severity: 0/6)</li>
                     <li>0 self-harm violations (severity: 0/6)</li>
@@ -592,23 +723,23 @@
         <!-- Slide 9: Innovation #3 -->
         <div class="slide slide-content" data-slide="9">
             <h2>Innovation #3</h2>
-            <h3 style="color: #6366f1; font-size: 56px;">📊 Built-in Experimentation</h3>
+            <h3 style="color: #6366f1;">📊 Built-in Experimentation</h3>
             <p class="subtitle">Measurement framework for continuous optimization</p>
             <div class="comparison">
                 <div class="compare-box">
                     <div class="compare-label" style="color: white;">Experiment Design</div>
-                    <ul style="margin-top: 20px;">
-                        <li style="font-size: 20px;">4 arms: 3 treatments + 1 control</li>
-                        <li style="font-size: 20px;">Stratified random assignment by segment</li>
-                        <li style="font-size: 20px;">Chi-square statistical testing</li>
-                        <li style="font-size: 20px;">Comprehensive metrics calculation</li>
+                    <ul>
+                        <li>4 arms: 3 treatments + 1 control</li>
+                        <li>Stratified random assignment by segment</li>
+                        <li>Chi-square statistical testing</li>
+                        <li>Comprehensive metrics calculation</li>
                     </ul>
                 </div>
                 <div class="compare-box">
                     <div class="compare-label" style="color: white;">Measurement Capability</div>
-                    <div class="stat-number" style="font-size: 48px; color: #10b981;">280/min</div>
-                    <p style="font-size: 20px;">Rapid experimentation at scale with statistical rigor</p>
-                    <p style="font-size: 20px; margin-top: 20px;">Identify promising strategies for optimization</p>
+                    <div class="stat-number" style="color: #10b981;">280/min</div>
+                    <p>Rapid experimentation at scale with statistical rigor</p>
+                    <p>Identify promising strategies for optimization</p>
                 </div>
             </div>
         </div>
@@ -634,11 +765,11 @@
                     <div class="feature-text">Policy enforcement across 4 categories with configurable thresholds</div>
                 </div>
             </div>
-            <div class="highlight-box" style="margin-top: 60px;">
-                <h3 style="margin-bottom: 20px;">Why Azure-Native?</h3>
-                <p style="font-size: 22px;"><strong>Enterprise Security:</strong> Managed identity, audit trails, compliance-ready infrastructure</p>
-                <p style="font-size: 22px;"><strong>Cost Optimization:</strong> 33x cheaper than GPT-4 while maintaining quality</p>
-                <p style="font-size: 22px;"><strong>Scalability:</strong> Cloud-native services scale from 100 to 100K+ customers</p>
+            <div class="highlight-box">
+                <h3>Why Azure-Native?</h3>
+                <p><strong>Enterprise Security:</strong> Managed identity, audit trails, compliance-ready infrastructure</p>
+                <p><strong>Cost Optimization:</strong> 33x cheaper than GPT-4 while maintaining quality</p>
+                <p><strong>Scalability:</strong> Cloud-native services scale from 100 to 100K+ customers</p>
             </div>
         </div>
 
@@ -656,8 +787,8 @@
                     <div class="stat-label">Cost Savings vs<br>Manual Personalization</div>
                 </div>
             </div>
-            <div class="highlight-box" style="margin-top: 40px;">
-                <h3 style="margin-bottom: 20px;">Strategic Value</h3>
+            <div class="highlight-box">
+                <h3>Strategic Value</h3>
                 <ul>
                     <li>Data-driven decisions with built-in A/B/n testing</li>
                     <li>Zero brand risk through citation-grounded generation</li>
@@ -681,7 +812,7 @@
                     <div class="stat-label">Success Rate<br>(248/250 processed)</div>
                 </div>
             </div>
-            <ul style="margin-top: 40px;">
+            <ul>
                 <li>Comprehensive error handling with retry logic (3 attempts, exponential backoff)</li>
                 <li>Complete documentation: README, ARCHITECTURE, CONTRIBUTING guides</li>
                 <li>Modular design: 5 independent agents with clear interfaces</li>
@@ -696,18 +827,18 @@
             <div class="comparison">
                 <div class="compare-box">
                     <div class="feature-title">🏆 Best Performer</div>
-                    <h3 style="color: #10b981; font-size: 48px;">Treatment 3 (Friendly)</h3>
-                    <div class="stat-number" style="font-size: 56px; color: #10b981;">38.7%</div>
-                    <p style="font-size: 20px;">Best performing treatment<br>(vs 30.6% control baseline)</p>
-                    <p style="margin-top: 20px; font-size: 18px;">Shows measurement and optimization capability<br>System identifies promising personalization strategies</p>
+                    <h3 style="color: #10b981;">Treatment 3 (Friendly)</h3>
+                    <div class="stat-number" style="color: #10b981;">38.7%</div>
+                    <p>Best performing treatment<br>(vs 30.6% control baseline)</p>
+                    <p>Shows measurement and optimization capability<br>System identifies promising personalization strategies</p>
                 </div>
                 <div class="compare-box">
                     <div class="feature-title">Key Insights</div>
-                    <ul style="margin-top: 20px;">
-                        <li style="font-size: 18px;">High-Value segment shows strongest baseline (47.6%)</li>
-                        <li style="font-size: 18px;">Standard segment benefits most from personalization</li>
-                        <li style="font-size: 18px;">Friendly tone consistently outperforms urgent/informational</li>
-                        <li style="font-size: 18px;">System demonstrates measurable engagement improvement</li>
+                    <ul>
+                        <li>High-Value segment shows strongest baseline (47.6%)</li>
+                        <li>Standard segment benefits most from personalization</li>
+                        <li>Friendly tone consistently outperforms urgent/informational</li>
+                        <li>System demonstrates measurable engagement improvement</li>
                     </ul>
                 </div>
             </div>
@@ -734,9 +865,9 @@
                     <div class="feature-text">Complete audit trail with timestamps, severity scores, and decisions for compliance.</div>
                 </div>
             </div>
-            <div class="highlight-box" style="margin-top: 60px;">
-                <h3 style="margin-bottom: 20px;">Safety Audit Results</h3>
-                <p style="font-size: 24px;">84 total safety checks • 100% pass rate • 0 blocked variants • Complete CSV audit trail with immutable logs</p>
+            <div class="highlight-box">
+                <h3>Safety Audit Results</h3>
+                <p>84 total safety checks • 100% pass rate • 0 blocked variants • Complete CSV audit trail with immutable logs</p>
             </div>
         </div>
 
@@ -761,9 +892,9 @@
                     <div class="feature-text">Production-quality code, 100% safety compliance, Azure-native security</div>
                 </div>
             </div>
-            <div class="highlight-box" style="margin-top: 40px;">
-                <h3 style="margin-bottom: 20px;">Market Position</h3>
-                <p style="font-size: 24px;">While competitors offer either personalization OR safety OR experimentation, we deliver all three in a unified, production-ready system that measures and proves business impact.</p>
+            <div class="highlight-box">
+                <h3>Market Position</h3>
+                <p>While competitors offer either personalization OR safety OR experimentation, we deliver all three in a unified, production-ready system that measures and proves business impact.</p>
             </div>
         </div>
 
@@ -799,8 +930,8 @@
         <!-- Slide 17: Thank You -->
         <div class="slide slide-highlight" data-slide="17">
             <div style="text-align: center; margin: auto;">
-                <h1 style="font-size: 96px; margin-bottom: 40px;">Thank You</h1>
-                <h2 style="font-size: 48px; margin-bottom: 60px;">Customer Personalization Orchestrator</h2>
+                <h1>Thank You</h1>
+                <h2>Customer Personalization Orchestrator</h2>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">38.7%</div>
@@ -811,11 +942,11 @@
                         <div class="stat-label">Safety Compliance</div>
                     </div>
                 </div>
-                <p style="font-size: 32px; margin-top: 60px; color: rgba(255,255,255,0.9);">
+                <p>
                     AI-Powered Personalization + Enterprise Safety
                 </p>
-                <div style="margin-top: 60px;">
-                    <div class="azure-logo" style="color: #002111; display: inline-block; font-size: 24px; padding: 20px 40px;">
+                <div>
+                    <div class="azure-logo" style="color: #002111; display: inline-block; padding: 15px 30px;">
                         Powered by Azure AI Services
                     </div>
                 </div>
@@ -827,7 +958,7 @@
     <div class="nav-controls">
         <button class="nav-btn" onclick="previousSlide()">← Previous</button>
         <div class="slide-counter">
-            <span id="current-slide">1</span> / <span id="total-slides">15</span>
+            <span id="current-slide">1</span> / <span id="total-slides">17</span>
         </div>
         <button class="nav-btn" onclick="nextSlide()">Next →</button>
     </div>
