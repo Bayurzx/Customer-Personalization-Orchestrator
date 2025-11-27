@@ -390,7 +390,7 @@
             }
             
             .feature-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
                 margin-top: 40px;
             }
@@ -487,7 +487,13 @@
 
         @media (min-width: 1024px) {
             .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+                margin: 40px auto 0;
             }
         }
 
@@ -501,6 +507,13 @@
         .slide-content {
             flex: 1;
             overflow-y: visible;
+        }
+
+        /* Center last item in odd-numbered grids */
+        .feature-grid .feature-box:nth-child(3):nth-last-child(1) {
+            grid-column: 1 / -1;
+            max-width: 400px;
+            margin: 0 auto;
         }
     </style>
 </head>
