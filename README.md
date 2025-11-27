@@ -5,7 +5,7 @@ An AI-powered agent system that enables marketing teams to deliver compliant, on
 ## 🏆 Competition Submission
 
 **📹 Demo Video**: [Watch the complete demo and presentation](https://youtu.be/jOk0ejjpL3o)  
-**📊 Live Presentation**: [Interactive HTML Slides](https://bayurzx.github.io/cpo/demo/presentation-slides.html)  
+**📊 Live Presentation**: [Interactive HTML Slides](https://bayurzx.github.io/Customer-Personalization-Orchestrator/demo/presentation-slides.html)  
 **💻 Repository**: https://github.com/Bayurzx/Customer-Personalization-Orchestrator.git  
 
 ### The Challenge
@@ -246,7 +246,7 @@ Built with Azure AI services:
 ✅ **Short Description**: AI-powered 5-agent system for enterprise marketing personalization with safety compliance  
 ✅ **Challenge Solved**: Customer Personalization at Scale with Brand Safety and Measurement  
 ✅ **Demo Video**: https://youtu.be/jOk0ejjpL3o (Complete system demo + presentation)  
-✅ **Live Presentation**: [Interactive HTML Slides](https://bayurzx.github.io/cpo/demo/presentation-slides.html) (PowerPoint equivalent)  
+✅ **Live Presentation**: [Interactive HTML Slides](https://bayurzx.github.io/Customer-Personalization-Orchestrator/demo/presentation-slides.html) (PowerPoint equivalent)  
 ✅ **Code Repository**: https://github.com/Bayurzx/Customer-Personalization-Orchestrator.git (Public GitHub repository)  
 
 ---
