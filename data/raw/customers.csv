@@ -1,0 +1,251 @@
+customer_id,age,location,tier,purchase_frequency,avg_order_value,last_engagement_days,historical_open_rate,historical_click_rate
+C001,35,New York,Gold,12,250.00,5,0.45,0.12
+C002,28,Los Angeles,Silver,6,150.00,30,0.35,0.08
+C003,42,Chicago,Gold,18,300.00,3,0.50,0.15
+C004,31,Houston,Bronze,3,75.00,45,0.20,0.04
+C005,29,Phoenix,Silver,8,180.00,15,0.38,0.09
+C006,45,Philadelphia,Gold,15,320.00,7,0.52,0.18
+C007,33,San Antonio,Bronze,4,95.00,60,0.22,0.05
+C008,38,San Diego,Silver,10,200.00,20,0.40,0.11
+C009,27,Dallas,Bronze,2,65.00,90,0.18,0.03
+C010,41,San Jose,Gold,20,380.00,2,0.55,0.20
+C011,36,Austin,Silver,7,165.00,25,0.36,0.08
+C012,30,Jacksonville,Bronze,5,110.00,50,0.25,0.06
+C013,44,Fort Worth,Gold,16,290.00,8,0.48,0.16
+C014,32,Columbus,Silver,9,175.00,18,0.39,0.10
+C015,26,Charlotte,Bronze,3,80.00,70,0.19,0.04
+C016,39,San Francisco,Gold,22,420.00,1,0.58,0.22
+C017,34,Indianapolis,Silver,11,190.00,12,0.42,0.12
+C018,28,Seattle,Bronze,4,100.00,55,0.23,0.05
+C019,43,Denver,Gold,17,310.00,6,0.49,0.17
+C020,37,Washington,Silver,8,170.00,22,0.37,0.09
+C021,25,Boston,Bronze,2,70.00,80,0.17,0.03
+C022,40,El Paso,Gold,19,350.00,4,0.53,0.19
+C023,35,Detroit,Silver,10,185.00,16,0.41,0.11
+C024,29,Nashville,Bronze,5,105.00,48,0.24,0.06
+C025,46,Portland,Gold,21,390.00,3,0.56,0.21
+C026,33,Oklahoma City,Silver,7,160.00,28,0.35,0.08
+C027,31,Las Vegas,Bronze,3,85.00,65,0.21,0.04
+C028,38,Louisville,Gold,14,270.00,9,0.47,0.15
+C029,27,Baltimore,Silver,6,155.00,32,0.34,0.07
+C030,42,Milwaukee,Bronze,4,95.00,58,0.22,0.05
+C031,36,Albuquerque,Gold,18,330.00,5,0.51,0.18
+C032,30,Tucson,Silver,9,180.00,19,0.38,0.10
+C033,44,Fresno,Bronze,2,75.00,85,0.18,0.03
+C034,32,Sacramento,Gold,16,295.00,7,0.48,0.16
+C035,28,Long Beach,Silver,8,175.00,24,0.37,0.09
+C036,39,Kansas City,Bronze,5,110.00,52,0.25,0.06
+C037,35,Mesa,Gold,20,370.00,2,0.54,0.20
+C038,26,Virginia Beach,Silver,7,165.00,26,0.36,0.08
+C039,41,Atlanta,Bronze,3,90.00,68,0.20,0.04
+C040,37,Colorado Springs,Gold,15,285.00,8,0.47,0.15
+C041,29,Omaha,Silver,10,190.00,17,0.40,0.11
+C042,43,Raleigh,Bronze,4,100.00,56,0.23,0.05
+C043,34,Miami,Gold,19,340.00,4,0.52,0.18
+C044,31,Oakland,Silver,8,170.00,21,0.37,0.09
+C045,45,Minneapolis,Bronze,2,80.00,75,0.19,0.04
+C046,38,Tulsa,Gold,17,315.00,6,0.49,0.17
+C047,27,Cleveland,Silver,9,185.00,18,0.39,0.10
+C048,40,Wichita,Bronze,5,105.00,49,0.24,0.06
+C049,36,Arlington,Gold,21,385.00,3,0.55,0.21
+C050,32,New Orleans,Silver,7,160.00,27,0.35,0.08
+C051,28,Bakersfield,Bronze,3,85.00,63,0.21,0.04
+C052,44,Tampa,Gold,18,325.00,5,0.50,0.18
+C053,33,Honolulu,Silver,10,195.00,15,0.41,0.12
+C054,29,Aurora,Bronze,4,95.00,57,0.22,0.05
+C055,41,Anaheim,Gold,16,300.00,7,0.48,0.16
+C056,37,Santa Ana,Silver,8,175.00,23,0.37,0.09
+C057,25,St. Louis,Bronze,2,70.00,82,0.17,0.03
+C058,39,Riverside,Gold,20,360.00,2,0.54,0.19
+C059,35,Corpus Christi,Silver,9,180.00,19,0.38,0.10
+C060,31,Lexington,Bronze,5,110.00,51,0.25,0.06
+C061,46,Pittsburgh,Gold,22,400.00,1,0.57,0.22
+C062,34,Anchorage,Silver,11,200.00,13,0.42,0.12
+C063,28,Stockton,Bronze,3,80.00,69,0.19,0.04
+C064,42,Cincinnati,Gold,17,310.00,6,0.49,0.17
+C065,38,St. Paul,Silver,8,170.00,22,0.37,0.09
+C066,26,Toledo,Bronze,2,75.00,78,0.18,0.03
+C067,40,Newark,Gold,19,345.00,4,0.52,0.18
+C068,36,Greensboro,Silver,10,185.00,16,0.40,0.11
+C069,32,Plano,Bronze,4,100.00,54,0.23,0.05
+C070,45,Henderson,Gold,21,375.00,3,0.55,0.20
+C071,33,Lincoln,Silver,7,165.00,25,0.36,0.08
+C072,29,Buffalo,Bronze,5,105.00,47,0.24,0.06
+C073,41,Jersey City,Gold,18,320.00,5,0.50,0.18
+C074,37,Chula Vista,Silver,9,180.00,18,0.38,0.10
+C075,27,Fort Wayne,Bronze,3,85.00,64,0.21,0.04
+C076,43,Orlando,Gold,16,295.00,7,0.48,0.16
+C077,35,St. Petersburg,Silver,8,175.00,24,0.37,0.09
+C078,31,Chandler,Bronze,4,95.00,59,0.22,0.05
+C079,44,Laredo,Gold,20,365.00,2,0.54,0.20
+C080,30,Norfolk,Silver,7,160.00,28,0.35,0.08
+C081,38,Durham,Bronze,2,70.00,81,0.17,0.03
+C082,26,Madison,Gold,15,280.00,8,0.47,0.15
+C083,42,Lubbock,Silver,10,190.00,17,0.40,0.11
+C084,34,Irvine,Bronze,5,110.00,53,0.25,0.06
+C085,39,Winston-Salem,Gold,19,340.00,4,0.52,0.18
+C086,35,Glendale,Silver,8,170.00,21,0.37,0.09
+C087,28,Garland,Bronze,3,80.00,71,0.19,0.04
+C088,41,Hialeah,Gold,17,315.00,6,0.49,0.17
+C089,37,Reno,Silver,9,185.00,18,0.39,0.10
+C090,33,Chesapeake,Bronze,4,100.00,56,0.23,0.05
+C091,45,Gilbert,Gold,21,380.00,3,0.55,0.21
+C092,31,Baton Rouge,Silver,7,165.00,26,0.36,0.08
+C093,29,Irving,Bronze,2,75.00,77,0.18,0.03
+C094,43,Scottsdale,Gold,18,330.00,5,0.51,0.18
+C095,36,North Las Vegas,Silver,10,195.00,15,0.41,0.12
+C096,32,Fremont,Bronze,5,105.00,48,0.24,0.06
+C097,40,Boise,Gold,16,300.00,7,0.48,0.16
+C098,27,Richmond,Silver,8,175.00,23,0.37,0.09
+C099,44,San Bernardino,Bronze,3,85.00,62,0.21,0.04
+C100,38,Birmingham,Gold,20,355.00,2,0.54,0.19
+C101,34,Spokane,Silver,9,180.00,19,0.38,0.10
+C102,30,Rochester,Bronze,4,95.00,58,0.22,0.05
+C103,42,Des Moines,Gold,17,305.00,6,0.49,0.17
+C104,36,Modesto,Silver,8,170.00,22,0.37,0.09
+C105,28,Fayetteville,Bronze,2,70.00,83,0.17,0.03
+C106,41,Tacoma,Gold,19,350.00,4,0.52,0.18
+C107,37,Oxnard,Silver,10,185.00,16,0.40,0.11
+C108,33,Fontana,Bronze,5,110.00,50,0.25,0.06
+C109,45,Columbus,Gold,22,395.00,1,0.56,0.21
+C110,31,Montgomery,Silver,7,160.00,27,0.35,0.08
+C111,29,Moreno Valley,Bronze,3,80.00,70,0.19,0.04
+C112,43,Shreveport,Gold,18,325.00,5,0.50,0.18
+C113,35,Aurora,Silver,9,180.00,18,0.38,0.10
+C114,39,Yonkers,Bronze,4,100.00,55,0.23,0.05
+C115,26,Akron,Gold,15,285.00,8,0.47,0.15
+C116,40,Huntington Beach,Silver,8,175.00,24,0.37,0.09
+C117,32,Little Rock,Bronze,2,75.00,79,0.18,0.03
+C118,44,Augusta,Gold,20,370.00,2,0.54,0.20
+C119,38,Amarillo,Silver,10,190.00,17,0.40,0.11
+C120,27,Glendale,Bronze,5,105.00,46,0.24,0.06
+C121,41,Mobile,Gold,17,310.00,6,0.49,0.17
+C122,37,Grand Rapids,Silver,8,170.00,21,0.37,0.09
+C123,33,Salt Lake City,Bronze,3,85.00,66,0.21,0.04
+C124,45,Tallahassee,Gold,19,345.00,4,0.52,0.18
+C125,31,Huntsville,Silver,9,185.00,18,0.39,0.10
+C126,29,Grand Prairie,Bronze,4,95.00,57,0.22,0.05
+C127,42,Knoxville,Gold,16,295.00,7,0.48,0.16
+C128,36,Worcester,Silver,7,165.00,25,0.36,0.08
+C129,28,Newport News,Bronze,2,70.00,84,0.17,0.03
+C130,40,Brownsville,Gold,21,385.00,3,0.55,0.21
+C131,34,Overland Park,Silver,10,195.00,15,0.41,0.12
+C132,32,Santa Clarita,Bronze,5,110.00,52,0.25,0.06
+C133,43,Providence,Gold,18,320.00,5,0.50,0.18
+C134,39,Garden Grove,Silver,8,175.00,23,0.37,0.09
+C135,25,Chattanooga,Bronze,3,80.00,72,0.19,0.04
+C136,41,Oceanside,Gold,20,360.00,2,0.54,0.19
+C137,37,Jackson,Silver,9,180.00,19,0.38,0.10
+C138,35,Fort Lauderdale,Bronze,4,100.00,56,0.23,0.05
+C139,44,Santa Rosa,Gold,17,315.00,6,0.49,0.17
+C140,30,Rancho Cucamonga,Silver,7,160.00,28,0.35,0.08
+C141,38,Port St. Lucie,Bronze,2,75.00,76,0.18,0.03
+C142,26,Tempe,Gold,15,280.00,8,0.47,0.15
+C143,42,Ontario,Silver,10,190.00,17,0.40,0.11
+C144,34,Vancouver,Bronze,5,105.00,49,0.24,0.06
+C145,39,Cape Coral,Gold,19,340.00,4,0.52,0.18
+C146,35,Sioux Falls,Silver,8,170.00,21,0.37,0.09
+C147,31,Springfield,Bronze,3,85.00,65,0.21,0.04
+C148,45,Peoria,Gold,21,375.00,3,0.55,0.20
+C149,33,Pembroke Pines,Silver,9,185.00,18,0.39,0.10
+C150,29,Elk Grove,Bronze,4,95.00,58,0.22,0.05
+C151,41,Salem,Gold,16,300.00,7,0.48,0.16
+C152,37,Lancaster,Silver,7,165.00,26,0.36,0.08
+C153,27,Corona,Bronze,2,70.00,85,0.17,0.03
+C154,43,Eugene,Gold,18,330.00,5,0.51,0.18
+C155,36,Palmdale,Silver,10,195.00,15,0.41,0.12
+C156,32,Salinas,Bronze,5,110.00,51,0.25,0.06
+C157,40,Springfield,Gold,20,365.00,2,0.54,0.20
+C158,28,Pasadena,Silver,8,175.00,24,0.37,0.09
+C159,44,Fort Collins,Bronze,3,80.00,69,0.19,0.04
+C160,38,Hayward,Gold,17,305.00,6,0.49,0.17
+C161,34,Pomona,Silver,9,180.00,18,0.38,0.10
+C162,30,Cary,Bronze,4,100.00,54,0.23,0.05
+C163,42,Rockford,Gold,19,350.00,4,0.52,0.18
+C164,36,Alexandria,Silver,8,170.00,22,0.37,0.09
+C165,26,Escondido,Bronze,2,75.00,78,0.18,0.03
+C166,41,McKinney,Gold,16,295.00,7,0.48,0.16
+C167,37,Kansas City,Silver,7,160.00,27,0.35,0.08
+C168,33,Joliet,Bronze,5,105.00,47,0.24,0.06
+C169,45,Sunnyvale,Gold,22,400.00,1,0.57,0.22
+C170,31,Torrance,Silver,10,190.00,17,0.40,0.11
+C171,29,Bridgeport,Bronze,3,85.00,63,0.21,0.04
+C172,43,Lakewood,Gold,18,325.00,5,0.50,0.18
+C173,35,Hollywood,Silver,9,185.00,18,0.39,0.10
+C174,39,Paterson,Bronze,4,95.00,57,0.22,0.05
+C175,27,Naperville,Gold,15,285.00,8,0.47,0.15
+C176,40,Syracuse,Silver,8,175.00,23,0.37,0.09
+C177,32,Mesquite,Bronze,2,70.00,81,0.17,0.03
+C178,44,Dayton,Gold,20,370.00,2,0.54,0.20
+C179,38,Savannah,Silver,10,195.00,15,0.41,0.12
+C180,34,Bellevue,Bronze,5,110.00,50,0.25,0.06
+C181,41,Orange,Gold,17,310.00,6,0.49,0.17
+C182,37,Fullerton,Silver,8,170.00,21,0.37,0.09
+C183,25,McAllen,Bronze,3,80.00,71,0.19,0.04
+C184,39,Columbia,Gold,19,345.00,4,0.52,0.18
+C185,35,Sterling Heights,Silver,9,180.00,19,0.38,0.10
+C186,31,New Haven,Bronze,4,100.00,56,0.23,0.05
+C187,45,Miramar,Gold,21,380.00,3,0.55,0.21
+C188,33,Waco,Silver,7,165.00,25,0.36,0.08
+C189,29,Thousand Oaks,Bronze,2,75.00,77,0.18,0.03
+C190,42,Cedar Rapids,Gold,16,300.00,7,0.48,0.16
+C191,36,Charleston,Silver,8,175.00,24,0.37,0.09
+C192,28,Visalia,Bronze,5,105.00,48,0.24,0.06
+C193,40,Topeka,Gold,18,320.00,5,0.50,0.18
+C194,34,Elizabeth,Silver,10,190.00,17,0.40,0.11
+C195,32,Gainesville,Bronze,3,85.00,64,0.21,0.04
+C196,43,Thornton,Gold,20,355.00,2,0.54,0.19
+C197,39,Roseville,Silver,9,185.00,18,0.39,0.10
+C198,27,Carrollton,Bronze,4,95.00,59,0.22,0.05
+C199,41,Coral Springs,Gold,17,315.00,6,0.49,0.17
+C200,37,Stamford,Silver,7,160.00,28,0.35,0.08
+C201,35,Simi Valley,Bronze,2,70.00,82,0.17,0.03
+C202,44,Concord,Gold,19,340.00,4,0.52,0.18
+C203,30,Hartford,Silver,8,170.00,21,0.37,0.09
+C204,38,Kent,Bronze,5,110.00,53,0.25,0.06
+C205,26,Lafayette,Gold,15,280.00,8,0.47,0.15
+C206,42,Midland,Silver,10,195.00,15,0.41,0.12
+C207,34,Surprise,Bronze,3,80.00,68,0.19,0.04
+C208,39,Denton,Gold,16,295.00,7,0.48,0.16
+C209,35,Victorville,Silver,8,175.00,23,0.37,0.09
+C210,31,Evansville,Bronze,4,100.00,55,0.23,0.05
+C211,45,Santa Clara,Gold,21,385.00,3,0.55,0.21
+C212,33,Abilene,Silver,9,180.00,19,0.38,0.10
+C213,29,Valley,Bronze,2,75.00,79,0.18,0.03
+C214,41,Vallejo,Gold,18,325.00,5,0.50,0.18
+C215,37,El Monte,Silver,7,165.00,26,0.36,0.08
+C216,27,Berkeley,Bronze,5,105.00,46,0.24,0.06
+C217,43,Ann Arbor,Gold,20,360.00,2,0.54,0.19
+C218,36,Allentown,Silver,10,190.00,17,0.40,0.11
+C219,32,Westminster,Bronze,3,85.00,66,0.21,0.04
+C220,40,Elgin,Gold,17,305.00,6,0.49,0.17
+C221,34,Waterbury,Silver,8,170.00,22,0.37,0.09
+C222,28,Downey,Bronze,4,95.00,58,0.22,0.05
+C223,44,Provo,Gold,19,350.00,4,0.52,0.18
+C224,38,Manchester,Silver,9,185.00,18,0.39,0.10
+C225,25,Arvada,Bronze,2,70.00,84,0.17,0.03
+C226,41,Norman,Gold,16,300.00,7,0.48,0.16
+C227,37,Centennial,Silver,7,160.00,27,0.35,0.08
+C228,33,High Point,Bronze,5,110.00,50,0.25,0.06
+C229,45,Miami Gardens,Gold,22,395.00,1,0.56,0.21
+C230,31,Temecula,Silver,10,195.00,15,0.41,0.12
+C231,29,Miami Beach,Bronze,3,80.00,70,0.19,0.04
+C232,42,Pueblo,Gold,18,320.00,5,0.50,0.18
+C233,36,Inglewood,Silver,8,175.00,24,0.37,0.09
+C234,30,Murfreesboro,Bronze,4,100.00,56,0.23,0.05
+C235,39,Wilmington,Gold,20,365.00,2,0.54,0.20
+C236,35,Broken Arrow,Silver,9,180.00,18,0.38,0.10
+C237,27,Roswell,Bronze,2,75.00,76,0.18,0.03
+C238,43,Pearland,Gold,17,310.00,6,0.49,0.17
+C239,38,Richardson,Silver,7,165.00,25,0.36,0.08
+C240,32,Lowell,Bronze,5,105.00,49,0.24,0.06
+C241,44,Cambridge,Gold,19,345.00,4,0.52,0.18
+C242,34,College Station,Silver,10,190.00,17,0.40,0.11
+C243,28,Round Rock,Bronze,3,85.00,65,0.21,0.04
+C244,40,West Valley City,Gold,16,295.00,7,0.48,0.16
+C245,36,Carlsbad,Silver,8,170.00,21,0.37,0.09
+C246,26,Westminster,Bronze,4,95.00,57,0.22,0.05
+C247,41,North Charleston,Gold,18,330.00,5,0.51,0.18
+C248,37,Portsmouth,Silver,9,185.00,18,0.39,0.10
+C249,33,Antioch,Bronze,2,70.00,83,0.17,0.03
+C250,45,Everett,Gold,21,375.00,3,0.55,0.20

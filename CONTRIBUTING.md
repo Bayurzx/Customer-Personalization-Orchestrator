@@ -15,8 +15,8 @@ Thank you for your interest in contributing to the Customer Personalization Orch
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/your-username/customer-personalization-orchestrator.git
-   cd customer-personalization-orchestrator
+   git clone https://github.com/Bayurzx/cpo.git
+   cd cpo
    ```
 
 2. **Create Virtual Environment**
@@ -114,6 +114,17 @@ bandit -r src/
 # Dependency vulnerabilities
 pip-audit
 ```
+
+### Technical Honesty Standards
+
+**Critical**: Always verify claims before making them in documentation or presentations:
+
+- **Performance Metrics**: Calculate from actual execution data, not estimates
+- **Statistical Claims**: Verify p-values and significance before claiming results
+- **System Capabilities**: Focus on what the system can do (always true) vs specific results (variable)
+- **Cost Estimates**: Use actual API usage data, not theoretical calculations
+
+**Example**: Say "Treatment achieved 38.7% vs 30.6% control" rather than "26.3% lift with statistical significance" unless you have verified p<0.05.
 
 ### Example Code Style
 
@@ -230,7 +241,7 @@ tests/
 1. **Test Naming**: `test_<function>_<scenario>_<expected>`
 2. **Fixtures**: Use `conftest.py` for common test data
 3. **Mocking**: Mock external dependencies (Azure APIs)
-4. **Coverage**: Aim for >80% code coverage
+4. **Coverage**: Aim for >80% code coverage (current: 85%)
 
 ### Example Test
 
@@ -389,7 +400,7 @@ log_event("variant_generated", {
 ### Before Submitting PR
 
 - [ ] All tests pass locally
-- [ ] Code coverage >80%
+- [ ] Code coverage >80% (current: 85%)
 - [ ] No linting errors
 - [ ] Type checking passes
 - [ ] Documentation updated
@@ -520,7 +531,7 @@ We use Semantic Versioning (SemVer):
 
 - **GitHub Issues**: Bug reports and feature requests
 - **GitHub Discussions**: General questions and discussions
-- **Email**: [maintainer-email] for security issues
+- **Email**: bayurzx@gmail.com for security issues
 
 ### Response Times
 

@@ -1,0 +1,439 @@
+{
+  "experiment_id": "EXP_4F7DA2EE",
+  "experiment_name": "personalization_poc_v1",
+  "total_customers": 248,
+  "primary_metric": "open_rate",
+  "arms": {
+    "control": {
+      "arm_name": "control",
+      "sample_size": 62,
+      "metrics": {
+        "open_rate": 0.3064516129032258,
+        "click_rate": 0.03225806451612903,
+        "conversion_rate": 0.0
+      },
+      "counts": {
+        "sent": 62,
+        "opened": 19,
+        "clicked": 2,
+        "converted": 0
+      }
+    },
+    "treatment_1": {
+      "arm_name": "treatment_1",
+      "sample_size": 62,
+      "metrics": {
+        "open_rate": 0.3709677419354839,
+        "click_rate": 0.016129032258064516,
+        "conversion_rate": 0.0
+      },
+      "counts": {
+        "sent": 62,
+        "opened": 23,
+        "clicked": 1,
+        "converted": 0
+      }
+    },
+    "treatment_2": {
+      "arm_name": "treatment_2",
+      "sample_size": 62,
+      "metrics": {
+        "open_rate": 0.3225806451612903,
+        "click_rate": 0.016129032258064516,
+        "conversion_rate": 0.0
+      },
+      "counts": {
+        "sent": 62,
+        "opened": 20,
+        "clicked": 1,
+        "converted": 0
+      }
+    },
+    "treatment_3": {
+      "arm_name": "treatment_3",
+      "sample_size": 62,
+      "metrics": {
+        "open_rate": 0.3870967741935484,
+        "click_rate": 0.0,
+        "conversion_rate": 0.0
+      },
+      "counts": {
+        "sent": 62,
+        "opened": 24,
+        "clicked": 0,
+        "converted": 0
+      }
+    }
+  },
+  "lift_analysis": [
+    {
+      "treatment_arm": "treatment_1",
+      "metric": "open_rate",
+      "control_value": 0.3064516129032258,
+      "treatment_value": 0.3709677419354839,
+      "lift_percent": 21.052631578947366,
+      "lift_absolute": 0.06451612903225806,
+      "statistical_significance": {
+        "p_value": 0.5691887286350393,
+        "significant": false,
+        "test_type": "chi_square",
+        "chi2_statistic": 0.3240418118466899,
+        "confidence_interval": {
+          "lower": -0.10170029928919108,
+          "upper": 0.2307325573537072
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_1",
+      "metric": "click_rate",
+      "control_value": 0.03225806451612903,
+      "treatment_value": 0.016129032258064516,
+      "lift_percent": -50.0,
+      "lift_absolute": -0.016129032258064516,
+      "statistical_significance": {
+        "p_value": 1.0,
+        "significant": false,
+        "test_type": "chi_square",
+        "chi2_statistic": 0.0,
+        "confidence_interval": {
+          "lower": -0.07014321688191466,
+          "upper": 0.03788515236578563
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_1",
+      "metric": "conversion_rate",
+      "control_value": 0.0,
+      "treatment_value": 0.0,
+      "lift_percent": 0,
+      "lift_absolute": 0.0,
+      "statistical_significance": {
+        "p_value": 1.0,
+        "significant": false,
+        "test_type": "failed",
+        "error": "The internally computed table of expected frequencies has a zero element at (np.int64(0), np.int64(0)).",
+        "confidence_interval": {
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_2",
+      "metric": "open_rate",
+      "control_value": 0.3064516129032258,
+      "treatment_value": 0.3225806451612903,
+      "lift_percent": 5.263157894736838,
+      "lift_absolute": 0.016129032258064502,
+      "statistical_significance": {
+        "p_value": 1.0,
+        "significant": false,
+        "test_type": "chi_square",
+        "chi2_statistic": 0.0,
+        "confidence_interval": {
+          "lower": -0.14730021911416838,
+          "upper": 0.17955828363029738
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_2",
+      "metric": "click_rate",
+      "control_value": 0.03225806451612903,
+      "treatment_value": 0.016129032258064516,
+      "lift_percent": -50.0,
+      "lift_absolute": -0.016129032258064516,
+      "statistical_significance": {
+        "p_value": 1.0,
+        "significant": false,
+        "test_type": "chi_square",
+        "chi2_statistic": 0.0,
+        "confidence_interval": {
+          "lower": -0.07014321688191466,
+          "upper": 0.03788515236578563
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_2",
+      "metric": "conversion_rate",
+      "control_value": 0.0,
+      "treatment_value": 0.0,
+      "lift_percent": 0,
+      "lift_absolute": 0.0,
+      "statistical_significance": {
+        "p_value": 1.0,
+        "significant": false,
+        "test_type": "failed",
+        "error": "The internally computed table of expected frequencies has a zero element at (np.int64(0), np.int64(0)).",
+        "confidence_interval": {
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_3",
+      "metric": "open_rate",
+      "control_value": 0.3064516129032258,
+      "treatment_value": 0.3870967741935484,
+      "lift_percent": 26.315789473684205,
+      "lift_absolute": 0.08064516129032256,
+      "statistical_significance": {
+        "p_value": 0.4504084121952995,
+        "significant": false,
+        "test_type": "chi_square",
+        "chi2_statistic": 0.5696238874533448,
+        "confidence_interval": {
+          "lower": -0.08629700077630209,
+          "upper": 0.24758732335694722
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_3",
+      "metric": "click_rate",
+      "control_value": 0.03225806451612903,
+      "treatment_value": 0.0,
+      "lift_percent": -100.0,
+      "lift_absolute": -0.03225806451612903,
+      "statistical_significance": {
+        "p_value": 0.475920525292605,
+        "significant": false,
+        "test_type": "chi_square",
+        "chi2_statistic": 0.5081967213114753,
+        "confidence_interval": {
+          "lower": -0.07623846301725468,
+          "upper": 0.011722333984996607
+        }
+      }
+    },
+    {
+      "treatment_arm": "treatment_3",
+      "metric": "conversion_rate",
+      "control_value": 0.0,
+      "treatment_value": 0.0,
+      "lift_percent": 0,
+      "lift_absolute": 0.0,
+      "statistical_significance": {
+        "p_value": 1.0,
+        "significant": false,
+        "test_type": "failed",
+        "error": "The internally computed table of expected frequencies has a zero element at (np.int64(0), np.int64(0)).",
+        "confidence_interval": {
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      }
+    }
+  ],
+  "segment_breakdown": [
+    {
+      "segment": "High-Value Recent",
+      "sample_size": 84,
+      "best_performing_arm": "control",
+      "lift_percent": 0.0,
+      "metrics_by_arm": {
+        "control": {
+          "arm_name": "control",
+          "sample_size": 21,
+          "metrics": {
+            "open_rate": 0.47619047619047616,
+            "click_rate": 0.09523809523809523,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 21,
+            "opened": 10,
+            "clicked": 2,
+            "converted": 0
+          }
+        },
+        "treatment_1": {
+          "arm_name": "treatment_1",
+          "sample_size": 21,
+          "metrics": {
+            "open_rate": 0.42857142857142855,
+            "click_rate": 0.047619047619047616,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 21,
+            "opened": 9,
+            "clicked": 1,
+            "converted": 0
+          }
+        },
+        "treatment_2": {
+          "arm_name": "treatment_2",
+          "sample_size": 21,
+          "metrics": {
+            "open_rate": 0.38095238095238093,
+            "click_rate": 0.047619047619047616,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 21,
+            "opened": 8,
+            "clicked": 1,
+            "converted": 0
+          }
+        },
+        "treatment_3": {
+          "arm_name": "treatment_3",
+          "sample_size": 21,
+          "metrics": {
+            "open_rate": 0.42857142857142855,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 21,
+            "opened": 9,
+            "clicked": 0,
+            "converted": 0
+          }
+        }
+      }
+    },
+    {
+      "segment": "Standard",
+      "sample_size": 144,
+      "best_performing_arm": "control",
+      "lift_percent": 0,
+      "metrics_by_arm": {
+        "control": {
+          "arm_name": "control",
+          "sample_size": 36,
+          "metrics": {
+            "open_rate": 0.25,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 36,
+            "opened": 9,
+            "clicked": 0,
+            "converted": 0
+          }
+        },
+        "treatment_1": {
+          "arm_name": "treatment_1",
+          "sample_size": 36,
+          "metrics": {
+            "open_rate": 0.3888888888888889,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 36,
+            "opened": 14,
+            "clicked": 0,
+            "converted": 0
+          }
+        },
+        "treatment_2": {
+          "arm_name": "treatment_2",
+          "sample_size": 36,
+          "metrics": {
+            "open_rate": 0.3333333333333333,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 36,
+            "opened": 12,
+            "clicked": 0,
+            "converted": 0
+          }
+        },
+        "treatment_3": {
+          "arm_name": "treatment_3",
+          "sample_size": 36,
+          "metrics": {
+            "open_rate": 0.3888888888888889,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 36,
+            "opened": 14,
+            "clicked": 0,
+            "converted": 0
+          }
+        }
+      }
+    },
+    {
+      "segment": "New Customer",
+      "sample_size": 20,
+      "best_performing_arm": "control",
+      "lift_percent": 0,
+      "metrics_by_arm": {
+        "control": {
+          "arm_name": "control",
+          "sample_size": 5,
+          "metrics": {
+            "open_rate": 0.0,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 5,
+            "opened": 0,
+            "clicked": 0,
+            "converted": 0
+          }
+        },
+        "treatment_1": {
+          "arm_name": "treatment_1",
+          "sample_size": 5,
+          "metrics": {
+            "open_rate": 0.0,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 5,
+            "opened": 0,
+            "clicked": 0,
+            "converted": 0
+          }
+        },
+        "treatment_2": {
+          "arm_name": "treatment_2",
+          "sample_size": 5,
+          "metrics": {
+            "open_rate": 0.0,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 5,
+            "opened": 0,
+            "clicked": 0,
+            "converted": 0
+          }
+        },
+        "treatment_3": {
+          "arm_name": "treatment_3",
+          "sample_size": 5,
+          "metrics": {
+            "open_rate": 0.2,
+            "click_rate": 0.0,
+            "conversion_rate": 0.0
+          },
+          "counts": {
+            "sent": 5,
+            "opened": 1,
+            "clicked": 0,
+            "converted": 0
+          }
+        }
+      }
+    }
+  ],
+  "computed_at": "2025-11-25T21:58:56.222164"
+}

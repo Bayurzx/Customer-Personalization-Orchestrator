@@ -1,0 +1,453 @@
+[
+  {
+    "variant_id": "VAR_High-Value Recent_urgent_0",
+    "segment": "High-Value Recent",
+    "subject": "**Subject:** Last Chance! Unlock Exclusive Premium Features ",
+    "body": "\n**Body:**  \nDear Valued Gold Member,  \n\nTime is running out! For a limited time, you can upgrade your account and unlock our Premium Widget with advanced features designed exclusively for our most valued customers. This is your chance to supercharge your experience with enhanced performance capabilities and priority support access, all at a special discounted rate of 30% off your first year! [Source: Premium Widget Features, Advanced Capabilities]  \n\nAs you continue your journey with us, remember your exclusive Gold Member benefits include priority access to new features and special promotions throughout the year. Don't let this opportunity slip away! [Source: Exclusive Gold Member Benefits, Section Benefits]  \n\nAdditionally, don\u2019t forget about our Loyalty Program! Celebrate each milestone you reach and unlock even more exclusive rewards. There\u2019s no better time than now to maximize your membership! [Source: Loyalty Program Milestone Rewards, Overview]  \n\nAct now\u2014this offer expires soon! Secure your spot and experience all the benefits waiting for you. Click here to upgrade and claim your exclusive offer today!  \n\nBest regards,  \n[Your Name]  \n[Your Company]",
+    "tone": "urgent",
+    "citations": [
+      {
+        "document_id": "DOC001",
+        "title": "Premium Widget Features",
+        "paragraph_index": 0,
+        "text_snippet": "Advanced Capabilities",
+        "citation_text": "[Source: Premium Widget Features, Advanced Capabilities]"
+      },
+      {
+        "document_id": "DOC003",
+        "title": "Exclusive Gold Member Benefits",
+        "paragraph_index": 0,
+        "text_snippet": "Section Benefits",
+        "citation_text": "[Source: Exclusive Gold Member Benefits, Section Benefits]"
+      },
+      {
+        "document_id": "DOC023",
+        "title": "Loyalty Program Milestone Rewards",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: Loyalty Program Milestone Rewards, Overview]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:17.709749",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 841,
+      "tokens_output": 238,
+      "tokens_total": 1079,
+      "cost_usd": 0.00026894999999999995,
+      "duration_ms": 5490,
+      "prompt_template": "generation_prompt_urgent"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 171,
+      "subject_length": 60,
+      "citation_count": 3
+    }
+  },
+  {
+    "variant_id": "VAR_High-Value Recent_informational_0",
+    "segment": "High-Value Recent",
+    "subject": "**Subject:** Unlock Exclusive Benefits as a Gold Member!",
+    "body": "\n**Body:**\n\nDear Valued Customer,\n\nAs a Gold member, you\u2019re part of an exclusive community that not only receives premium features but also enjoys unparalleled benefits tailored just for you. Did you know that our Premium Widget comes equipped with advanced performance capabilities designed specifically for our most valued customers? This means enhanced efficiency and exclusive customization options that can elevate your experience with us significantly [Source: Premium Widget Features, Advanced Capabilities].\n\nIn addition to these features, your Gold membership grants you priority access to special promotions throughout the year [Source: Exclusive Gold Member Benefits, Promotions]. Take advantage of our limited-time upgrade offer: enjoy a 30% discount off your first year of premium service and unlock bonus features that enhance your functionality [Source: Limited Time Upgrade Offer, Discount Details].\n\nWe encourage you to fully leverage these exclusive opportunities. If you have any questions or would like to learn more about maximizing your membership benefits, feel free to reach out.\n\nBest regards,  \n[Your Name]  \n[Your Position]  \n[Your Company]  \n\n---\n\nThis email integrates insights relevant to the 'High-Value Recent' segment while ensuring a tone that is informative and professional.",
+    "tone": "informational",
+    "citations": [
+      {
+        "document_id": "DOC001",
+        "title": "Premium Widget Features",
+        "paragraph_index": 0,
+        "text_snippet": "Advanced Capabilities",
+        "citation_text": "[Source: Premium Widget Features, Advanced Capabilities]"
+      },
+      {
+        "document_id": "DOC003",
+        "title": "Exclusive Gold Member Benefits",
+        "paragraph_index": 0,
+        "text_snippet": "Promotions",
+        "citation_text": "[Source: Exclusive Gold Member Benefits, Promotions]"
+      },
+      {
+        "document_id": "DOC008",
+        "title": "Limited Time Upgrade Offer",
+        "paragraph_index": 0,
+        "text_snippet": "Discount Details",
+        "citation_text": "[Source: Limited Time Upgrade Offer, Discount Details]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:23.202277",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 883,
+      "tokens_output": 244,
+      "tokens_total": 1127,
+      "cost_usd": 0.00027885,
+      "duration_ms": 2790,
+      "prompt_template": "generation_prompt_informational"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 186,
+      "subject_length": 56,
+      "citation_count": 3
+    }
+  },
+  {
+    "variant_id": "VAR_High-Value Recent_friendly_0",
+    "segment": "High-Value Recent",
+    "subject": "**Subject:** Your Exclusive Benefits Await!",
+    "body": "\n**Body:**  \nHi there,\n\nWe've been thinking about you and wanted to share something special just for you as a valued Gold member! \ud83c\udf89 Your recent activity with us truly signifies your commitment, and we\u2019re excited to offer you exclusive access to premium features that cater to your needs [Source: Exclusive Gold Member Benefits, Special Benefits].\n\nNow\u2019s the perfect time to elevate your experience! For a limited time, you can upgrade your account and unlock these advanced capabilities at a fantastic 30% discount off your first year of premium service [Source: Limited Time Upgrade Offer, Discount Details]. Imagine all the exclusive customization options and priority support right at your fingertips!\n\nPlus, as you continue on your journey with us, don\u2019t forget to check out our Loyalty Program Milestone Rewards. Reaching milestones means unlocking even more exciting benefits and special recognition [Source: Loyalty Program Milestone Rewards, Celebrating Your Journey].\n\nWe truly value your loyalty and can\u2019t wait for you to take full advantage of all these offerings. Let\u2019s get started\u2014click below to upgrade your account today!\n\nWarm regards,  \n[Your Company Name]\n\n**CITATIONS:**  \n[Source: Exclusive Gold Member Benefits, Special Benefits]  \n[Source: Limited Time Upgrade Offer, Discount Details]  \n[Source: Loyalty Program Milestone Rewards, Celebrating Your Journey]",
+    "tone": "friendly",
+    "citations": [
+      {
+        "document_id": "DOC003",
+        "title": "Exclusive Gold Member Benefits",
+        "paragraph_index": 0,
+        "text_snippet": "Special Benefits",
+        "citation_text": "[Source: Exclusive Gold Member Benefits, Special Benefits]"
+      },
+      {
+        "document_id": "DOC008",
+        "title": "Limited Time Upgrade Offer",
+        "paragraph_index": 0,
+        "text_snippet": "Discount Details",
+        "citation_text": "[Source: Limited Time Upgrade Offer, Discount Details]"
+      },
+      {
+        "document_id": "DOC023",
+        "title": "Loyalty Program Milestone Rewards",
+        "paragraph_index": 0,
+        "text_snippet": "Celebrating Your Journey",
+        "citation_text": "[Source: Loyalty Program Milestone Rewards, Celebrating Your Journey]"
+      },
+      {
+        "document_id": "DOC003",
+        "title": "Exclusive Gold Member Benefits",
+        "paragraph_index": 0,
+        "text_snippet": "Special Benefits",
+        "citation_text": "[Source: Exclusive Gold Member Benefits, Special Benefits]"
+      },
+      {
+        "document_id": "DOC008",
+        "title": "Limited Time Upgrade Offer",
+        "paragraph_index": 0,
+        "text_snippet": "Discount Details",
+        "citation_text": "[Source: Limited Time Upgrade Offer, Discount Details]"
+      },
+      {
+        "document_id": "DOC023",
+        "title": "Loyalty Program Milestone Rewards",
+        "paragraph_index": 0,
+        "text_snippet": "Celebrating Your Journey",
+        "citation_text": "[Source: Loyalty Program Milestone Rewards, Celebrating Your Journey]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:25.993373",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 930,
+      "tokens_output": 276,
+      "tokens_total": 1206,
+      "cost_usd": 0.0003051,
+      "duration_ms": 3931,
+      "prompt_template": "generation_prompt_friendly"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 202,
+      "subject_length": 43,
+      "citation_count": 6
+    }
+  },
+  {
+    "variant_id": "VAR_Standard_urgent_3",
+    "segment": "Standard",
+    "subject": "**Subject:** Last Chance! Exclusive Gold Member Benefits Awa",
+    "body": "\n**Body:**  \nDear Valued Member,\n\nTime is running out! As a prized Gold member, you have limited access to exceptional benefits that will enhance your experience with us. Act quickly\u2014these offers are only available for a short time!\n\nUnlock the power of our **Advanced Analytics Suite** to transform your data into actionable insights. With comprehensive reporting and real-time dashboards at your fingertips, you'll be equipped to make informed decisions swiftly. [Source: Advanced Analytics Suite, Transformative Insights]\n\nDon\u2019t miss the chance to explore our **Premium Widget** features, crafted specifically for our most valued customers. Enjoy enhanced performance and exclusive customization options designed to elevate your productivity. [Source: Premium Widget Features, Advanced Capabilities]\n\nThis is your final opportunity to take full advantage of these exclusive Gold member promotions. Claim your benefits before they vanish!\n\n**Act now \u2014 click here to secure your spot and harness these incredible features!**\n\nBest regards,  \n[Your Company Name]  \n\n---  \n[Note: Replace \"[Your Company Name]\" with the actual name of your company for personalization.]",
+    "tone": "urgent",
+    "citations": [
+      {
+        "document_id": "DOC006",
+        "title": "Advanced Analytics Suite",
+        "paragraph_index": 0,
+        "text_snippet": "Transformative Insights",
+        "citation_text": "[Source: Advanced Analytics Suite, Transformative Insights]"
+      },
+      {
+        "document_id": "DOC001",
+        "title": "Premium Widget Features",
+        "paragraph_index": 0,
+        "text_snippet": "Advanced Capabilities",
+        "citation_text": "[Source: Premium Widget Features, Advanced Capabilities]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:30.050362",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 781,
+      "tokens_output": 227,
+      "tokens_total": 1008,
+      "cost_usd": 0.00025335,
+      "duration_ms": 3070,
+      "prompt_template": "generation_prompt_urgent"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 165,
+      "subject_length": 60,
+      "citation_count": 2
+    }
+  },
+  {
+    "variant_id": "VAR_Standard_informational_3",
+    "segment": "Standard",
+    "subject": "**Subject:** Unlock Exclusive Gold Member Insights Today",
+    "body": "\n**Body:**  \nDear Valued Member,\n\nAs a Gold member, you already enjoy exclusive benefits designed to enhance your experience with us. But did you know that you can maximize these opportunities with our Advanced Analytics Suite? This powerful toolset transforms your data into actionable insights, providing comprehensive reporting and real-time dashboards that empower your decision-making ([Source: Advanced Analytics Suite, Introduction]).\n\nAdditionally, take advantage of the AI-Powered Insights Engine, which employs machine learning to uncover hidden patterns and actionable recommendations relevant to your needs ([Source: AI-Powered Insights Engine, Overview]). These features are part of our commitment to delivering premium services specifically tailored for you as a valued customer.\n\nHere are just a few ways you can leverage these tools:\n- Identify trends in your data for more informed strategy planning.\n- Access real-time insights to respond quickly to market changes.\n- Benefit from personalized recommendations to drive efficiency.\n\nReady to explore these exclusive offerings? We encourage you to visit your member portal for more information and start harnessing the full potential of your Gold membership.\n\nBest Regards,  \n[Your Name]  \nCustomer Success Team\n\n**CITATION:**  \n- [Source: Advanced Analytics Suite, Introduction]  \n- [Source: AI-Powered Insights Engine, Overview]  \n- [Source: Exclusive Gold Member Benefits, Overview]",
+    "tone": "informational",
+    "citations": [
+      {
+        "document_id": "DOC006",
+        "title": "Advanced Analytics Suite",
+        "paragraph_index": 0,
+        "text_snippet": "Introduction",
+        "citation_text": "[Source: Advanced Analytics Suite, Introduction]"
+      },
+      {
+        "document_id": "DOC025",
+        "title": "AI-Powered Insights Engine",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: AI-Powered Insights Engine, Overview]"
+      },
+      {
+        "document_id": "DOC006",
+        "title": "Advanced Analytics Suite",
+        "paragraph_index": 0,
+        "text_snippet": "Introduction",
+        "citation_text": "[Source: Advanced Analytics Suite, Introduction]"
+      },
+      {
+        "document_id": "DOC025",
+        "title": "AI-Powered Insights Engine",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: AI-Powered Insights Engine, Overview]"
+      },
+      {
+        "document_id": "DOC003",
+        "title": "Exclusive Gold Member Benefits",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: Exclusive Gold Member Benefits, Overview]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:33.122051",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 823,
+      "tokens_output": 274,
+      "tokens_total": 1097,
+      "cost_usd": 0.00028785,
+      "duration_ms": 2345,
+      "prompt_template": "generation_prompt_informational"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 200,
+      "subject_length": 56,
+      "citation_count": 5
+    }
+  },
+  {
+    "variant_id": "VAR_Standard_friendly_3",
+    "segment": "Standard",
+    "subject": "**Subject:** Your Exclusive Benefits Await!",
+    "body": "\n**Body:**  \nHi there!\n\nWe\u2019ve been thinking about you and wanted to share some exciting updates tailored just for our valued Standard members like you! As you may know, we believe you deserve the best, which is why we continuously strive to enhance your experience.\n\nWith our **Advanced Analytics Suite**, you can transform your data into actionable insights, giving you comprehensive reporting and real-time dashboards that help you stay ahead of the game [Source: Advanced Analytics Suite, Overview]. Plus, we\u2019ve recently rolled out our **AI-Powered Insights Engine**, designed to discover hidden patterns in your data and predict trends that drive your success [Source: AI-Powered Insights Engine, Benefits].\n\nAnd don\u2019t forget, as part of our commitment to you, you have exclusive access to special promotions that we send out throughout the year [Source: Exclusive Gold Member Benefits, Member Perks].\n\nWe\u2019re excited for you to dive in and make the most of these powerful tools! Check them out and see how they can boost your growth.\n\nThanks for being an important part of our community. We\u2019re here for you!\n\nWarm regards,  \n[Your Name]  \n[Your Company]",
+    "tone": "friendly",
+    "citations": [
+      {
+        "document_id": "DOC006",
+        "title": "Advanced Analytics Suite",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: Advanced Analytics Suite, Overview]"
+      },
+      {
+        "document_id": "DOC025",
+        "title": "AI-Powered Insights Engine",
+        "paragraph_index": 0,
+        "text_snippet": "Benefits",
+        "citation_text": "[Source: AI-Powered Insights Engine, Benefits]"
+      },
+      {
+        "document_id": "DOC003",
+        "title": "Exclusive Gold Member Benefits",
+        "paragraph_index": 0,
+        "text_snippet": "Member Perks",
+        "citation_text": "[Source: Exclusive Gold Member Benefits, Member Perks]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:35.470746",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 870,
+      "tokens_output": 241,
+      "tokens_total": 1111,
+      "cost_usd": 0.0002751,
+      "duration_ms": 2085,
+      "prompt_template": "generation_prompt_friendly"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 182,
+      "subject_length": 43,
+      "citation_count": 3
+    }
+  },
+  {
+    "variant_id": "VAR_New Customer_urgent_6",
+    "segment": "New Customer",
+    "subject": "**Subject:** Last Chance to Unlock Your Essential Package!",
+    "body": "\n**Body:**  \nWelcome to our platform! This is your last chance to maximize your experience with the Essential Widget Package\u2014designed exclusively for new customers like you. Don\u2019t miss out on all the core functionalities that will set you up for success [Source: Essential Widget Package, Features Overview].\n\nStart by completing your profile setup, and dive straight into exploring our dashboard. You'll find that our platform is intuitive and ready to assist you in streamlining your tasks with our powerful Automation Workflows [Source: Automation Workflows, Key Benefits]. \n\nAct now! We encourage you to check out our comprehensive Getting Started Guide, where you'll discover additional tips to make the most out of your new account [Source: Getting Started Guide, Introduction]. \n\nRemember, time is of the essence! Secure your package today and set the foundation for your success. Your journey starts here!\n\n**Call to Action:** Click here to activate your Essential Package now! \n\nDon't wait\u2014this opportunity won\u2019t last forever! \n\nBest,  \n[Your Company Name] Team",
+    "tone": "urgent",
+    "citations": [
+      {
+        "document_id": "DOC002",
+        "title": "Essential Widget Package",
+        "paragraph_index": 0,
+        "text_snippet": "Features Overview",
+        "citation_text": "[Source: Essential Widget Package, Features Overview]"
+      },
+      {
+        "document_id": "DOC013",
+        "title": "Automation Workflows",
+        "paragraph_index": 0,
+        "text_snippet": "Key Benefits",
+        "citation_text": "[Source: Automation Workflows, Key Benefits]"
+      },
+      {
+        "document_id": "DOC005",
+        "title": "Getting Started Guide",
+        "paragraph_index": 0,
+        "text_snippet": "Introduction",
+        "citation_text": "[Source: Getting Started Guide, Introduction]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:37.667233",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 842,
+      "tokens_output": 219,
+      "tokens_total": 1061,
+      "cost_usd": 0.0002577,
+      "duration_ms": 2671,
+      "prompt_template": "generation_prompt_urgent"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 160,
+      "subject_length": 58,
+      "citation_count": 3
+    }
+  },
+  {
+    "variant_id": "VAR_New Customer_informational_6",
+    "segment": "New Customer",
+    "subject": "**Subject:** Your Guide to Getting Started with Us",
+    "body": "\n**Body:**\n\nWelcome to our platform! You're now part of a community that values innovation and efficiency, and we're excited to help you maximize your experience.\n\nTo kick things off, we recommend diving into our **Getting Started Guide**. This resource will walk you through setting up your profile and familiarizing yourself with your dashboard, ensuring you\u2019re equipped to hit the ground running [Source: Getting Started Guide, Overview].\n\nAs a new customer, the **Essential Widget Package** is ideal for you, offering all the core functionalities to enhance your exploration of our platform, including basic dashboard access and essential tools [Source: Essential Widget Package, Core Features]. \n\nDon\u2019t forget to check out our **Referral Rewards Program**! Share your experience with friends and earn rewards like account credits and exclusive bonuses [Source: Referral Rewards Program, Overview]. \n\nWe\u2019re here to support you. If you have any questions or need guidance, feel free to reach out to our support team. \n\nStart your journey today by exploring the resources we\u2019ve mentioned!\n\nBest regards,  \n[Your Name]  \n[Your Company]",
+    "tone": "informational",
+    "citations": [
+      {
+        "document_id": "DOC005",
+        "title": "Getting Started Guide",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: Getting Started Guide, Overview]"
+      },
+      {
+        "document_id": "DOC002",
+        "title": "Essential Widget Package",
+        "paragraph_index": 0,
+        "text_snippet": "Core Features",
+        "citation_text": "[Source: Essential Widget Package, Core Features]"
+      },
+      {
+        "document_id": "DOC011",
+        "title": "Referral Rewards Program",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: Referral Rewards Program, Overview]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:40.339927",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 884,
+      "tokens_output": 231,
+      "tokens_total": 1115,
+      "cost_usd": 0.0002712,
+      "duration_ms": 2168,
+      "prompt_template": "generation_prompt_informational"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 169,
+      "subject_length": 50,
+      "citation_count": 3
+    }
+  },
+  {
+    "variant_id": "VAR_New Customer_friendly_6",
+    "segment": "New Customer",
+    "subject": "**Subject:** Welcome Aboard! Let\u2019s Get You Started",
+    "body": "\n**Body:**  \nHi there!\n\nWe\u2019re thrilled to welcome you to our community! Getting started on our platform is a journey we\u2019re excited to accompany you on. Begin by checking out our **Getting Started Guide**\u2014it\u2019s packed with tips to help you set up your profile and explore the main dashboard ([Source: Getting Started Guide, Introduction]). \n\nAs a new customer, you\u2019ll love our **Essential Widget Package**, which includes everything you need to hit the ground running. Whether it's basic dashboard access or core functionalities, it\u2019s all designed to make your experience seamless ([Source: Essential Widget Package, Overview]).\n\nAlso, don\u2019t forget about our **Referral Rewards Program**! Share the love with friends and family, and earn amazing rewards when they sign up ([Source: Referral Rewards Program, Introduction]). \n\nWe\u2019re here to support you every step of the way, so dive in, and let us know if you have any questions. Click below to start exploring, and welcome to the family!\n\n**[Get Started Now]**\n\nWarm regards,  \n[Your Name]  \n[Your Company]",
+    "tone": "friendly",
+    "citations": [
+      {
+        "document_id": "DOC005",
+        "title": "Getting Started Guide",
+        "paragraph_index": 0,
+        "text_snippet": "Introduction",
+        "citation_text": "[Source: Getting Started Guide, Introduction]"
+      },
+      {
+        "document_id": "DOC002",
+        "title": "Essential Widget Package",
+        "paragraph_index": 0,
+        "text_snippet": "Overview",
+        "citation_text": "[Source: Essential Widget Package, Overview]"
+      },
+      {
+        "document_id": "DOC011",
+        "title": "Referral Rewards Program",
+        "paragraph_index": 0,
+        "text_snippet": "Introduction",
+        "citation_text": "[Source: Referral Rewards Program, Introduction]"
+      }
+    ],
+    "generated_at": "2025-11-25T21:58:42.509858",
+    "generation_metadata": {
+      "model": "gpt-4o-mini",
+      "tokens_input": 931,
+      "tokens_output": 235,
+      "tokens_total": 1166,
+      "cost_usd": 0.00028065,
+      "duration_ms": 3380,
+      "prompt_template": "generation_prompt_friendly"
+    },
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "word_count": 163,
+      "subject_length": 50,
+      "citation_count": 3
+    }
+  }
+]

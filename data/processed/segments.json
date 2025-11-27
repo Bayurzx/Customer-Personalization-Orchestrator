@@ -1,0 +1,2752 @@
+[
+  {
+    "customer_id": "C001",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 12,
+      "avg_order_value": 250.0,
+      "engagement_score": 0.28500000000000003
+    }
+  },
+  {
+    "customer_id": "C002",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 6,
+      "avg_order_value": 150.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C003",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 300.0,
+      "engagement_score": 0.325
+    }
+  },
+  {
+    "customer_id": "C004",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.12000000000000001
+    }
+  },
+  {
+    "customer_id": "C005",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.235
+    }
+  },
+  {
+    "customer_id": "C006",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 15,
+      "avg_order_value": 320.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C007",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C008",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 200.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C009",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 65.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C010",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 380.0,
+      "engagement_score": 0.375
+    }
+  },
+  {
+    "customer_id": "C011",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C012",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C013",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 290.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C014",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C015",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C016",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 22,
+      "avg_order_value": 420.0,
+      "engagement_score": 0.39999999999999997
+    }
+  },
+  {
+    "customer_id": "C017",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 11,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.27
+    }
+  },
+  {
+    "customer_id": "C018",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C019",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 310.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C020",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C021",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C022",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 350.0,
+      "engagement_score": 0.36
+    }
+  },
+  {
+    "customer_id": "C023",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.26
+    }
+  },
+  {
+    "customer_id": "C024",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C025",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 390.0,
+      "engagement_score": 0.385
+    }
+  },
+  {
+    "customer_id": "C026",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C027",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C028",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 14,
+      "avg_order_value": 270.0,
+      "engagement_score": 0.31
+    }
+  },
+  {
+    "customer_id": "C029",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 6,
+      "avg_order_value": 155.0,
+      "engagement_score": 0.20500000000000002
+    }
+  },
+  {
+    "customer_id": "C030",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C031",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 330.0,
+      "engagement_score": 0.345
+    }
+  },
+  {
+    "customer_id": "C032",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C033",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C034",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 295.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C035",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C036",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C037",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 370.0,
+      "engagement_score": 0.37
+    }
+  },
+  {
+    "customer_id": "C038",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C039",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 90.0,
+      "engagement_score": 0.12000000000000001
+    }
+  },
+  {
+    "customer_id": "C040",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 15,
+      "avg_order_value": 285.0,
+      "engagement_score": 0.31
+    }
+  },
+  {
+    "customer_id": "C041",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C042",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C043",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 340.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C044",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C045",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C046",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 315.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C047",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C048",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C049",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 385.0,
+      "engagement_score": 0.38
+    }
+  },
+  {
+    "customer_id": "C050",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C051",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C052",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 325.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C053",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 195.0,
+      "engagement_score": 0.265
+    }
+  },
+  {
+    "customer_id": "C054",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C055",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 300.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C056",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C057",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C058",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 360.0,
+      "engagement_score": 0.365
+    }
+  },
+  {
+    "customer_id": "C059",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C060",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C061",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 22,
+      "avg_order_value": 400.0,
+      "engagement_score": 0.39499999999999996
+    }
+  },
+  {
+    "customer_id": "C062",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 11,
+      "avg_order_value": 200.0,
+      "engagement_score": 0.27
+    }
+  },
+  {
+    "customer_id": "C063",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C064",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 310.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C065",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C066",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C067",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 345.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C068",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C069",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C070",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 375.0,
+      "engagement_score": 0.375
+    }
+  },
+  {
+    "customer_id": "C071",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C072",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C073",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 320.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C074",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C075",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C076",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 295.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C077",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C078",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C079",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 365.0,
+      "engagement_score": 0.37
+    }
+  },
+  {
+    "customer_id": "C080",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C081",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C082",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 15,
+      "avg_order_value": 280.0,
+      "engagement_score": 0.31
+    }
+  },
+  {
+    "customer_id": "C083",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C084",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C085",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 340.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C086",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C087",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C088",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 315.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C089",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C090",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C091",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 380.0,
+      "engagement_score": 0.38
+    }
+  },
+  {
+    "customer_id": "C092",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C093",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C094",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 330.0,
+      "engagement_score": 0.345
+    }
+  },
+  {
+    "customer_id": "C095",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 195.0,
+      "engagement_score": 0.265
+    }
+  },
+  {
+    "customer_id": "C096",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C097",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 300.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C098",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C099",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C100",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 355.0,
+      "engagement_score": 0.365
+    }
+  },
+  {
+    "customer_id": "C101",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C102",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C103",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 305.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C104",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C105",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C106",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 350.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C107",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C108",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C109",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 22,
+      "avg_order_value": 395.0,
+      "engagement_score": 0.385
+    }
+  },
+  {
+    "customer_id": "C110",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C111",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C112",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 325.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C113",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C114",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C115",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 15,
+      "avg_order_value": 285.0,
+      "engagement_score": 0.31
+    }
+  },
+  {
+    "customer_id": "C116",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C117",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C118",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 370.0,
+      "engagement_score": 0.37
+    }
+  },
+  {
+    "customer_id": "C119",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C120",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C121",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 310.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C122",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C123",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C124",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 345.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C125",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C126",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C127",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 295.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C128",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C129",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C130",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 385.0,
+      "engagement_score": 0.38
+    }
+  },
+  {
+    "customer_id": "C131",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 195.0,
+      "engagement_score": 0.265
+    }
+  },
+  {
+    "customer_id": "C132",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C133",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 320.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C134",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C135",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C136",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 360.0,
+      "engagement_score": 0.365
+    }
+  },
+  {
+    "customer_id": "C137",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C138",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C139",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 315.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C140",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C141",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C142",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 15,
+      "avg_order_value": 280.0,
+      "engagement_score": 0.31
+    }
+  },
+  {
+    "customer_id": "C143",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C144",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C145",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 340.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C146",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C147",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C148",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 375.0,
+      "engagement_score": 0.375
+    }
+  },
+  {
+    "customer_id": "C149",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C150",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C151",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 300.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C152",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C153",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C154",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 330.0,
+      "engagement_score": 0.345
+    }
+  },
+  {
+    "customer_id": "C155",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 195.0,
+      "engagement_score": 0.265
+    }
+  },
+  {
+    "customer_id": "C156",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C157",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 365.0,
+      "engagement_score": 0.37
+    }
+  },
+  {
+    "customer_id": "C158",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C159",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C160",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 305.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C161",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C162",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C163",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 350.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C164",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C165",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C166",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 295.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C167",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C168",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C169",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 22,
+      "avg_order_value": 400.0,
+      "engagement_score": 0.39499999999999996
+    }
+  },
+  {
+    "customer_id": "C170",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C171",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C172",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 325.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C173",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C174",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C175",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 15,
+      "avg_order_value": 285.0,
+      "engagement_score": 0.31
+    }
+  },
+  {
+    "customer_id": "C176",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C177",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C178",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 370.0,
+      "engagement_score": 0.37
+    }
+  },
+  {
+    "customer_id": "C179",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 195.0,
+      "engagement_score": 0.265
+    }
+  },
+  {
+    "customer_id": "C180",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C181",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 310.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C182",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C183",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C184",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 345.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C185",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C186",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C187",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 380.0,
+      "engagement_score": 0.38
+    }
+  },
+  {
+    "customer_id": "C188",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C189",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C190",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 300.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C191",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C192",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C193",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 320.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C194",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C195",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C196",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 355.0,
+      "engagement_score": 0.365
+    }
+  },
+  {
+    "customer_id": "C197",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C198",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C199",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 315.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C200",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C201",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C202",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 340.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C203",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C204",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C205",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 15,
+      "avg_order_value": 280.0,
+      "engagement_score": 0.31
+    }
+  },
+  {
+    "customer_id": "C206",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 195.0,
+      "engagement_score": 0.265
+    }
+  },
+  {
+    "customer_id": "C207",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C208",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 295.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C209",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C210",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C211",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 385.0,
+      "engagement_score": 0.38
+    }
+  },
+  {
+    "customer_id": "C212",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C213",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C214",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 325.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C215",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C216",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C217",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 360.0,
+      "engagement_score": 0.365
+    }
+  },
+  {
+    "customer_id": "C218",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C219",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C220",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 305.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C221",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C222",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C223",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 350.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C224",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C225",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C226",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 300.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C227",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 160.0,
+      "engagement_score": 0.215
+    }
+  },
+  {
+    "customer_id": "C228",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 110.0,
+      "engagement_score": 0.155
+    }
+  },
+  {
+    "customer_id": "C229",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 22,
+      "avg_order_value": 395.0,
+      "engagement_score": 0.385
+    }
+  },
+  {
+    "customer_id": "C230",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 195.0,
+      "engagement_score": 0.265
+    }
+  },
+  {
+    "customer_id": "C231",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 80.0,
+      "engagement_score": 0.115
+    }
+  },
+  {
+    "customer_id": "C232",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 320.0,
+      "engagement_score": 0.33999999999999997
+    }
+  },
+  {
+    "customer_id": "C233",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 175.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C234",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 100.0,
+      "engagement_score": 0.14
+    }
+  },
+  {
+    "customer_id": "C235",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 20,
+      "avg_order_value": 365.0,
+      "engagement_score": 0.37
+    }
+  },
+  {
+    "customer_id": "C236",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 180.0,
+      "engagement_score": 0.24
+    }
+  },
+  {
+    "customer_id": "C237",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 75.0,
+      "engagement_score": 0.105
+    }
+  },
+  {
+    "customer_id": "C238",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 17,
+      "avg_order_value": 310.0,
+      "engagement_score": 0.33
+    }
+  },
+  {
+    "customer_id": "C239",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 7,
+      "avg_order_value": 165.0,
+      "engagement_score": 0.22
+    }
+  },
+  {
+    "customer_id": "C240",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 5,
+      "avg_order_value": 105.0,
+      "engagement_score": 0.15
+    }
+  },
+  {
+    "customer_id": "C241",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 19,
+      "avg_order_value": 345.0,
+      "engagement_score": 0.35
+    }
+  },
+  {
+    "customer_id": "C242",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 10,
+      "avg_order_value": 190.0,
+      "engagement_score": 0.255
+    }
+  },
+  {
+    "customer_id": "C243",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 3,
+      "avg_order_value": 85.0,
+      "engagement_score": 0.125
+    }
+  },
+  {
+    "customer_id": "C244",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 16,
+      "avg_order_value": 295.0,
+      "engagement_score": 0.32
+    }
+  },
+  {
+    "customer_id": "C245",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 8,
+      "avg_order_value": 170.0,
+      "engagement_score": 0.22999999999999998
+    }
+  },
+  {
+    "customer_id": "C246",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 4,
+      "avg_order_value": 95.0,
+      "engagement_score": 0.135
+    }
+  },
+  {
+    "customer_id": "C247",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 18,
+      "avg_order_value": 330.0,
+      "engagement_score": 0.345
+    }
+  },
+  {
+    "customer_id": "C248",
+    "segment": "Standard",
+    "segment_id": 3,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 9,
+      "avg_order_value": 185.0,
+      "engagement_score": 0.245
+    }
+  },
+  {
+    "customer_id": "C249",
+    "segment": "New Customer",
+    "segment_id": 2,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 2,
+      "avg_order_value": 70.0,
+      "engagement_score": 0.1
+    }
+  },
+  {
+    "customer_id": "C250",
+    "segment": "High-Value Recent",
+    "segment_id": 0,
+    "confidence": 1.0,
+    "features": {
+      "avg_purchase_frequency": 21,
+      "avg_order_value": 375.0,
+      "engagement_score": 0.375
+    }
+  }
+]

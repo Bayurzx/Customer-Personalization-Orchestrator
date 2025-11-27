@@ -50,18 +50,31 @@ logs/
 *.tmp
 *.pid
 
+!logs/safety_audit.log
+
 # ============================
 # Data (exclude raw & processed unless explicitly included)
 # ============================
+# Exclude potentially sensitive raw data, but keep sample datasets
 data/raw/*.csv
 data/raw/*.json
 data/raw/*.parquet
 
+# Include sample/test datasets for others to test with
+!data/raw/customers.csv
+
 # Keep approved content templates
 !data/content/approved_content/*.json
 
-# Large auto-generated outputs
+# Large auto-generated outputs (exclude most, but keep some examples)
 data/processed/*.json
+data/processed/*.csv
+data/processed/*.md
+
+# Keep key example outputs for reference
+!data/processed/segments.json
+!data/processed/variants.json
+!data/processed/experiment_metrics.json
 
 # ============================
 # Reports & visualizations
@@ -71,6 +84,8 @@ reports/*.csv
 reports/visualizations/*.png
 reports/visualizations/*.jpg
 reports/visualizations/*.svg
+
+!reports/experiment_report.pdf
 
 # ============================
 # Configuration
