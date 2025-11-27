@@ -15,7 +15,7 @@ Thank you for your interest in contributing to the Customer Personalization Orch
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/Bayurzx/cpo.git
+   git clone https://github.com/Bayurzx/Customer-Personalization-Orchestrator.git
    cd cpo
    ```
 

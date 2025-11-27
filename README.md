@@ -6,7 +6,7 @@ An AI-powered agent system that enables marketing teams to deliver compliant, on
 
 **📹 Demo Video**: [Watch the complete demo and presentation](https://youtu.be/jOk0ejjpL3o)  
 **📊 Presentation**: [Interactive HTML Slides](demo/presentation-slides.html)  
-**💻 Repository**: https://github.com/Bayurzx/cpo.git  
+**💻 Repository**: https://github.com/Bayurzx/Customer-Personalization-Orchestrator.git  
 
 ### The Challenge
 
@@ -82,7 +82,7 @@ For detailed technical architecture, see:
 
 ```bash
 # Clone repository
-git clone https://github.com/Bayurzx/cpo.git
+git clone https://github.com/Bayurzx/Customer-Personalization-Orchestrator.git
 cd cpo
 
 # Create virtual environment
@@ -247,7 +247,7 @@ Built with Azure AI services:
 ✅ **Challenge Solved**: Customer Personalization at Scale with Brand Safety and Measurement  
 ✅ **Demo Video**: https://youtu.be/jOk0ejjpL3o (Complete system demo + presentation)  
 ✅ **Presentation**: [Interactive HTML Slides](demo/presentation-slides.html) (PowerPoint equivalent)  
-✅ **Code Repository**: https://github.com/Bayurzx/cpo.git (Public GitHub repository)  
+✅ **Code Repository**: https://github.com/Bayurzx/Customer-Personalization-Orchestrator.git (Public GitHub repository)  
 
 ---
 
